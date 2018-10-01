@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="hexo," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="&amp;emsp;&amp;emsp;利用github的不同分支来分别保存网站静态文件与hexo源码（md原始文件及主题等），实现在不同电脑上都可以自由写博客。 Github Page&amp;emsp;&amp;emsp;这里假设你已经在github上建好了page的仓库，也就是 “yourusername.github.io”的名字的项目仓库，比如我的 dxjia.github.io 。另外，也假设你在自己的电脑上已经配置">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo利用Github分支在不同电脑上写博客">
+<meta property="og:url" content="www.xiaoyb.cc/2017/03/19/Hexo利用Github分支在不同电脑上写博客/index.html">
+<meta property="og:site_name" content="David Aaronson">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;利用github的不同分支来分别保存网站静态文件与hexo源码（md原始文件及主题等），实现在不同电脑上都可以自由写博客。 Github Page&amp;emsp;&amp;emsp;这里假设你已经在github上建好了page的仓库，也就是 “yourusername.github.io”的名字的项目仓库，比如我的 dxjia.github.io 。另外，也假设你在自己的电脑上已经配置">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xqitw.com1.z0.glb.clouddn.com/blog-resgit_hub_new_branch.png">
+<meta property="og:image" content="http://7xqitw.com1.z0.glb.clouddn.com/blog-resgit_hub_set_default_branch.png">
+<meta property="og:updated_time" content="2017-07-23T13:24:50.752Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo利用Github分支在不同电脑上写博客">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;利用github的不同分支来分别保存网站静态文件与hexo源码（md原始文件及主题等），实现在不同电脑上都可以自由写博客。 Github Page&amp;emsp;&amp;emsp;这里假设你已经在github上建好了page的仓库，也就是 “yourusername.github.io”的名字的项目仓库，比如我的 dxjia.github.io 。另外，也假设你在自己的电脑上已经配置">
+<meta name="twitter:image" content="http://7xqitw.com1.z0.glb.clouddn.com/blog-resgit_hub_new_branch.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="www.xiaoyb.cc/2017/03/19/Hexo利用Github分支在不同电脑上写博客/"/>
+
+
+
+
+
+  <title>Hexo利用Github分支在不同电脑上写博客 | David Aaronson</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">David Aaronson</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br />
+            
+            guestbook
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/03/19/Hexo利用Github分支在不同电脑上写博客/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David Aaronson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Aaronson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hexo利用Github分支在不同电脑上写博客</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-19T12:15:27+08:00">
+                2017-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&emsp;&emsp;利用github的不同分支来分别保存网站静态文件与hexo源码（md原始文件及主题等），实现在不同电脑上都可以自由写博客。</p>
+<h1 id="Github-Page"><a href="#Github-Page" class="headerlink" title="Github Page"></a>Github Page</h1><p>&emsp;&emsp;这里假设你已经在github上建好了page的仓库，也就是 “yourusername.github.io”的名字的项目仓库，比如我的 dxjia.github.io 。另外，也假设你在自己的电脑上已经配置好git、hexo、node js等环境。<br><a id="more"></a></p>
+<h2 id="新建hexo分支"><a href="#新建hexo分支" class="headerlink" title="新建hexo分支"></a>新建hexo分支</h2><p>&emsp;仓库建好之后，都是默认一个master分支的，Github page要求你的网站文件必须存放在这个master分支上，这个没得选；所以我们需要新建另外一个分支来保存我们的hexo原始文件；master 保存的全是public 文件夹下的内容，这也是 hexo发布到github上的内容，而hexo这个分支，保存的是我们网站的配置 。</p>
+<p>如下图在红色输入框内写入新建的branch名hexo后，回车即可建立新的branch-hexo；<br><img src="http://7xqitw.com1.z0.glb.clouddn.com/blog-resgit_hub_new_branch.png" alt=""></p>
+<h2 id="设置默认分支"><a href="#设置默认分支" class="headerlink" title="设置默认分支"></a>设置默认分支</h2><p>&emsp;&emsp;因为我们写博客更多的是更新这个分支，网站文件所在的master分支则由hexo d命令发布文章的时候进行推送，所以我们将hexo分支设置为默认分支，这样我们在新的电脑环境下git clone该仓库时，自动切到hexo`分支。按下图进行操作。<br><img src="http://7xqitw.com1.z0.glb.clouddn.com/blog-resgit_hub_set_default_branch.png" alt="设置默认分支"></p>
+<h2 id="配置hexo-deploy参数"><a href="#配置hexo-deploy参数" class="headerlink" title="配置hexo deploy参数"></a>配置hexo deploy参数</h2><p>&emsp;&emsp;为了保证hexo d命令可以正确部署到master分支，在hexo 的配置文件 _config.yml文件中配置参数如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/dxjia/dxjia.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;hexo 3.0之后 deploy type，将github改为了git，这样适用性更广了，如果你发现无法hexo d，使用下面的命令安装git deployer插件后重试即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<h2 id="修改推送到hexo分支"><a href="#修改推送到hexo分支" class="headerlink" title="修改推送到hexo分支"></a>修改推送到hexo分支</h2><p>&emsp;&emsp;上一步的deploy参数正确配置后，文章写完使用hexo g -d命令就可以直接部署了，生成的博客静态文件会自动部署到 username.github.io仓库的master分支上，这时候通过浏览器访问<a href="http://username.github.io就可以看到你的博客页面里。" target="_blank" rel="noopener">http://username.github.io就可以看到你的博客页面里。</a></p>
+<p>&emsp;&emsp;网站页面是保存了，但这时候我们还没有保存我们的hexo原始文件，包括我们的文章md文件，我们千辛万苦修改的主题配置等。。。接下来使用下面的步骤将他们都统统推送到hexo分支上去。其中目录下的.gitignore 表示哪些文件或文件夹不提交，根据自己需要配置。<br>如果没有.git文件，先git init。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m “change description”</span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure></p>
+<p>如果没关联远程仓库，执行第三步会出错。和远程仓库关联执行：git remote add origin &lt;远程仓库地址&gt;<br>这样就OK了，我们的原始文件就都上去了，换电脑也不怕了。</p>
+<h1 id="日常写博客"><a href="#日常写博客" class="headerlink" title="日常写博客"></a>日常写博客</h1><p>&emsp;&emsp;有时候我们可能会在不同的电脑上写博客，那在不同的电脑上配置 hexo、git、node.js，以及配置git ssh key等都要折腾一下的，这是免不了的，也是比wordpress等其他博客框架麻烦的一点。</p>
+<h2 id="已有环境"><a href="#已有环境" class="headerlink" title="已有环境"></a>已有环境</h2><p>&emsp;&emsp;如果在电脑上已经写过博客，那么可以在已有的工作目录下同步之前写的博客。<br>在你的仓库目录下右键’git bash shell’，起来bash命令行，然后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<p>这样你的状态就更新了，之后就是 hexo命令写文章啦。。。<br>写完hexo g -d部署好后，使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m “change description”</span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure>
+<p>推送到hexo分支上去。</p>
+<h2 id="新的环境"><a href="#新的环境" class="headerlink" title="新的环境"></a>新的环境</h2><p>&emsp;&emsp;到了新的电脑上时，我们需要将项目先下载到本地，然后再进行hexo初始化。<br><strong>记住不需要hexo init指令</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/dxjia/dxjia.github.io.git</span><br><span class="line">cd dxjia.github.io</span><br><span class="line">npm install hexo</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git –save</span><br></pre></td></tr></table></figure></p>
+<p>之后开始写博客，写好部署好之后，别忘记 git add , ….git push origin hexo…推上去。。。<br>&emsp;&emsp;原文地址：<a href="http://dxjia.cn/2016/01/27/hexo-write-everywhere/" title="原文" target="_blank" rel="noopener">http://dxjia.cn/2016/01/27/hexo-write-everywhere/</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/19/hexo提交新文章错误/" rel="next" title="hexo提交新文章错误">
+                <i class="fa fa-chevron-left"></i> hexo提交新文章错误
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/19/连续子数组的最大和/" rel="prev" title="连续子数组的最大和">
+                连续子数组的最大和 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">David Aaronson</p>
+              <p class="site-description motion-element" itemprop="description">小小程序员的成长之路</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Github-Page"><span class="nav-number">1.</span> <span class="nav-text">Github Page</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新建hexo分支"><span class="nav-number">1.1.</span> <span class="nav-text">新建hexo分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置默认分支"><span class="nav-number">1.2.</span> <span class="nav-text">设置默认分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置hexo-deploy参数"><span class="nav-number">1.3.</span> <span class="nav-text">配置hexo deploy参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改推送到hexo分支"><span class="nav-number">1.4.</span> <span class="nav-text">修改推送到hexo分支</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#日常写博客"><span class="nav-number">2.</span> <span class="nav-text">日常写博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#已有环境"><span class="nav-number">2.1.</span> <span class="nav-text">已有环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新的环境"><span class="nav-number">2.2.</span> <span class="nav-text">新的环境</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">David Aaronson</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

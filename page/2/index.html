@@ -1,0 +1,2044 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="小小程序员的成长之路">
+<meta property="og:type" content="website">
+<meta property="og:title" content="David Aaronson">
+<meta property="og:url" content="www.xiaoyb.cc/page/2/index.html">
+<meta property="og:site_name" content="David Aaronson">
+<meta property="og:description" content="小小程序员的成长之路">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="David Aaronson">
+<meta name="twitter:description" content="小小程序员的成长之路">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="www.xiaoyb.cc/page/2/"/>
+
+
+
+
+
+  <title>David Aaronson</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">David Aaronson</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br />
+            
+            guestbook
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/06/06/用sklearn做数据预处理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David Aaronson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Aaronson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/06/用sklearn做数据预处理/" itemprop="url">用sklearn做数据预处理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-06T14:57:48+08:00">
+                2017-06-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sklearn学习/" itemprop="url" rel="index">
+                    <span itemprop="name">sklearn学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>用sklearn做机器学习的时候，一直都是用的时候再去网上找资料，结果每次都要重新找，很麻烦。终于下决心好好总结一下，平时经常用的一些sklearn的东西（或其他相关知识），希望能写成一个系列的笔记。</p>
+<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>这次就总结下sklearn数据预处理。主要是别人博客的知识，汇总一下。<br>sklearn是一个常用的机器学习库，其中的sklearn.preprocessing模块包含了常用的预处理函数，包括数据的清洗，如缺失值和零值的填充，数据标准化，二值化和哑编码等。</p>
+<h1 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h1><h2 id="1-标准化（均值去除和按方差比例缩放）"><a href="#1-标准化（均值去除和按方差比例缩放）" class="headerlink" title="1.标准化（均值去除和按方差比例缩放）"></a>1.标准化（均值去除和按方差比例缩放）</h2><p>将数据转化为均值为零，方差为一的数据，形如标准正态分布（高斯分布）。实际操作中，经常忽略特征数据的分布形状，移除每个特征均值，划分离散特征的标准差，从而等级化，进而实现数据中心化。在利用机器学习算法（例如SVM）的过程中，如果目标函数中的一个特征的方差的阶数的量级高于其他特征的方差，那么这一特征就会在目标函数中占主导地位，从而“淹没”其他特征的作用。<br>数据标准化的意义：</p>
+<ol>
+<li>消除量纲影响和变量自身变异大小和数值大小的影响。</li>
+<li>数据同趋化，主要解决不同性质数据问题，对不同性质指标直接加总不能正确反映不同作用力的综合结果<h3 id="Z-score标准化"><a href="#Z-score标准化" class="headerlink" title="Z-score标准化"></a>Z-score标准化</h3>基于原始数据的均值（mean）和标准差（standard deviation）进行数据的标准化。<br>公式为：(X-mean)/std  （mean为均值，std为标准差）<br>计算时对每个属性/每列分别进行。<br>将数据按期属性（按列进行）减去其均值，并处以其方差。得到的结果是，对于每个属性/每列来说所有数据都聚集在0附近，方差为1。<br>用sklearn实现有两种方式：<br>1.使用sklearn.preprocessing.scale()函数，可以直接将给定数据进行标准化。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X = np.array([[ <span class="number">1.</span>, <span class="number">-1.</span>,  <span class="number">2.</span>],</span><br><span class="line"><span class="meta">... </span>              [ <span class="number">2.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>],</span><br><span class="line"><span class="meta">... </span>              [ <span class="number">0.</span>,  <span class="number">1.</span>, <span class="number">-1.</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_scaled = preprocessing.scale(X)</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_scaled                                          </span><br><span class="line">array([[ <span class="number">0.</span>  ..., <span class="number">-1.22</span>...,  <span class="number">1.33</span>...],</span><br><span class="line">       [ <span class="number">1.22</span>...,  <span class="number">0.</span>  ..., <span class="number">-0.26</span>...],</span><br><span class="line">       [<span class="number">-1.22</span>...,  <span class="number">1.22</span>..., <span class="number">-1.06</span>...]])</span><br><span class="line"> </span><br><span class="line">&gt;&gt;&gt;<span class="comment">#处理后数据的均值和方差</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_scaled.mean(axis=<span class="number">0</span>)</span><br><span class="line">array([ <span class="number">0.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>])<span class="comment">#零均值</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_scaled.std(axis=<span class="number">0</span>)</span><br><span class="line">array([ <span class="number">1.</span>,  <span class="number">1.</span>,  <span class="number">1.</span>])<span class="comment">#单位方差</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2.使用sklearn.preprocessing.StandardScaler类，使用该类的好处在于可以保存训练集中的参数（均值、方差）直接使用其对象转换测试集数据。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>scaler = preprocessing.StandardScaler().fit(X)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>scaler</span><br><span class="line">StandardScaler(copy=<span class="keyword">True</span>, with_mean=<span class="keyword">True</span>, with_std=<span class="keyword">True</span>)</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>scaler.mean_                                      </span><br><span class="line">array([ <span class="number">1.</span> ...,  <span class="number">0.</span> ...,  <span class="number">0.33</span>...])</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>scaler.std_                                       </span><br><span class="line">array([ <span class="number">0.81</span>...,  <span class="number">0.81</span>...,  <span class="number">1.24</span>...])</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>scaler.transform(X)                               </span><br><span class="line">array([[ <span class="number">0.</span>  ..., <span class="number">-1.22</span>...,  <span class="number">1.33</span>...],</span><br><span class="line">       [ <span class="number">1.22</span>...,  <span class="number">0.</span>  ..., <span class="number">-0.26</span>...],</span><br><span class="line">       [<span class="number">-1.22</span>...,  <span class="number">1.22</span>..., <span class="number">-1.06</span>...]])</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&gt;&gt;&gt;<span class="comment">#可以直接使用训练集对测试集数据进行转换</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>scaler.transform([[<span class="number">-1.</span>,  <span class="number">1.</span>, <span class="number">0.</span>]])                </span><br><span class="line">array([[<span class="number">-2.44</span>...,  <span class="number">1.22</span>..., <span class="number">-0.26</span>...]])</span><br></pre></td></tr></table></figure></p>
+<h3 id="MinMax标准化-最小最大值标准化"><a href="#MinMax标准化-最小最大值标准化" class="headerlink" title="MinMax标准化(最小最大值标准化)"></a>MinMax标准化(最小最大值标准化)</h3><p>将数据缩放至给定的最小值与最大值之间，通常是０与１之间，可用MinMaxScaler实现。或者将最大的绝对值缩放至单位大小，可用MaxAbsScaler实现。<br>对原始数据的线性变换，使结果落到[0,1]区间，转换函数如下：<br>x ＝ (x - min)/(max - min)<br>max: 样本数据的最大值<br>min: 为样本数据的最小值<br>使用这种方法的目的包括：<br>1、对于方差非常小的属性可以增强其稳定性。<br>2、维持稀疏矩阵中为0的条目。<br>sklearn实现MinMax标准化：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_train = np.array([[ <span class="number">1.</span>, <span class="number">-1.</span>,  <span class="number">2.</span>],</span><br><span class="line"><span class="meta">... </span>                    [ <span class="number">2.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>],</span><br><span class="line"><span class="meta">... </span>                    [ <span class="number">0.</span>,  <span class="number">1.</span>, <span class="number">-1.</span>]])</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>min_max_scaler = preprocessing.MinMaxScaler()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_train_minmax = min_max_scaler.fit_transform(X_train)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_train_minmax</span><br><span class="line">array([[ <span class="number">0.5</span>       ,  <span class="number">0.</span>        ,  <span class="number">1.</span>        ],</span><br><span class="line">       [ <span class="number">1.</span>        ,  <span class="number">0.5</span>       ,  <span class="number">0.33333333</span>],</span><br><span class="line">       [ <span class="number">0.</span>        ,  <span class="number">1.</span>        ,  <span class="number">0.</span>        ]])</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment">#将相同的缩放应用到测试集数据中</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_test = np.array([[ <span class="number">-3.</span>, <span class="number">-1.</span>,  <span class="number">4.</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_test_minmax = min_max_scaler.transform(X_test)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_test_minmax</span><br><span class="line">array([[<span class="number">-1.5</span>       ,  <span class="number">0.</span>        ,  <span class="number">1.66666667</span>]])</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment">#缩放因子等属性</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>min_max_scaler.scale_                             </span><br><span class="line">array([ <span class="number">0.5</span>       ,  <span class="number">0.5</span>       ,  <span class="number">0.33</span>...])</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>min_max_scaler.min_                               </span><br><span class="line">array([ <span class="number">0.</span>        ,  <span class="number">0.5</span>       ,  <span class="number">0.33</span>...])</span><br></pre></td></tr></table></figure></p>
+<p>MinMaxScaler()默认的缩放范围是（0,1）。在构造类对象的时候也可以直接指定最大最小值的范围：feature_range=(min, max)<br>例如：min_max_scaler = preprocessing.MinMaxScaler(feature_range=(min, max))</p>
+<h3 id="MaxAbsScaler（绝对值最大标准化）"><a href="#MaxAbsScaler（绝对值最大标准化）" class="headerlink" title="MaxAbsScaler（绝对值最大标准化）"></a>MaxAbsScaler（绝对值最大标准化）</h3><p>与上述标准化方法相似，但是它通过除以最大值将训练集缩放至[-1,1]<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">X_train = np.array([[ <span class="number">1.</span>, <span class="number">-1.</span>,  <span class="number">2.</span>],  </span><br><span class="line">                     [ <span class="number">2.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>],  </span><br><span class="line">                    [ <span class="number">0.</span>,  <span class="number">1.</span>, <span class="number">-1.</span>]])  </span><br><span class="line">max_abs_scaler = preprocessing.MaxAbsScaler()  </span><br><span class="line">X_train_maxabs = max_abs_scaler.fit_transform(X_train)  </span><br><span class="line"><span class="comment"># doctest +NORMALIZE_WHITESPACE^, out: array([[ 0.5, -1.,  1. ], [ 1. , 0. ,  0. ],       [ 0. ,  1. , -0.5]])  </span></span><br><span class="line">X_test = np.array([[ <span class="number">-3.</span>, <span class="number">-1.</span>,  <span class="number">4.</span>]])  </span><br><span class="line">X_test_maxabs = max_abs_scaler.transform(X_test) <span class="comment">#out: array([[-1.5, -1. ,  2. ]])  </span></span><br><span class="line">max_abs_scaler.scale_  <span class="comment">#out: array([ 2.,  1.,  2.])</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="正则化（Normalization）规范化"><a href="#正则化（Normalization）规范化" class="headerlink" title="正则化（Normalization）规范化"></a>正则化（Normalization）规范化</h2><p>这个本人理解的不是很透，先把别人的结论放上来。而且从找到的资料来看，这个翻译比较模糊。<br>文档上说：Normalization is the process of scaling individual samples to have unit norm.<br>正则化的过程是将每个样本缩放到单位范数（每个样本的范数为1），如果后面要使用如二次型（点积）或者其它核方法计算两个样本之间的相似性这个方法会很有用。<br>将样本缩放成单位向量，标准化数据是针对特征来说的，而现在正则化是对样本来做的，是用样本数据除以他的范式。<br>sklearn实现使用preprocessing.normalize(x, norm = ‘l1’)方法，具体的参数说明详见sklearn文档<br><a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.normalize.html#sklearn.preprocessing.normalize" target="_blank" rel="noopener">http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.normalize.html#sklearn.preprocessing.normalize</a><br>1.使用preprocessing.normalize()函数对指定数据进行转换：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>X = [[ <span class="number">1.</span>, <span class="number">-1.</span>,  <span class="number">2.</span>],</span><br><span class="line"><span class="meta">... </span>     [ <span class="number">2.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>],</span><br><span class="line"><span class="meta">... </span>     [ <span class="number">0.</span>,  <span class="number">1.</span>, <span class="number">-1.</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_normalized = preprocessing.normalize(X, norm=<span class="string">'l2'</span>)</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_normalized                                      </span><br><span class="line">array([[ <span class="number">0.40</span>..., <span class="number">-0.40</span>...,  <span class="number">0.81</span>...],</span><br><span class="line">       [ <span class="number">1.</span>  ...,  <span class="number">0.</span>  ...,  <span class="number">0.</span>  ...],</span><br><span class="line">       [ <span class="number">0.</span>  ...,  <span class="number">0.70</span>..., <span class="number">-0.70</span>...]])</span><br></pre></td></tr></table></figure></p>
+<p>2.使用processing.Normalizer()类实现对训练集和测试集的拟合和转换：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>normalizer = preprocessing.Normalizer().fit(X)  <span class="comment"># fit does nothing</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>normalizer</span><br><span class="line">Normalizer(copy=<span class="keyword">True</span>, norm=<span class="string">'l2'</span>)</span><br><span class="line"> </span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>normalizer.transform(X)                            </span><br><span class="line">array([[ <span class="number">0.40</span>..., <span class="number">-0.40</span>...,  <span class="number">0.81</span>...],</span><br><span class="line">       [ <span class="number">1.</span>  ...,  <span class="number">0.</span>  ...,  <span class="number">0.</span>  ...],</span><br><span class="line">       [ <span class="number">0.</span>  ...,  <span class="number">0.70</span>..., <span class="number">-0.70</span>...]])</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>normalizer.transform([[<span class="number">-1.</span>,  <span class="number">1.</span>, <span class="number">0.</span>]])             </span><br><span class="line">array([[<span class="number">-0.70</span>...,  <span class="number">0.70</span>...,  <span class="number">0.</span>  ...]])</span><br></pre></td></tr></table></figure></p>
+<p>对于l2 norm,变换后每个样本的各维特征的平方和为1。类似地，L1 norm则是变换后每个样本的各维特征的绝对值和为1。还有max norm，则是将每个样本的各维特征除以该样本各维特征的最大值.</p>
+<h2 id="二值化（Binarization）"><a href="#二值化（Binarization）" class="headerlink" title="二值化（Binarization）"></a>二值化（Binarization）</h2><p>将数值型数据转化为布尔型的二值数据，可以设置一个阈值（threshold）<br>在sklearn中，sklearn.preprocessing.Binarizer函数可以实现<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>X = [[ <span class="number">1.</span>, <span class="number">-1.</span>,  <span class="number">2.</span>],</span><br><span class="line"><span class="meta">... </span>     [ <span class="number">2.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>],</span><br><span class="line"><span class="meta">... </span>     [ <span class="number">0.</span>,  <span class="number">1.</span>, <span class="number">-1.</span>]]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>binarizer = preprocessing.Binarizer().fit(X)  <span class="comment"># fit does nothing</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>binarizer</span><br><span class="line">Binarizer(copy=<span class="keyword">True</span>, threshold=<span class="number">0.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>binarizer.transform(X)</span><br><span class="line">array([[ <span class="number">1.</span>,  <span class="number">0.</span>,  <span class="number">1.</span>],</span><br><span class="line">       [ <span class="number">1.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>],</span><br><span class="line">       [ <span class="number">0.</span>,  <span class="number">1.</span>,  <span class="number">0.</span>]])</span><br></pre></td></tr></table></figure></p>
+<p>而且还可以调整阈值<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>binarizer = preprocessing.Binarizer(threshold=<span class="number">1.1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>binarizer.transform(X)</span><br><span class="line">array([[ <span class="number">0.</span>,  <span class="number">0.</span>,  <span class="number">1.</span>],</span><br><span class="line">       [ <span class="number">1.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>],</span><br><span class="line">       [ <span class="number">0.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>]])</span><br></pre></td></tr></table></figure></p>
+<h2 id="标签预处理（Label-preprocessing）"><a href="#标签预处理（Label-preprocessing）" class="headerlink" title="标签预处理（Label preprocessing）"></a>标签预处理（Label preprocessing）</h2><h3 id="标签二值化（Label-binarization）"><a href="#标签二值化（Label-binarization）" class="headerlink" title="标签二值化（Label binarization）"></a>标签二值化（Label binarization）</h3><p>LabelBinarizer通常用于通过一个多类标签（label）列表，创建一个label指示器矩阵<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lb = preprocessing.LabelBinarizer()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>lb.fit([<span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">4</span>, <span class="number">2</span>])</span><br><span class="line">LabelBinarizer(neg_label=<span class="number">0</span>, pos_label=<span class="number">1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>lb.classes_</span><br><span class="line">array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>lb.transform([<span class="number">1</span>, <span class="number">6</span>])</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">       [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]])</span><br></pre></td></tr></table></figure></p>
+<p>上例中每个实例中只有一个标签（label），LabelBinarizer也支持每个实例数据显示多个标签：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lb.fit_transform([(<span class="number">1</span>, <span class="number">2</span>), (<span class="number">3</span>,)]) <span class="comment">#(1,2)实例中就包含两个label</span></span><br><span class="line">array([[<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>],</span><br><span class="line">       [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>lb.classes_</span><br><span class="line">array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br></pre></td></tr></table></figure></p>
+<h3 id="标签编码（Label-encoding）"><a href="#标签编码（Label-encoding）" class="headerlink" title="标签编码（Label encoding）"></a>标签编码（Label encoding）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>le = preprocessing.LabelEncoder()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>le.fit([<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">6</span>])</span><br><span class="line">LabelEncoder()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>le.classes_</span><br><span class="line">array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>le.transform([<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>])</span><br><span class="line">array([<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>le.inverse_transform([<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line">array([<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>])</span><br></pre></td></tr></table></figure>
+<p>也可以用于非数值类型的标签到数值类型标签的转化：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>le = preprocessing.LabelEncoder()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>le.fit([<span class="string">"paris"</span>, <span class="string">"paris"</span>, <span class="string">"tokyo"</span>, <span class="string">"amsterdam"</span>])</span><br><span class="line">LabelEncoder()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(le.classes_)</span><br><span class="line">[<span class="string">'amsterdam'</span>, <span class="string">'paris'</span>, <span class="string">'tokyo'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>le.transform([<span class="string">"tokyo"</span>, <span class="string">"tokyo"</span>, <span class="string">"paris"</span>])</span><br><span class="line">array([<span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(le.inverse_transform([<span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>]))</span><br><span class="line">[<span class="string">'tokyo'</span>, <span class="string">'tokyo'</span>, <span class="string">'paris'</span>]</span><br></pre></td></tr></table></figure></p>
+<h2 id="离散变量编码"><a href="#离散变量编码" class="headerlink" title="离散变量编码"></a>离散变量编码</h2><p>例如性别有‘男’， ‘女’，然而计算机的许多模型都只能在数值型数据当中进行计算，如果我们简单的将‘男’为1，‘女’为0，虽然也可以完成转换，但是在转换的过程当中我们引入了大小关系，就是‘女’ &lt; ‘男’，这会对后续模型应用造成不必要的困扰。<br>解决方法为OneHotEncode，就是将其转化为二进制串，除了当前值所在位置为1，其他全部为0，如[0,0,1,0,0], [0,1,0,0,0].。性别可表示为男为[1,0]，女为[0,1]，这样一个性别特征就转化成了两个特征。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">df = pd.DataFrame(&#123;<span class="string">'pet'</span>: [<span class="string">'cat'</span>, <span class="string">'dog'</span>, <span class="string">'dog'</span>, <span class="string">'fish'</span>],<span class="string">'age'</span>: [<span class="number">4</span> , <span class="number">6</span>, <span class="number">3</span>, <span class="number">3</span>],</span><br><span class="line"><span class="string">'salary'</span>:[<span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">1</span>]&#125;)</span><br><span class="line"><span class="comment">#例如有数据比较大，OneHotEncoder会生成非常多的特征，或者为字符串数据，先转化为数字，所以先用LabelEncoder处理。</span></span><br><span class="line">label = preprocessing.LabelEncoder()</span><br><span class="line">df[<span class="string">'pet'</span>] = label.fit_transform(df[<span class="string">'pet'</span>])</span><br><span class="line">one_hot = preprocessing.OneHotEncoder(sparse = <span class="keyword">False</span>)</span><br><span class="line"><span class="keyword">print</span> one_hot.fit_transform(df[[<span class="string">'pet'</span>]])</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">before</span><br><span class="line">   age  pet  salary</span><br><span class="line">0    4    0       4</span><br><span class="line">1    6    1       5</span><br><span class="line">2    3    1       1</span><br><span class="line">3    3    2       1</span><br><span class="line">after</span><br><span class="line">[[ 1.  0.  0.]</span><br><span class="line"> [ 0.  1.  0.]</span><br><span class="line"> [ 0.  1.  0.]</span><br><span class="line"> [ 0.  0.  1.]]</span><br></pre></td></tr></table></figure>
+<h2 id="缺失值处理"><a href="#缺失值处理" class="headerlink" title="缺失值处理"></a>缺失值处理</h2><p>sklearn中的Imputer类提供了一些基本的方法来处理缺失值，如使用均值、中位值或者缺失值所在列中频繁出现的值来替换。<br>例如使用均值来处理的实例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> numpy <span class="keyword">as</span> np  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> Imputer  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>imp = Imputer(missing_values=<span class="string">'NaN'</span>, strategy=<span class="string">'mean'</span>, axis=<span class="number">0</span>)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>imp.fit([[<span class="number">1</span>, <span class="number">2</span>], [np.nan, <span class="number">3</span>], [<span class="number">7</span>, <span class="number">6</span>]])  </span><br><span class="line">Imputer(axis=<span class="number">0</span>, copy=<span class="keyword">True</span>, missing_values=<span class="string">'NaN'</span>, strategy=<span class="string">'mean'</span>, verbose=<span class="number">0</span>)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X = [[np.nan, <span class="number">2</span>], [<span class="number">6</span>, np.nan], [<span class="number">7</span>, <span class="number">6</span>]]  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(imp.transform(X))                             </span><br><span class="line">[[ <span class="number">4.</span>          <span class="number">2.</span>        ]  </span><br><span class="line"> [ <span class="number">6.</span>          <span class="number">3.666</span>...]  </span><br><span class="line"> [ <span class="number">7.</span>          <span class="number">6.</span>        ]]</span><br></pre></td></tr></table></figure></p>
+<p>Imputer也支持稀疏矩阵作为输入：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> scipy.sparse <span class="keyword">as</span> sp</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X = sp.csc_matrix([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">0</span>, <span class="number">3</span>], [<span class="number">7</span>, <span class="number">6</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>imp = Imputer(missing_values=<span class="number">0</span>, strategy=<span class="string">'mean'</span>, axis=<span class="number">0</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>imp.fit(X)</span><br><span class="line">Imputer(axis=<span class="number">0</span>, copy=<span class="keyword">True</span>, missing_values=<span class="number">0</span>, strategy=<span class="string">'mean'</span>, verbose=<span class="number">0</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_test = sp.csc_matrix([[<span class="number">0</span>, <span class="number">2</span>], [<span class="number">6</span>, <span class="number">0</span>], [<span class="number">7</span>, <span class="number">6</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(imp.transform(X_test))                      </span><br><span class="line">[[ <span class="number">4.</span>          <span class="number">2.</span>        ]</span><br><span class="line"> [ <span class="number">6.</span>          <span class="number">3.666</span>...]</span><br><span class="line"> [ <span class="number">7.</span>          <span class="number">6.</span>        ]]</span><br></pre></td></tr></table></figure></p>
+<h2 id="维度拓展"><a href="#维度拓展" class="headerlink" title="维度拓展"></a>维度拓展</h2><p>考虑复杂化非线性特征，就是生成多项式特征，例如(x1,x2)−&gt;(x1,x2,x21,x1x2,x22)，会使特征数量增加<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">poly = PolynomialFeatures(<span class="number">2</span>)<span class="comment">#参数为阶数</span></span><br><span class="line">poly.fit_transform(X) </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">before </span></span><br><span class="line"><span class="string">[[0, 1],</span></span><br><span class="line"><span class="string"> [2, 3],</span></span><br><span class="line"><span class="string"> [4, 5]]</span></span><br><span class="line"><span class="string">after</span></span><br><span class="line"><span class="string">[[  1.,   0.,   1.,   0.,   0.,   1.],</span></span><br><span class="line"><span class="string"> [  1.,   2.,   3.,   4.,   6.,   9.],</span></span><br><span class="line"><span class="string"> [  1.,   4.,   5.,  16.,  20.,  25.]]</span></span><br></pre></td></tr></table></figure></p>
+<p>参考：<br><a href="http://scikit-learn.org/stable/modules/preprocessing.html#preprocessing-normalization" target="_blank" rel="noopener">http://scikit-learn.org/stable/modules/preprocessing.html#preprocessing-normalization</a><br><a href="http://blog.csdn.net/u010787640/article/details/60956164" target="_blank" rel="noopener">http://blog.csdn.net/u010787640/article/details/60956164</a><br><a href="http://blog.csdn.net/shmily_skx/article/details/52946414" target="_blank" rel="noopener">http://blog.csdn.net/shmily_skx/article/details/52946414</a><br><a href="http://www.cnblogs.com/chaosimple/p/4153167.html" target="_blank" rel="noopener">http://www.cnblogs.com/chaosimple/p/4153167.html</a><br><a href="http://blog.csdn.net/csmqq/article/details/51461696" target="_blank" rel="noopener">http://blog.csdn.net/csmqq/article/details/51461696</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/06/05/记一次坑爹的windows下安装xgboost的经历/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David Aaronson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Aaronson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/05/记一次坑爹的windows下安装xgboost的经历/" itemprop="url">记一次坑爹的windows下安装xgboost的经历</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-05T15:51:28+08:00">
+                2017-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据比赛/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据比赛</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>近来做一个比赛，一个识别鼠标轨迹是人还是机器的二分类问题。自己用SVM和神经网络等传统的机器学习的方法都试过了，但是提交之后的结果发现并不好。正好前几天研究过几个别人做的其他比赛的解决方案，发现用的boosting方法比较多,其中尤其是xgboost。于是打算再用xgboost的模型做一下，看看结果怎么样。<br>但是，安装xgboost的过程并不轻松。试了好几种方法，最后花了一下午时间，终于安装成功。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/05/记一次坑爹的windows下安装xgboost的经历/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/06/01/sklearn-PCA降维/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David Aaronson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Aaronson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/01/sklearn-PCA降维/" itemprop="url">sklearn PCA降维</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T18:01:31+08:00">
+                2017-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sklearn学习/" itemprop="url" rel="index">
+                    <span itemprop="name">sklearn学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>对于太多的特征，一般需要进行降维处理。PCA是最常用的降维的方法，sklearn提供了PCA降维的方法。</p>
+<h1 id="函数原型"><a href="#函数原型" class="headerlink" title="函数原型"></a>函数原型</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class sklearn.decomposition.PCA(n_components=None, copy=True, whiten=False, svd_solver=&apos;auto&apos;, tol=0.0, iterated_power=&apos;auto&apos;, random_state=None)</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/01/sklearn-PCA降维/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/05/31/lightgbm-python接口的安装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David Aaronson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Aaronson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/31/lightgbm-python接口的安装/" itemprop="url">lightgbm python接口的安装</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-31T18:32:15+08:00">
+                2017-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>最近看一些大数据比赛大神们开源的解决方案，发现他们经常使用所谓数据挖掘三驾马车。恶补了一下boosting方法.现在把lightgbm的python接口的安装过程记录下来，免得以后忘了。<br>LightGBM（Light Gradient Boosting Machine）是一个基于决策树算法的快速的、分布式的、高性能 gradient boosting（GBDT、GBRT、GBM 或 MART）框架，可被用于排行、分类以及其他许多机器学习任务中。<br>开源项目地址： <a href="https://github.com/Microsoft/LightGBM" target="_blank" rel="noopener">https://github.com/Microsoft/LightGBM</a><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/31/lightgbm-python接口的安装/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/05/31/hexo个人域名配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David Aaronson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Aaronson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/31/hexo个人域名配置/" itemprop="url">hexo个人域名配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-31T17:20:02+08:00">
+                2017-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="1-在万网上购买域名"><a href="#1-在万网上购买域名" class="headerlink" title="1.在万网上购买域名"></a>1.在万网上购买域名</h1><p><a href="https://wanwang.aliyun.com" target="_blank" rel="noopener">https://wanwang.aliyun.com</a>  或者其他域名购买网站</p>
+<h1 id="2-配置域名解析"><a href="#2-配置域名解析" class="headerlink" title="2.配置域名解析"></a>2.配置域名解析</h1><p>进入你的管理后台<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/31/hexo个人域名配置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/04/22/eclipse下创建maven-webapp项目/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David Aaronson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Aaronson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/22/eclipse下创建maven-webapp项目/" itemprop="url">eclipse下创建maven webapp项目</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T16:17:03+08:00">
+                2017-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javaweb/" itemprop="url" rel="index">
+                    <span itemprop="name">javaweb</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>1、开启eclipse，右键new——》other，如下图找到maven project<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/22/eclipse下创建maven-webapp项目/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/04/12/为什么新生代需要两个Survivor区/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David Aaronson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Aaronson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/12/为什么新生代需要两个Survivor区/" itemprop="url">为什么新生代需要两个Survivor区</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-12T22:14:32+08:00">
+                2017-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java虚拟机/" itemprop="url" rel="index">
+                    <span itemprop="name">java虚拟机</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在JVM的新生代内存中，为什么除了Eden区，还要设置两个Survivor区？</p>
+<h1 id="为什么要有Survivor区"><a href="#为什么要有Survivor区" class="headerlink" title="为什么要有Survivor区"></a>为什么要有Survivor区</h1><p>先不去想为什么有两个Survivor区，第一个问题是，设置Survivor区的意义在哪里？<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/12/为什么新生代需要两个Survivor区/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/04/11/回朔算法详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David Aaronson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Aaronson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/11/回朔算法详解/" itemprop="url">回溯算法详解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T11:47:08+08:00">
+                2017-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>刷题的时候碰到一个很常见的算法-回溯法，看了一些博客，感觉这个讲得通俗易懂。转过来，后面有些自己的补充。<br>&emsp;&emsp;回溯法（探索与回溯法）是一种选优搜索法，又称为试探法，按选优条件向前搜索，以达到目标。但当探索到某一步时，发现原先选择并不优或达不到目标，就退回一步重新选择，这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为“回溯点”。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/11/回朔算法详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/04/10/Java源码之StringBuffer-StringBuilder/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David Aaronson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Aaronson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/10/Java源码之StringBuffer-StringBuilder/" itemprop="url">Java源码之StringBuffer,StringBuilder</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T13:24:17+08:00">
+                2017-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java源码/" itemprop="url" rel="index">
+                    <span itemprop="name">java源码</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/04/07/Java源码之HashSet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David Aaronson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Aaronson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/07/Java源码之HashSet/" itemprop="url">Java源码之HashSet</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-07T11:10:20+08:00">
+                2017-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java源码/" itemprop="url" rel="index">
+                    <span itemprop="name">java源码</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>1.HashSet 是一个没有重复元素的集合。它是由HashMap实现的，不保证元素的顺序，特别是它不保证该顺序恒久不变。而且HashSet允许使用 null 元素。<br>2.HashSet是非同步的。如果多个线程同时访问一个哈希 set，而其中至少一个线程修改了该 set，那么它必须保持外部同步。这通常是通过对自然封装该 set 的对象执行同步操作来完成的。如果不存在这样的对象，则应该使用 Collections.synchronizedSet 方法来“包装” Set。最好在创建时完成这一操作，以防止对该 set 进行意外的不同步访问：<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/07/Java源码之HashSet/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">David Aaronson</p>
+              <p class="site-description motion-element" itemprop="description">小小程序员的成长之路</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">David Aaronson</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
