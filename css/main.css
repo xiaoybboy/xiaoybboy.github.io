@@ -1862,7 +1862,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #675206;
+  background: #18c4ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3160,6 +3160,7 @@ pre .javascript .function {
     margin: 8px 0 0;
   }
 }
+#主页文章添加阴影效果,
 .post {
   margin-top: 60px;
   margin-bottom: 60px;
