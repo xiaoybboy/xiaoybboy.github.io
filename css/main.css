@@ -1762,13 +1762,11 @@ pre .javascript .function {
   max-width: 120px;
   height: auto;
   border: site-author-image-border-color;
-/* start*/
   border-radius: 50%;
   webkit-transition: 1.4s all;
   moz-transition: 1.4s all;
   ms-transition: 1.4s all;
   transition: 1.4s all;
-/* end */
 }
 # 头像旋转事件,
 .site-author-image:hover {
@@ -1862,7 +1860,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #18c4ff;
+  background: #55835c;
 }
 .links-of-blogroll {
   font-size: 13px;
