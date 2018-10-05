@@ -418,7 +418,11 @@
 
       
         
-          <h1 id="SpringMVC-拦截器的原理图"><a href="#SpringMVC-拦截器的原理图" class="headerlink" title="SpringMVC 拦截器的原理图"></a>SpringMVC 拦截器的原理图</h1><p> <img src="http://i.imgur.com/IXPPwYv.png" alt=""><br>注意postHandle方法的执行顺序与定义顺序正好相反。</p>
+          <div class="note success"><p>Spring MVC中的拦截器（Interceptor）类似于Servlet中的过滤器（Filter），它主要用于拦截用户请求并作相应的处理。例如通过拦截器可以进行权限验证、记录请求信息的日志、判断用户是否登录等。 </p></div>
+# SpringMVC 拦截器的原理图
+ ![](http://i.imgur.com/IXPPwYv.png)
+注意postHandle方法的执行顺序与定义顺序正好相反。
+<div class="note class_name"><p>SpringMVC 中的Interceptor 拦截请求是通过HandlerInterceptor 来实现的。在SpringMVC 中定义一个Interceptor 非常简单，主要有两种方式，第一种方式是要定义的Interceptor类要实现了Spring 的HandlerInterceptor 接口，或者是这个类继承实现了HandlerInterceptor 接口的类，比如Spring 已经提供的实现了HandlerInterceptor 接口的抽象类HandlerInterceptorAdapter ；第二种方式是实现Spring的WebRequestInterceptor接口，或者是继承实现了WebRequestInterceptor的类。 </p></div>
 <h1 id="springMVC拦截器的实现一般有两种方式"><a href="#springMVC拦截器的实现一般有两种方式" class="headerlink" title="springMVC拦截器的实现一般有两种方式"></a>springMVC拦截器的实现一般有两种方式</h1><ol>
 <li>第一种方式是要定义的Interceptor类要实现了Spring的HandlerInterceptor 接口，或者子接口如WebRequestInterceptor</li>
 <li><p>第二种方式是继承实现了HandlerInterceptor接口的类，比如Spring已经提供的实现了HandlerInterceptor接口的抽象类HandlerInterceptorAdapter.</p>
