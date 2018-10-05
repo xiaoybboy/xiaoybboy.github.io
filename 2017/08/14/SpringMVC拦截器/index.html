@@ -89,19 +89,19 @@
 
 
 
-<meta name="description" content="Spring MVC中的拦截器（Interceptor）类似于Servlet中的过滤器（Filter），它主要用于拦截用户请求并作相应的处理。通过拦截器可以进行权限验证、记录请求信息的日志、判断用户是否登录等。   ## SpringMVC 拦截器原理图  ![](https://i.imgur.com/dEKEE0i.jpg) 注意postHandle方法的执行顺序与定义顺序正好相反。">
+<meta name="description" content="Spring MVC中的拦截器（Interceptor）类似于Servlet中的过滤器（Filter），它主要用于拦截用户请求并作相应的处理。通过拦截器可以进行权限验证、记录请求信息的日志、判断用户是否登录等。    ## SpringMVC 拦截器原理图  ![](https://i.imgur.com/dEKEE0i.jpg) 注意postHandle方法的执行顺序与定义顺序正好相反。">
 <meta name="keywords" content="spring,拦截器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringMVC拦截器">
 <meta property="og:url" content="www.xiaoyb.cc/2017/08/14/SpringMVC拦截器/index.html">
 <meta property="og:site_name" content="David Aaronson">
-<meta property="og:description" content="Spring MVC中的拦截器（Interceptor）类似于Servlet中的过滤器（Filter），它主要用于拦截用户请求并作相应的处理。通过拦截器可以进行权限验证、记录请求信息的日志、判断用户是否登录等。   ## SpringMVC 拦截器原理图  ![](https://i.imgur.com/dEKEE0i.jpg) 注意postHandle方法的执行顺序与定义顺序正好相反。">
+<meta property="og:description" content="Spring MVC中的拦截器（Interceptor）类似于Servlet中的过滤器（Filter），它主要用于拦截用户请求并作相应的处理。通过拦截器可以进行权限验证、记录请求信息的日志、判断用户是否登录等。    ## SpringMVC 拦截器原理图  ![](https://i.imgur.com/dEKEE0i.jpg) 注意postHandle方法的执行顺序与定义顺序正好相反。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://i.imgur.com/GGUBVhn.png">
-<meta property="og:updated_time" content="2018-10-05T03:51:51.897Z">
+<meta property="og:updated_time" content="2018-10-05T03:55:14.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringMVC拦截器">
-<meta name="twitter:description" content="Spring MVC中的拦截器（Interceptor）类似于Servlet中的过滤器（Filter），它主要用于拦截用户请求并作相应的处理。通过拦截器可以进行权限验证、记录请求信息的日志、判断用户是否登录等。   ## SpringMVC 拦截器原理图  ![](https://i.imgur.com/dEKEE0i.jpg) 注意postHandle方法的执行顺序与定义顺序正好相反。">
+<meta name="twitter:description" content="Spring MVC中的拦截器（Interceptor）类似于Servlet中的过滤器（Filter），它主要用于拦截用户请求并作相应的处理。通过拦截器可以进行权限验证、记录请求信息的日志、判断用户是否登录等。    ## SpringMVC 拦截器原理图  ![](https://i.imgur.com/dEKEE0i.jpg) 注意postHandle方法的执行顺序与定义顺序正好相反。">
 <meta name="twitter:image" content="http://i.imgur.com/GGUBVhn.png">
 
 
@@ -417,7 +417,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,945字
+                  2,893字
                 </span>
               
 
@@ -443,6 +443,7 @@
 
       
         <div class="note success"><p>Spring MVC中的拦截器（Interceptor）类似于Servlet中的过滤器（Filter），它主要用于拦截用户请求并作相应的处理。通过拦截器可以进行权限验证、记录请求信息的日志、判断用户是否登录等。 </p></div> 
+
 ## SpringMVC 拦截器原理图
  ![](https://i.imgur.com/dEKEE0i.jpg)
 注意postHandle方法的执行顺序与定义顺序正好相反。
@@ -462,7 +463,14 @@
 </ol>
 <h2 id="WebRequestInterceptor-接口"><a href="#WebRequestInterceptor-接口" class="headerlink" title="WebRequestInterceptor 接口"></a>WebRequestInterceptor 接口</h2><p>在WebRequestInterceptor接口中也定义了 3 个方法，同HandlerInterceptor接口完全相同，也是通过复写这 3 个方法来用户的请求进行拦截处理的。而且这 3 个方法都传递了同一个参数 WebRequest，这个 WebRequest 是 Spring 中定义的一个接口，它里面的方法定义跟 HttpServletRequest 类似，在WebRequestInterceptor中对 WebRequest 进行的所有操作都将同步到 HttpServletRequest 中，然后在当前请求中依次传递。<br>在 Spring 框架之中，还提供了一个和WebRequestInterceptor接口长的很像的抽象类，那就是：WebRequestInterceptorAdapter，其实现了AsyncHandlerInterceptor接口，并在内部调用了WebRequestInterceptor接口。<br>接下来，咱们主要讲一下WebRequestInterceptor接口的 3 个函数：</p>
 <ol>
-<li>preHandle(WebRequest request)方法，该方法在请求处理之前进行调用，也就是说，其会在 Controller 中的方法调用之前被调用。这个方法跟 HandlerInterceptor 中的 preHandle 不同，主要区别在于该方法的返回值是void 类型的，也就是没有返回值，因此我们主要用它来进行资源的准备工作，比如我们在使用 Hibernate 的时候，可以在这个方法中准备一个 Hibernate 的Session 对象，然后利用 WebRequest 的 setAttribute(name, value, scope) 把它放到 WebRequest 的属性中。在这里，进一步说说 setAttribute 方法的第三个参数 scope ，该参数是一个Integer 类型的。在 WebRequest 的父层接口 RequestAttributes 中对它定义了三个常量，分别为：<br>SCOPE_REQUEST ，它的值是 0，表示只有在 request 中可以访问。<br>SCOPE_SESSION，它的值是1，如果环境允许的话，它表示的是一个局部的隔离的 session，否则就代表普通的 session，并且在该 session 范围内可以访问。<br>SCOPE_GLOBAL_SESSION，它的值是 2，如果环境允许的话，它表示的是一个全局共享的 session，否则就代表普通的 session，并且在该 session 范围内可以访问。</li>
+<li>preHandle(WebRequest request)方法，该方法在请求处理之前进行调用，即在 Controller 中的方法调用之前被调用。这个方法跟 HandlerInterceptor 中的 preHandle 不同，主要区别在于该方法的返回值是void 类型的，也就是没有返回值，因此我们主要用它来进行资源的准备工作。在这里，进一步说说 setAttribute 方法的第三个参数 scope ，该参数是一个Integer 类型的。在 WebRequest 的父层接口 RequestAttributes 中对它定义了三个常量，分别为： </li>
+</ol>
+<ul>
+<li>SCOPE_REQUEST ，它的值是 0，表示只有在 request 中可以访问。</li>
+<li>SCOPE_SESSION，它的值是1，如果环境允许的话，它表示的是一个局部的隔离的 session，否则就代表普通的 session，并且在该 session 范围内可以访问。</li>
+<li>SCOPE_GLOBAL_SESSION，它的值是 2，如果环境允许的话，它表示的是一个全局共享的 session，否则就代表普通的 session，并且在该 session 范围内可以访问。</li>
+</ul>
+<ol start="2">
 <li>postHandle(WebRequest request, ModelMap model)方法，该方法在请求处理之后，也就是在 Controller 中的方法调用之后被调用，但是会在视图返回被渲染之前被调用，所以可以在这个方法里面通过改变数据模型 ModelMap 来改变数据的展示。该方法有两个参数，WebRequest 对象是用于传递整个请求数据的，比如在 preHandle 中准备的数据都可以通过 WebRequest 来传递和访问；ModelMap 就是 Controller 处理之后返回的 Model 对象，咱们可以通过改变它的属性来改变返回的 Model 模型。</li>
 <li>afterCompletion(WebRequest request, Exception ex)方法，该方法会在整个请求处理完成，也就是在视图返回并被渲染之后执行。因此可以在该方法中进行资源的释放操作。而 WebRequest 参数就可以把咱们在 preHandle 中准备的资源传递到这里进行释放。Exception 参数表示的是当前请求的异常对象，如果在 Controller 中抛出的异常已经被 Spring 的异常处理器给处理了的话，那么这个异常对象就是是 null.<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.ui.ModelMap;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.context.request.WebRequest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.context.request.WebRequestInterceptor;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WrongCodeInterceptor</span> <span class="keyword">implements</span> <span class="title">WebRequestInterceptor</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preHandle</span><span class="params">(WebRequest request)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"WrongCodeInterceptor, preHandle......"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postHandle</span><span class="params">(WebRequest request, ModelMap model)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"WrongCodeInterceptor, postHandle......"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterCompletion</span><span class="params">(WebRequest request, Exception ex)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"WrongCodeInterceptor, afterCompletion......"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
