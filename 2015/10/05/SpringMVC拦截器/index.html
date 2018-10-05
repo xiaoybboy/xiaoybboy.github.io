@@ -89,19 +89,19 @@
 
 
 
-<meta name="description" content="Spring MVC中的拦截器（Interceptor）类似于Servlet中的过滤器（Filter），它主要用于拦截用户请求并作相应的处理。通过拦截器可以进行权限验证、记录请求信息的日志、判断用户是否登录等。    ## SpringMVC 拦截器原理图  ![](https://i.imgur.com/dEKEE0i.jpg) 注意postHandle方法的执行顺序与定义顺序正好相反。">
+<meta name="description" content="Spring MVC中的拦截器（Interceptor）类似于Servlet中的过滤器（Filter），它主要用于拦截用户请求并作相应的处理。通过拦截器可以进行权限验证、记录请求信息的日志、判断用户是否登录等。    ## SpringMVC 注意postHandle方法的执行顺序与定义顺序正好相反。">
 <meta name="keywords" content="spring,拦截器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringMVC拦截器">
-<meta property="og:url" content="www.xiaoyb.cc/2017/08/14/SpringMVC拦截器/index.html">
+<meta property="og:url" content="www.xiaoyb.cc/2015/10/05/SpringMVC拦截器/index.html">
 <meta property="og:site_name" content="David Aaronson">
-<meta property="og:description" content="Spring MVC中的拦截器（Interceptor）类似于Servlet中的过滤器（Filter），它主要用于拦截用户请求并作相应的处理。通过拦截器可以进行权限验证、记录请求信息的日志、判断用户是否登录等。    ## SpringMVC 拦截器原理图  ![](https://i.imgur.com/dEKEE0i.jpg) 注意postHandle方法的执行顺序与定义顺序正好相反。">
+<meta property="og:description" content="Spring MVC中的拦截器（Interceptor）类似于Servlet中的过滤器（Filter），它主要用于拦截用户请求并作相应的处理。通过拦截器可以进行权限验证、记录请求信息的日志、判断用户是否登录等。    ## SpringMVC 注意postHandle方法的执行顺序与定义顺序正好相反。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://i.imgur.com/GGUBVhn.png">
-<meta property="og:updated_time" content="2018-10-05T03:55:14.853Z">
+<meta property="og:updated_time" content="2018-10-05T03:58:49.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringMVC拦截器">
-<meta name="twitter:description" content="Spring MVC中的拦截器（Interceptor）类似于Servlet中的过滤器（Filter），它主要用于拦截用户请求并作相应的处理。通过拦截器可以进行权限验证、记录请求信息的日志、判断用户是否登录等。    ## SpringMVC 拦截器原理图  ![](https://i.imgur.com/dEKEE0i.jpg) 注意postHandle方法的执行顺序与定义顺序正好相反。">
+<meta name="twitter:description" content="Spring MVC中的拦截器（Interceptor）类似于Servlet中的过滤器（Filter），它主要用于拦截用户请求并作相应的处理。通过拦截器可以进行权限验证、记录请求信息的日志、判断用户是否登录等。    ## SpringMVC 注意postHandle方法的执行顺序与定义顺序正好相反。">
 <meta name="twitter:image" content="http://i.imgur.com/GGUBVhn.png">
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="www.xiaoyb.cc/2017/08/14/SpringMVC拦截器/"/>
+  <link rel="canonical" href="www.xiaoyb.cc/2015/10/05/SpringMVC拦截器/"/>
 
 
 
@@ -319,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/08/14/SpringMVC拦截器/">
+    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2015/10/05/SpringMVC拦截器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="David Aaronson">
@@ -348,8 +348,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T14:42:35+08:00">
-                2017-08-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-05T14:42:35+08:00">
+                2015-10-05
               </time>
             
 
@@ -389,8 +389,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/14/SpringMVC拦截器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/08/14/SpringMVC拦截器/" itemprop="commentCount"></span>
+                <a href="/2015/10/05/SpringMVC拦截器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2015/10/05/SpringMVC拦截器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -417,7 +417,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,893字
+                  2,881字
                 </span>
               
 
@@ -444,8 +444,7 @@
       
         <div class="note success"><p>Spring MVC中的拦截器（Interceptor）类似于Servlet中的过滤器（Filter），它主要用于拦截用户请求并作相应的处理。通过拦截器可以进行权限验证、记录请求信息的日志、判断用户是否登录等。 </p></div> 
 
-## SpringMVC 拦截器原理图
- ![](https://i.imgur.com/dEKEE0i.jpg)
+## SpringMVC
 注意postHandle方法的执行顺序与定义顺序正好相反。
 <a id="more"></a>
 <div class="note info"><p> SpringMVC 中的Interceptor 拦截请求是通过HandlerInterceptor 来实现的。<br>在SpringMVC 中定义一个Interceptor 主要有两种方式.</p>
@@ -455,8 +454,7 @@
 </ol></div>
 <h2 id="实现HandlerInterceptor接口"><a href="#实现HandlerInterceptor接口" class="headerlink" title="实现HandlerInterceptor接口"></a>实现HandlerInterceptor接口</h2><p>HandlerInterceptor 接口中定义了三个方法，我们就是通过这三个方法来对用户的请求进行拦截处理的。流程：<br><img src="http://i.imgur.com/GGUBVhn.png" alt=""><br>接口实现如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringMVCInterceptor</span> <span class="keyword">implements</span> <span class="title">HandlerInterceptor</span> </span>&#123;  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * preHandle方法是进行处理器拦截用的，该方法将在Controller处理之前进行调用，SpringMVC中的Interceptor拦截器是链式的，可以同时存在 </span></span><br><span class="line"><span class="comment">     * 多个Interceptor，然后SpringMVC会根据声明的前后顺序一个接一个的执行，而且所有的Interceptor中的preHandle方法都会在 </span></span><br><span class="line"><span class="comment">     * Controller方法调用之前调用。SpringMVC的这种Interceptor链式结构也是可以进行中断的，这种中断方式是令preHandle的返 </span></span><br><span class="line"><span class="comment">     * 回值为false，当preHandle的返回值为false的时候整个请求就结束了。 </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(HttpServletRequest request,  </span></span></span><br><span class="line"><span class="function"><span class="params">            HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception </span>&#123;  </span><br><span class="line">        <span class="comment">// TODO Auto-generated method stub  </span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 这个方法只会在当前这个Interceptor的preHandle方法返回值为true的时候才会执行。postHandle是进行处理器拦截用的，它的执行时间是在处理器进行处理之 </span></span><br><span class="line"><span class="comment">     * 后，也就是在Controller的方法调用之后执行，但是它会在DispatcherServlet进行视图的渲染之前执行，也就是说在这个方法中你可以对ModelAndView进行操 </span></span><br><span class="line"><span class="comment">     * 作。这个方法的链式结构跟正常访问的方向是相反的，也就是说先声明的Interceptor拦截器该方法反而会后调用。 </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postHandle</span><span class="params">(HttpServletRequest request,  </span></span></span><br><span class="line"><span class="function"><span class="params">            HttpServletResponse response, Object handler,  </span></span></span><br><span class="line"><span class="function"><span class="params">            ModelAndView modelAndView)</span> <span class="keyword">throws</span> Exception </span>&#123;  </span><br><span class="line">        <span class="comment">// TODO Auto-generated method stub   </span></span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 该方法也是需要当前对应的Interceptor的preHandle方法的返回值为true时才会执行。该方法将在整个请求完成之后，也就是DispatcherServlet渲染了视图执行， </span></span><br><span class="line"><span class="comment">     * 这个方法的主要作用是用于清理资源的，当然这个方法也只能在当前这个Interceptor的preHandle方法的返回值为true时才会执行。 </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterCompletion</span><span class="params">(HttpServletRequest request,  </span></span></span><br><span class="line"><span class="function"><span class="params">            HttpServletResponse response, Object handler, Exception ex)</span>  </span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> Exception </span>&#123;  </span><br><span class="line">        <span class="comment">// TODO Auto-generated method stub   </span></span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <ol>
-<li>preHandle：预处理回调方法，实现处理器的预处理（如登录检查），第三个参数为响应的处理器（如我们上一章的Controller实现）；<br>  返回值：true表示继续流程（如调用下一个拦截器或处理器）;<pre><code>false表示流程中断（如登录检查失败），不会继续调用其他的拦截器或处理器，此时我们需要通过response来产生响应；
-</code></pre></li>
+<li>preHandle：预处理回调方法，实现处理器的预处理（如登录检查），第三个参数为响应的处理器（如我们上一章的Controller实现）；<br>返回值：true表示继续流程（如调用下一个拦截器或处理器）;<br>false表示流程中断（如登录检查失败），不会继续调用其他的拦截器或处理器，此时我们需要通过response来产生响应；</li>
 <li>postHandle：后处理回调方法，实现处理器的后处理（但在渲染视图之前），此时我们可以通过modelAndView（模型和视图对象）对模型数据进行处理或对视图进行处理，modelAndView也可能为null。</li>
 <li>afterCompletion：整个请求处理完毕回调方法，即在视图渲染完毕时回调，如性能监控中我们可以在此记录结束时间并输出消耗时间，还可以进行一些资源清理，类似于try-catch-finally中的finally，但仅调用处理器执行链中preHandle返回true的拦截器的afterCompletion。<div class="note primary"><p>在实际应用中，一般都是通过实现HandlerInterceptor接口或者继承HandlerInterceptorAdapter抽象类，复写preHandle()、postHandle()和afterCompletion()这 3 个方法来对用户的请求进行拦截处理的。</p></div>
 </li>
@@ -545,7 +543,7 @@ String.format(<span class="string">"%s consume %d millis"</span>, request.getReq
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="www.xiaoyb.cc/2017/08/14/SpringMVC拦截器/" title="SpringMVC拦截器">www.xiaoyb.cc/2017/08/14/SpringMVC拦截器/</a>
+    <a href="www.xiaoyb.cc/2015/10/05/SpringMVC拦截器/" title="SpringMVC拦截器">www.xiaoyb.cc/2015/10/05/SpringMVC拦截器/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -575,15 +573,15 @@ String.format(<span class="string">"%s consume %d millis"</span>, request.getReq
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/14/java源码-ArrayDeque/" rel="next" title="java源码--ArrayDeque">
-                <i class="fa fa-chevron-left"></i> java源码--ArrayDeque
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/07/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
