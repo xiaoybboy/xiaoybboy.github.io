@@ -19,7 +19,7 @@ git push -u origin hexo:hexo
 ```
 ## 设置默认分支
 因为我们写博客更多的是更新这个分支，网站文件所在的master分支则由hexo d命令发布文章的时候进行推送，所以我们将hexo分支设置为默认分支，这样我们在新的电脑环境下git clone该仓库时，自动切到hexo`分支。按下图进行操作。
-![设置默认分支](https://i.imgur.com/4BoTift.png)
+![](https://i.imgur.com/V5ofFkt.png)
 ## 配置hexo deploy参数
 为了保证hexo d命令可以正确部署到master分支，在hexo 的配置文件 _config.yml文件中配置参数如下：
 ```
