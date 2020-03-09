@@ -97,12 +97,12 @@
 <meta property="og:site_name" content="David Aaronson">
 <meta property="og:description" content="利用github的不同分支来分别保存网站静态文件与hexo源码（md原始文件及主题等），实现在不同电脑上都可以自由写博客。   Github Page这里假设你已经在github上建好了page的仓库，也就是 “yourusername.github.io”的名字的项目仓库，比如我的 xiaoybboy.github.io 。另外，也假设你在自己的电脑上已经配置好git、hexo、node js等">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/4BoTift.png">
-<meta property="og:updated_time" content="2018-10-03T07:10:08.081Z">
+<meta property="og:image" content="https://i.imgur.com/V5ofFkt.png">
+<meta property="og:updated_time" content="2020-03-09T15:02:27.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo利用Github分支在不同电脑上写博客">
 <meta name="twitter:description" content="利用github的不同分支来分别保存网站静态文件与hexo源码（md原始文件及主题等），实现在不同电脑上都可以自由写博客。   Github Page这里假设你已经在github上建好了page的仓库，也就是 “yourusername.github.io”的名字的项目仓库，比如我的 xiaoybboy.github.io 。另外，也假设你在自己的电脑上已经配置好git、hexo、node js等">
-<meta name="twitter:image" content="https://i.imgur.com/4BoTift.png">
+<meta name="twitter:image" content="https://i.imgur.com/V5ofFkt.png">
 
 
 
@@ -446,7 +446,7 @@
 </blockquote>
 <h2 id="Github-Page"><a href="#Github-Page" class="headerlink" title="Github Page"></a>Github Page</h2><p>这里假设你已经在github上建好了page的仓库，也就是 “yourusername.github.io”的名字的项目仓库，比如我的 xiaoybboy.github.io 。另外，也假设你在自己的电脑上已经配置好git、hexo、node js等环境。<br><a id="more"></a></p>
 <h2 id="新建hexo分支"><a href="#新建hexo分支" class="headerlink" title="新建hexo分支"></a>新建hexo分支</h2><p>仓库建好之后，都是默认一个master分支的，Github page要求你的网站文件必须存放在这个master分支上，这个没得选；所以我们需要新建另外一个分支来保存我们的hexo原始文件；master 保存的全是public 文件夹下的内容，这也是 hexo发布到github上的内容，而hexo这个分支，保存的是我们网站的配置 。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git branch hexo</span><br><span class="line">git checkout hexo</span><br><span class="line">git add remote origin git@github.com:xiaoybboy/xiaoybboy.github.io.git</span><br><span class="line">git push -u origin hexo:hexo</span><br></pre></td></tr></table></figure></p>
-<h2 id="设置默认分支"><a href="#设置默认分支" class="headerlink" title="设置默认分支"></a>设置默认分支</h2><p>因为我们写博客更多的是更新这个分支，网站文件所在的master分支则由hexo d命令发布文章的时候进行推送，所以我们将hexo分支设置为默认分支，这样我们在新的电脑环境下git clone该仓库时，自动切到hexo`分支。按下图进行操作。<br><img src="https://i.imgur.com/4BoTift.png" alt="设置默认分支"></p>
+<h2 id="设置默认分支"><a href="#设置默认分支" class="headerlink" title="设置默认分支"></a>设置默认分支</h2><p>因为我们写博客更多的是更新这个分支，网站文件所在的master分支则由hexo d命令发布文章的时候进行推送，所以我们将hexo分支设置为默认分支，这样我们在新的电脑环境下git clone该仓库时，自动切到hexo`分支。按下图进行操作。<br><img src="https://i.imgur.com/V5ofFkt.png" alt=""></p>
 <h2 id="配置hexo-deploy参数"><a href="#配置hexo-deploy参数" class="headerlink" title="配置hexo deploy参数"></a>配置hexo deploy参数</h2><p>为了保证hexo d命令可以正确部署到master分支，在hexo 的配置文件 _config.yml文件中配置参数如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/dxjia/xiaoybboy.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
 <p>hexo 3.0之后，将github改为了git，这样适用性更广了，如果你发现无法hexo d，使用下面的命令安装git deployer插件后重试即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
 <h2 id="修改推送到hexo分支"><a href="#修改推送到hexo分支" class="headerlink" title="修改推送到hexo分支"></a>修改推送到hexo分支</h2><p>上一步的deploy参数正确配置后，文章写完使用hexo g -d命令就可以直接部署了，生成的博客静态文件会自动部署到 username.github.io仓库的master分支上，这时候通过浏览器访问<a href="http://username.github.io就可以看到你的博客页面里。" target="_blank" rel="noopener">http://username.github.io就可以看到你的博客页面里。</a><br>网站页面是保存了，但这时候我们还没有保存我们的hexo原始文件，包括我们的文章md文件，我们千辛万苦修改的主题配置等。。。接下来使用下面的步骤将他们都统统推送到hexo分支上去。其中目录下的.gitignore 表示哪些文件或文件夹不提交，根据自己需要配置。<br>如果没有.git文件，先git init。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m “change description”</span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure></p>
@@ -611,7 +611,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -633,7 +633,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -702,7 +702,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

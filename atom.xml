@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.xiaoyb.cc/"/>
-  <updated>2018-10-05T15:07:49.786Z</updated>
+  <updated>2018-10-29T14:53:09.580Z</updated>
   <id>www.xiaoyb.cc/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>springboot学习笔记</title>
+    <link href="www.xiaoyb.cc/2018/10/29/springboot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>www.xiaoyb.cc/2018/10/29/springboot学习笔记/</id>
+    <published>2018-10-29T14:20:07.000Z</published>
+    <updated>2018-10-29T14:53:09.580Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note success"><p>一门技术如果不用，真是超快就忘记了。springboot都学几遍了，一两个星期不看，就忘得一干二净，索性自己好好总结一下，供以后经常翻翻，顺便熟悉一下idea。有很多其他大牛博客的东西，多找些资料总结一下。 </p></div><div class="note danger"><p>万事开头难，加油！</p></div><h2 id="Spring-Boot-配置文件"><a href="#Spring-Boot-配置文件" class="headerlink" title="Spring Boot 配置文件"></a>Spring Boot 配置文件</h2><p>SpringBoot使用一个全局的配置文件（resource文件夹下），配置文件名是固定的。<br>-application.properties<br>-application.yml<br>springboot推荐使用yml的方式进行配置（yml的确很方便）。<br>配置文件的作用：修改SpringBoot自动配置的默认值；</p><h3 id="自定义属性与使用"><a href="#自定义属性与使用" class="headerlink" title="自定义属性与使用"></a>自定义属性与使用</h3><p>虽然springboot帮我们配置了很多东西，但是有时候我们需要定义自己的配置，我们可以在application.yml中如下方式定义：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">person:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">xyb</span></span><br><span class="line"><span class="attr">  age:</span> <span class="number">25</span></span><br><span class="line"><span class="attr">  address:</span> <span class="string">hns</span></span><br></pre></td></tr></table></figure></p><p>然后就可以通过@Value(“${属性名}”)注解来加载对应的配置属性，具体如下：</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;div class=&quot;note success&quot;&gt;&lt;p&gt;一门技术如果不用，真是超快就忘记了。springboot都学几遍了，一两个星期不看，就忘得一干二净，索性自己好好总结一下，供以后经常翻翻，顺便熟悉一下idea。有很多其他大牛博客的东西，多找些资料总结一下。 &lt;/p&gt;&lt;/d
+      
+    
+    </summary>
+    
+      <category term="spring" scheme="www.xiaoyb.cc/categories/spring/"/>
+    
+    
+      <category term="springboot" scheme="www.xiaoyb.cc/tags/springboot/"/>
+    
+  </entry>
   
   <entry>
     <title>好久不见</title>
@@ -274,9 +299,9 @@
       <category term="sklearn学习" scheme="www.xiaoyb.cc/categories/sklearn%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="数据挖掘" scheme="www.xiaoyb.cc/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
-    
       <category term="sklearn" scheme="www.xiaoyb.cc/tags/sklearn/"/>
+    
+      <category term="数据挖掘" scheme="www.xiaoyb.cc/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
     
   </entry>
   
@@ -474,28 +499,6 @@
       <category term="算法" scheme="www.xiaoyb.cc/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="回溯法" scheme="www.xiaoyb.cc/tags/%E5%9B%9E%E6%BA%AF%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java源码之StringBuffer,StringBuilder</title>
-    <link href="www.xiaoyb.cc/2017/04/10/Java%E6%BA%90%E7%A0%81%E4%B9%8BStringBuffer-StringBuilder/"/>
-    <id>www.xiaoyb.cc/2017/04/10/Java源码之StringBuffer-StringBuilder/</id>
-    <published>2017-04-10T05:24:17.000Z</published>
-    <updated>2017-07-23T13:24:50.754Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="java源码" scheme="www.xiaoyb.cc/categories/java%E6%BA%90%E7%A0%81/"/>
-    
-    
-      <category term="java源码" scheme="www.xiaoyb.cc/tags/java%E6%BA%90%E7%A0%81/"/>
-    
-      <category term="StringBuffer" scheme="www.xiaoyb.cc/tags/StringBuffer/"/>
-    
-      <category term="StringBuilder" scheme="www.xiaoyb.cc/tags/StringBuilder/"/>
     
   </entry>
   
