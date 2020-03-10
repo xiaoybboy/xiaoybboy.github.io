@@ -92,7 +92,7 @@
 <meta name="description" content="在浮躁的社会中,我携书本同行">
 <meta property="og:type" content="website">
 <meta property="og:title" content="David Aaronson">
-<meta property="og:url" content="www.xiaoyb.cc/tags/springmvc/index.html">
+<meta property="og:url" content="www.xiaoyb.cc/tags/SpringMVC/index.html">
 <meta property="og:site_name" content="David Aaronson">
 <meta property="og:description" content="在浮躁的社会中,我携书本同行">
 <meta property="og:locale" content="zh-Hans">
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="www.xiaoyb.cc/tags/springmvc/"/>
+  <link rel="canonical" href="www.xiaoyb.cc/tags/SpringMVC/"/>
 
 
 
 
 
-  <title>标签: springmvc | David Aaronson</title>
+  <title>标签: SpringMVC | David Aaronson</title>
   
 
 
@@ -308,7 +308,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>springmvc<small>标签</small>
+        <h1>SpringMVC<small>标签</small>
         </h1>
       </div>
 
@@ -320,37 +320,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/08/10/SpringMVC-使用-ResponseBody返回json-中文乱码/" itemprop="url">
+            <a class="post-title-link" href="/2020/03/09/SpringMVC注解-ControllerAdvice/" itemprop="url">
               
-                <span itemprop="name">SpringMVC使用@ResponseBody返回json 中文乱码</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-10T19:18:01+08:00"
-              content="2017-08-10" >
-          08-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/07/SpringMVC自定义注解和拦截器实现用户行为验证/" itemprop="url">
-              
-                <span itemprop="name">SpringMVC 使用HandlerMethodArgumentResolver自定义解析器实现请求数据绑定方法入参</span>
+                <span itemprop="name">SpringMVC注解@ControllerAdvice</span>
               
             </a>
         
@@ -358,65 +330,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-07T18:59:23+08:00"
-              content="2017-08-07" >
-          08-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/05/用-ExceptionHandler，-ControllerAdvice-来进行异常处理/" itemprop="url">
-              
-                <span itemprop="name">用@ExceptionHandler，@ControllerAdvice 来进行异常处理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-05T19:03:25+08:00"
-              content="2017-08-05" >
-          08-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/01/SpringMVC自定义注解/" itemprop="url">
-              
-                <span itemprop="name">SpringMVC自定义注解和拦截器实现用户行为验证</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-01T17:30:39+08:00"
-              content="2017-08-01" >
-          08-01
+              datetime="2020-03-09T23:34:08+08:00"
+              content="2020-03-09" >
+          03-09
         </time>
       </div>
 
@@ -480,7 +396,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -502,7 +418,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1027,6 +943,102 @@
               });
               var searchResultList = '<ul class=\"search-result-list\">';
               resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+    resultItems.forEach(function (result) {
                 searchResultList += result.item;
               })
               searchResultList += "</ul>";
