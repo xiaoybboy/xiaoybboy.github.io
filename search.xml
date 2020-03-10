@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[SpringMVC注解@ControllerAdvice]]></title>
-    <url>%2F2020%2F03%2F09%2FSpringMVC%E6%B3%A8%E8%A7%A3-ControllerAdvice%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[springboot学习笔记]]></title>
     <url>%2F2018%2F10%2F29%2Fspringboot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[一门技术如果不用，真是超快就忘记了。springboot都学几遍了，一两个星期不看，就忘得一干二净，索性自己好好总结一下，供以后经常翻翻，顺便熟悉一下idea。有很多其他大牛博客的东西，多找些资料总结一下。 万事开头难，加油！ Spring Boot 配置文件SpringBoot使用一个全局的配置文件（resource文件夹下），配置文件名是固定的。-application.properties-application.ymlspringboot推荐使用yml的方式进行配置（yml的确很方便）。配置文件的作用：修改SpringBoot自动配置的默认值； 自定义属性与使用虽然springboot帮我们配置了很多东西，但是有时候我们需要定义自己的配置，我们可以在application.yml中如下方式定义：1234person: name: xyb age: 25 address: hns 然后就可以通过@Value(“${属性名}”)注解来加载对应的配置属性，具体如下：]]></content>
