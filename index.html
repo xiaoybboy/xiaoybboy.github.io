@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,438字
+                  1,568字
                 </span>
               
 
@@ -415,15 +415,11 @@
 
       
         
-          <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>@ControllerAdvice顾名思义，用于Controller增强，是一个在类上声明的注解，可以用于定义@ExceptionHandler、@InitBinder、@ModelAttribute，并应用到所有@RequestMapping、@PostMapping， @GetMapping注解中。</p>
-<p>使用方法常见有下面3种：</p>
+          <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p><strong>@ControllerAdvic</strong>e顾名思义，用于Controller增强，是一个在类上声明的注解。可以用于定义<strong>@ExceptionHandler</strong>、<strong>@InitBinder</strong>、<strong>@ModelAttribute</strong>，并应用到所有<strong>@RequestMapping</strong>注解中。使用方法常见有下面3种：</p>
 <ol>
-<li><p>结合方法型注解@ExceptionHandler，用于捕获Controller中抛出的指定类型的异常，从而达到不同类型的异常区别处理的目的；</p>
-</li>
-<li><p>结合方法型注解@InitBinder，用于request中自定义参数解析方式进行注册，从而达到自定义指定格式参数的目的。</p>
-</li>
-<li><p>结合方法型注解@ModelAttribute，表示其标注的方法将会在目标Controller方法执行之前执行。</p>
-</li>
+<li>结合注解<strong>@ExceptionHandler</strong>，捕获制定类型的异常，从而对不同类型的异常区分处理。</li>
+<li>结合注解<strong>@InitBinde</strong>r，用于绑定全局的属性编辑器或用于全局的参数预处理。</li>
+<li>结合注解<strong>@ModelAttribute</strong>，设置全局数据，供所有的@<strong>RequestMapping</strong>使用。</li>
 </ol>
           <!--noindex-->
           <div class="post-button text-center">
