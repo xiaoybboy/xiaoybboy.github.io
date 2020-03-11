@@ -305,6 +305,7 @@ font:
   enable: false
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
+  #host: //fonts.lug.ustc.edu.cn
   host: //fonts.lug.ustc.edu.cn
 
   # Font options:

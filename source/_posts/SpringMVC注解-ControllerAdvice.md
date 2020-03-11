@@ -1,7 +1,7 @@
 ---
 title: SpringMVC注解@ControllerAdvice
 date: 2020-03-09 23:34:08
-tags:[SpringMVC]
+tags: [SpringMVC]
 ---
 
 # 介绍
@@ -16,7 +16,7 @@ tags:[SpringMVC]
 
 3. 结合方法型注解@ModelAttribute，表示其标注的方法将会在目标Controller方法执行之前执行。
 
-   <!--more-->
+<!--more-->
 
 总体使用：
 
@@ -162,7 +162,9 @@ public class UserController {
 }
 ```
 
-  在浏览器输入http://localhost:8080/user/detail?id=1&date=2018-10-2，可以看到控制台进行了如下打印：
+ 在浏览器输入http://localhost:8080/user/detail?id=1&date=2018-10-2
+
+可以看到控制台进行了如下打印：
 
 ```
 Tue Oct 02 00:00:00 CST 2018
@@ -209,7 +211,9 @@ public class UserController {
 }
 ```
 
-​    可以看到，这里使用@ModelAttribute注解接收名称为message的参数，从而获取了前面绑定的参数。运行上述代码并且访问http://localhost:8080/user/detail?id=1，可以看到页面进行了正常的展示，控制台也进行了如下打印：
+​    可以看到，这里使用@ModelAttribute注解接收名称为message的参数，从而获取了前面绑定的参数。运行上述代码并且访问http://localhost:8080/user/detail?id=1
+
+可以看到页面进行了正常的展示，控制台也进行了如下打印：
 
 ```
 global model attribute.
