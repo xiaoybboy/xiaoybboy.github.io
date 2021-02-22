@@ -6,34 +6,23 @@ tags: [SpringMVC]
 
 # 介绍
 
-@ControllerAdvice顾名思义，用于Controller增强，是一个在类上声明的注解，可以用于定义@ExceptionHandler、@InitBinder、@ModelAttribute，并应用到所有@RequestMapping、@PostMapping， @GetMapping注解中。
+**@ControllerAdvic**e顾名思义，用于Controller增强，是一个在类上声明的注解。可以用于定义**@ExceptionHandler**、**@InitBinder**、**@ModelAttribute**，并应用到所有**@RequestMapping**注解中（用于增强上述三个注解的作用范围）。使用方法常见有下面3种：
 
-使用方法常见有下面3种：
-
-1. 结合方法型注解@ExceptionHandler，用于捕获Controller中抛出的指定类型的异常，从而达到不同类型的异常区别处理的目的；
-
-2. 结合方法型注解@InitBinder，用于request中自定义参数解析方式进行注册，从而达到自定义指定格式参数的目的。
-
-3. 结合方法型注解@ModelAttribute，表示其标注的方法将会在目标Controller方法执行之前执行。
+1. 结合注解**@ExceptionHandler**，捕获制定类型的异常，从而对不同类型的异常区分处理。
+2. 结合注解**@InitBinde**r，用于绑定全局的属性编辑器或用于全局的参数预处理。
+3. 结合注解**@ModelAttribute**，设置全局数据，供所有的@**RequestMapping**使用。
 
 <!--more-->
 
 总体使用：
 
 ```java
-package com.sam.demo.controller;
- 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
- 
-/**
- * controller 增强器
- * @author sam
- * @since 2017/7/17
- */
+
 @ControllerAdvice
 public class MyControllerAdvice {
  
@@ -71,7 +60,7 @@ public class MyControllerAdvice {
 
 # 1.@ExceptionHandler
 
-  @ExceptionHandler的作用主要在于声明一个或多个类型的异常，当符合条件的Controller抛出这些异常之后将会对这些异常进行捕获，然后按照其标注的方法的逻辑进行处理，从而改变返回的视图信息。
+  **@ExceptionHandler**的作用在于声明一个或多个类型的异常，当符合条件的Controller抛出这些异常之后将会对这些异常进行捕获，然后按照其标注的方法的逻辑进行处理，改变返回的视图信息。通过 **@ControllerAdvice** 结合 **@ExceptionHandler** 可以全局异常捕获机制，所有的Controller抛出的异常会被捕获，并对应到相应的处理方法中。
 
 ```java
 @ControllerAdvice
@@ -107,29 +96,18 @@ public class WebExceptionHandle {
         logger.error("不支持当前媒体类型", e);
         return ServiceResponseHandle.failed("content_type_not_supported");
     }
-
-    /**
-     * 500 - Internal Server Error
-     */
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    @ExceptionHandler(Exception.class)
-    public ServiceResponse handleException(Exception e) {
-        if (e instanceof BusinessException){
-            return ServiceResponseHandle.failed("BUSINESS_ERROR", e.getMessage());
-        }
-        
-        logger.error("服务运行异常", e);
-        e.printStackTrace();
-        return ServiceResponseHandle.failed("server_error");
-    }
 }
 ```
 
 # 2.@InitBinder
 
-@InitBinder的主要作用是绑定一些自定义的参数。对于一些特殊类型参数，比如Date，它们的绑定Spring是没有提供直接的支持的，我们只能为其声明一个转换器，将request中字符串类型的参数通过转换器转换为Date类型的参数，从而供给@RequestMapping标注的方法使用。
+## 2.1 绑定属性编辑器
 
- 如下是使用@InitBinder注册Date类型参数转换器的实现：
+**@InitBinder**可以绑定**请求参数到指定的属性编辑器**。
+
+前端传递给后端的值是String类型的，当向Model中Set值时，如果Set的属性是一个对象，Spring会找对应的Editor进行转换之后再Set进去。Spring本身提供了很多Editor，如CustomDateEditor ，CustomBooleanEditor，CustomNumberEdito等。有时候对于一些特殊类型的参数，我们需要手动注册一个编辑器。例如：前端出入的日期为一个String，后端接收为Date类型，这时候通过**@InitBinder**可以注册一个Editor用于这个转换（当类上加上**@ControllerAdvice**时，表示注册全局的Editor）。
+
+ 如下是使用**@InitBinder**注册Date类型参数转换器的实现：
 
 ```java
 @ControllerAdvice(basePackages = "mvc")
@@ -155,8 +133,6 @@ public class UserController {
   public ModelAndView detail(@RequestParam("id") long id, Date date) {
     System.out.println(date);
     ModelAndView view = new ModelAndView("user");
-    User user = userService.detail(id);
-    view.addObject("user", user);
     return view;
   }
 }
@@ -172,11 +148,51 @@ Tue Oct 02 00:00:00 CST 2018
 
 ​    可以看到，这里我们对request参数进行了转换，并且在接口中成功接收了该参数。
 
+## 2.2  请求参数预处理
+
+
+
 # 3. @ModelAttribute
 
-关于@ModelAttribute的用法，处理用于接口参数可以用于转换对象类型的属性之外，其还可以用来进行方法的声明。如果声明在方法上，并且结合@ControllerAdvice，该方法将会在@ControllerAdvice所指定的范围内的所有接口方法执行之前执行，并且@ModelAttribute标注的方法的返回值还可以供给后续会调用的接口方法使用。
+当**@ModelAttribute**在方法上使用时，该方法会在`Controller`中每个方法执行之前执行，可以用于添加一个或多个属性到model上，填充一些公共需要的属性或数据，其他**@RequestMapping**就可以从model中获取这些属性。
 
-  这里@ModelAttribute的各个属性值主要是用于其在接口参数上进行标注时使用的，如果是作为方法注解，其name或value属性则指定的是返回值的名称。如下是使用@ModelAttribute进行方法标注的一个例子：
+1）使用`@ModelAttribute`注解无返回值的方法
+
+```java
+@Controller
+@RequestMapping(value = "/modelattribute")
+public class ModelAttributeController {
+
+    @ModelAttribute
+    public void myModel(@RequestParam(required = false) String abc, Model model) {
+        model.addAttribute("attributeName", abc);
+    }
+
+    @RequestMapping(value = "/method")
+    public String method() {
+        return "method";
+    }
+}
+```
+
+2）使用`@ModelAttribute`注解带有返回值的方法
+
+```java
+@ModelAttribute
+public String myModel(@RequestParam(required = false) String abc) {
+    return abc;
+}
+
+@ModelAttribute
+public Student myModel(@RequestParam(required = false) String abc) {
+    Student student = new Student(abc);
+    return student;
+}
+```
+
+当`@ModelAttribute`结合**@ControllerAdvice**时，**@ModelAttribute**注解的方法会在**@ControllerAdvice**所指定的范围内的所有**@RequestMapping**方法之前执行，并且**@RequestMapping**标注的方法添加的属性可以在所有**@RequestMapping**方法中获取。
+
+  使用`@ModelAttribute`进行方法标注的一个例子：
 
 ```java
 @ControllerAdvice(basePackages = "mvc")
@@ -189,7 +205,7 @@ public class SpringControllerAdvice {
 }
 ```
 
-​    这里需要注意的是，该方法提供了一个String类型的返回值，而@ModelAttribute中指定了该属性名称为message，这样在Controller层就可以接收该参数了，如下是Controller层的代码：
+​    该方法提供了一个String类型的返回值，而`@ModelAttribute`中指定了该属性名称为message，这样在Controller层就可以接收该参数了，如下是Controller层的代码：
 
 ```java
 @Controller
@@ -211,7 +227,7 @@ public class UserController {
 }
 ```
 
-​    可以看到，这里使用@ModelAttribute注解接收名称为message的参数，从而获取了前面绑定的参数。运行上述代码并且访问http://localhost:8080/user/detail?id=1
+​    可以看到，这里使用`@ModelAttribute`注解接收名称为message的参数，从而获取了前面绑定的参数。运行上述代码并且访问http://localhost:8080/user/detail?id=1
 
 可以看到页面进行了正常的展示，控制台也进行了如下打印：
 
@@ -220,5 +236,51 @@ global model attribute.
 this is from model attribute
 ```
 
-​    可以看到，这里使用@ModelAttribute注解标注的方法确实在目标接口执行之前执行了。需要说明的是，@ModelAttribute标注的方法的执行是在所有拦截器的preHandle()方法执行之后才会执行。
+​    可以看到，这里使用@ModelAttribute注解标注的方法确实在目标接口执行之前执行了。
+
+# @ControllerAdvice指定作用范围
+
+```java
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Component
+public @interface ControllerAdvice {
+
+	@AliasFor("basePackages")
+	String[] value() default {};
+
+	@AliasFor("value")
+	String[] basePackages() default {};
+
+	Class<?>[] basePackageClasses() default {};
+
+	Class<?>[] assignableTypes() default {};
+
+	Class<? extends Annotation>[] annotations() default {};
+}
+```
+
+**@ControllerAdvice**默认是全局作用范围，即对所有的**@RequestMapping**有效。可以使用属性值来指定**@ControllerAdvice**注解的作用范围。
+
+```java
+//对com.xiao.app.controller包下RequestMapping起作用
+@ControllerAdvice(value="com.xiao.app.mvc.controller")
+```
+
+```java
+//对TestController及其子类型的Controller起作用
+@ControllerAdvice(assignableTypes=TestController.class)
+```
+
+```java
+//对标注了RestController注解的RequestMapping起作用
+@ControllerAdvice(annotations=RestController.class)
+```
+
+上述属性也可以联合使用。
+
+本文参考：https://my.oschina.net/zhangxufeng/blog/2222434
+
+​			 	https://blog.csdn.net/junlon2006/article/details/91997607
 
