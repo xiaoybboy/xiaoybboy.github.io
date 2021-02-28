@@ -89,18 +89,18 @@
 
 
 
-<meta name="description" content="#什么是StreamStream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。特点：  Stream自己不会存储元素; Stream操作不">
+<meta name="description" content="什么是StreamStream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。特点：  Stream自己不会存储元素; Stream操作不会">
 <meta name="keywords" content="Java,Stream">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java流式编程Stream">
 <meta property="og:url" content="www.xiaoyb.cc/2021/02/28/Java流式编程/index.html">
 <meta property="og:site_name" content="David Aaronson">
-<meta property="og:description" content="#什么是StreamStream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。特点：  Stream自己不会存储元素; Stream操作不">
+<meta property="og:description" content="什么是StreamStream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。特点：  Stream自己不会存储元素; Stream操作不会">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-02-28T12:48:33.789Z">
+<meta property="og:updated_time" content="2021-02-28T12:58:27.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java流式编程Stream">
-<meta name="twitter:description" content="#什么是StreamStream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。特点：  Stream自己不会存储元素; Stream操作不">
+<meta name="twitter:description" content="什么是StreamStream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。特点：  Stream自己不会存储元素; Stream操作不会">
 
 
 
@@ -393,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  162字
+                  163字
                 </span>
               
 
@@ -418,13 +418,13 @@
       
 
       
-        <p>#什么是Stream<br>Stream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。<br>特点：</p>
+        <h1 id="什么是Stream"><a href="#什么是Stream" class="headerlink" title="什么是Stream"></a>什么是Stream</h1><p>Stream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。<br>特点：</p>
 <ol>
 <li>Stream自己不会存储元素;</li>
 <li>Stream操作不会改变源对象;</li>
-<li>Stream操作延迟执行，必须到终端操作时才会执行。</li>
+<li>Stream操作延迟执行，到终端操作时才会执行。</li>
 </ol>
-<p>#</p>
+<h1 id="创建流"><a href="#创建流" class="headerlink" title="创建流"></a>创建流</h1><p>​    </p>
 
       
     </div>
@@ -548,8 +548,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -629,6 +638,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是Stream"><span class="nav-number">1.</span> <span class="nav-text">什么是Stream</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建流"><span class="nav-number">2.</span> <span class="nav-text">创建流</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

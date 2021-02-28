@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Java流式编程Stream]]></title>
     <url>%2F2021%2F02%2F28%2FJava%E6%B5%81%E5%BC%8F%E7%BC%96%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[#什么是StreamStream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。特点： Stream自己不会存储元素; Stream操作不会改变源对象; Stream操作延迟执行，必须到终端操作时才会执行。 #]]></content>
+    <content type="text"><![CDATA[什么是StreamStream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。特点： Stream自己不会存储元素; Stream操作不会改变源对象; Stream操作延迟执行，到终端操作时才会执行。 创建流​]]></content>
       <tags>
         <tag>Java</tag>
         <tag>Stream</tag>

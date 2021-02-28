@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.xiaoyb.cc/"/>
-  <updated>2021-02-28T12:48:33.789Z</updated>
+  <updated>2021-02-28T12:58:27.693Z</updated>
   <id>www.xiaoyb.cc/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="www.xiaoyb.cc/2021/02/28/Java%E6%B5%81%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
     <id>www.xiaoyb.cc/2021/02/28/Java流式编程/</id>
     <published>2021-02-28T12:32:35.000Z</published>
-    <updated>2021-02-28T12:48:33.789Z</updated>
+    <updated>2021-02-28T12:58:27.693Z</updated>
     
-    <content type="html"><![CDATA[<p>#什么是Stream<br>Stream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。<br>特点：</p><ol><li>Stream自己不会存储元素;</li><li>Stream操作不会改变源对象;</li><li>Stream操作延迟执行，必须到终端操作时才会执行。</li></ol><p>#</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="什么是Stream"><a href="#什么是Stream" class="headerlink" title="什么是Stream"></a>什么是Stream</h1><p>Stream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。<br>特点：</p><ol><li>Stream自己不会存储元素;</li><li>Stream操作不会改变源对象;</li><li>Stream操作延迟执行，到终端操作时才会执行。</li></ol><h1 id="创建流"><a href="#创建流" class="headerlink" title="创建流"></a>创建流</h1><p>​    </p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;#什么是Stream&lt;br&gt;Stream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素
+        &lt;h1 id=&quot;什么是Stream&quot;&gt;&lt;a href=&quot;#什么是Stream&quot; class=&quot;headerlink&quot; title=&quot;什么是Stream&quot;&gt;&lt;/a&gt;什么是Stream&lt;/h1&gt;&lt;p&gt;Stream是JDK8中新增的API,对集合Collection的功能进行增强，可以
       
     
     </summary>
