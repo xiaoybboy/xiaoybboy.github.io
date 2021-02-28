@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.xiaoyb.cc/"/>
-  <updated>2021-02-28T12:58:27.693Z</updated>
+  <updated>2021-02-28T13:04:31.733Z</updated>
   <id>www.xiaoyb.cc/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="www.xiaoyb.cc/2021/02/28/Java%E6%B5%81%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
     <id>www.xiaoyb.cc/2021/02/28/Java流式编程/</id>
     <published>2021-02-28T12:32:35.000Z</published>
-    <updated>2021-02-28T12:58:27.693Z</updated>
+    <updated>2021-02-28T13:04:31.733Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="什么是Stream"><a href="#什么是Stream" class="headerlink" title="什么是Stream"></a>什么是Stream</h1><p>Stream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。<br>特点：</p><ol><li>Stream自己不会存储元素;</li><li>Stream操作不会改变源对象;</li><li>Stream操作延迟执行，到终端操作时才会执行。</li></ol><h1 id="创建流"><a href="#创建流" class="headerlink" title="创建流"></a>创建流</h1><p>​    </p>]]></content>
+    <content type="html"><![CDATA[<h1 id="什么是Stream"><a href="#什么是Stream" class="headerlink" title="什么是Stream"></a>什么是Stream</h1><p>Stream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。特点：</p><ol><li>Stream自己不会存储元素;</li><li>Stream操作不会改变源对象;</li><li>Stream操作延迟执行，到终端操作时才会执行。</li></ol><h1 id="创建流"><a href="#创建流" class="headerlink" title="创建流"></a>创建流</h1><p>​    </p>]]></content>
     
     <summary type="html">
     
@@ -46,9 +46,9 @@
     <link href="www.xiaoyb.cc/2021/02/22/2021%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/"/>
     <id>www.xiaoyb.cc/2021/02/22/2021年度计划/</id>
     <published>2021-02-22T13:27:43.000Z</published>
-    <updated>2021-02-22T15:36:51.496Z</updated>
+    <updated>2021-02-28T13:03:17.471Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="2021年年度计划"><a href="#2021年年度计划" class="headerlink" title="2021年年度计划"></a>2021年年度计划</h1><ol><li>减肥，锻炼好身体</li><li>充实自己的简历</li><li>确定定居地点，准备买房子</li><li>收获另一半</li></ol><h1 id="行动计划"><a href="#行动计划" class="headerlink" title="行动计划"></a>行动计划</h1><ol><li>每周至少完成一篇博客</li><li>每周跑步3-4次</li><li>每周刷算法4-5道</li><li>每天7.30起床，读/看书半小时</li></ol><p><strong>加油！</strong><br><strong>万事开头难，请一定坚持下去</strong></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="2021年年度计划"><a href="#2021年年度计划" class="headerlink" title="2021年年度计划"></a>2021年年度计划</h1><ol><li>减肥，锻炼好身体</li><li>充实自己的简历</li><li>确定定居地点，准备买房子</li><li>收获另一半</li></ol><h1 id="行动计划"><a href="#行动计划" class="headerlink" title="行动计划"></a>行动计划</h1><ol><li>每周至少完成一篇博客</li><li>每周跑步3-4次</li><li>每周刷算法4-5道</li><li>每天7.30起床，读/看书半小时</li></ol><p><strong>加油！万事开头难，请一定坚持下去</strong></p>]]></content>
     
     <summary type="html">
     
