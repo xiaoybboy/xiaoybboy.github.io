@@ -92,7 +92,7 @@
 <meta name="description" content="在浮躁的社会中,我携书本同行">
 <meta property="og:type" content="website">
 <meta property="og:title" content="David Aaronson">
-<meta property="og:url" content="www.xiaoyb.cc/tags/java/index.html">
+<meta property="og:url" content="www.xiaoyb.cc/tags/Java/index.html">
 <meta property="og:site_name" content="David Aaronson">
 <meta property="og:description" content="在浮躁的社会中,我携书本同行">
 <meta property="og:locale" content="zh-Hans">
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="www.xiaoyb.cc/tags/java/"/>
+  <link rel="canonical" href="www.xiaoyb.cc/tags/Java/"/>
 
 
 
 
 
-  <title>标签: java | David Aaronson</title>
+  <title>标签: Java | David Aaronson</title>
   
 
 
@@ -308,7 +308,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>java<small>标签</small>
+        <h1>Java<small>标签</small>
         </h1>
       </div>
 
@@ -320,37 +320,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/08/14/java源码-ArrayDeque/" itemprop="url">
+            <a class="post-title-link" href="/2021/02/28/Java流式编程/" itemprop="url">
               
-                <span itemprop="name">java源码--ArrayDeque</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-14T13:52:23+08:00"
-              content="2017-08-14" >
-          08-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/07/Java源码之HashSet/" itemprop="url">
-              
-                <span itemprop="name">Java源码之HashSet</span>
+                <span itemprop="name">Java流式编程Stream</span>
               
             </a>
         
@@ -358,65 +330,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-07T11:10:20+08:00"
-              content="2017-04-07" >
-          04-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/02/Java-Scanner-next-和nextLine/" itemprop="url">
-              
-                <span itemprop="name">Java Scanner next()和nextLine()</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-02T13:29:44+08:00"
-              content="2017-04-02" >
-          04-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/23/如何终止一个线程/" itemprop="url">
-              
-                <span itemprop="name">如何终止一个线程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-23T10:04:35+08:00"
-              content="2017-03-23" >
-          03-23
+              datetime="2021-02-28T20:32:35+08:00"
+              content="2021-02-28" >
+          02-28
         </time>
       </div>
 
@@ -480,7 +396,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -502,7 +418,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1035,6 +951,94 @@
           }
 
           if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+'auto' === 'auto') {
             input.addEventListener('input', inputEventFunction);
           } else {
             $('.search-icon').click(inputEventFunction);

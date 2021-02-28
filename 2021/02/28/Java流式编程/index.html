@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java,Stream," />
 
 
 
@@ -89,16 +89,18 @@
 
 
 
-<meta name="description" content="在浮躁的社会中,我携书本同行">
-<meta property="og:type" content="website">
-<meta property="og:title" content="David Aaronson">
-<meta property="og:url" content="www.xiaoyb.cc/tags/异常处理/index.html">
+<meta name="description" content="#什么是StreamStream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。特点：  Stream自己不会存储元素; Stream操作不">
+<meta name="keywords" content="Java,Stream">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java流式编程Stream">
+<meta property="og:url" content="www.xiaoyb.cc/2021/02/28/Java流式编程/index.html">
 <meta property="og:site_name" content="David Aaronson">
-<meta property="og:description" content="在浮躁的社会中,我携书本同行">
+<meta property="og:description" content="#什么是StreamStream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。特点：  Stream自己不会存储元素; Stream操作不">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-02-28T12:48:33.789Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="David Aaronson">
-<meta name="twitter:description" content="在浮躁的社会中,我携书本同行">
+<meta name="twitter:title" content="Java流式编程Stream">
+<meta name="twitter:description" content="#什么是StreamStream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。特点：  Stream自己不会存储元素; Stream操作不">
 
 
 
@@ -128,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="www.xiaoyb.cc/tags/异常处理/"/>
+  <link rel="canonical" href="www.xiaoyb.cc/2021/02/28/Java流式编程/"/>
 
 
 
 
 
-  <title>标签: 异常处理 | David Aaronson</title>
+  <title>Java流式编程Stream | David Aaronson</title>
   
 
 
@@ -163,7 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -301,54 +303,217 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>异常处理<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2021/02/28/Java流式编程/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David Aaronson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Aaronson">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/08/05/用-ExceptionHandler，-ControllerAdvice-来进行异常处理/" itemprop="url">
-              
-                <span itemprop="name">用@ExceptionHandler，@ControllerAdvice 来进行异常处理</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Java流式编程Stream</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-05T19:03:25+08:00"
-              content="2017-08-05" >
-          08-05
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-02-28T20:32:35+08:00">
+                2021-02-28
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/02/28/Java流式编程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/02/28/Java流式编程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i></i>阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  162字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#什么是Stream<br>Stream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。<br>特点：</p>
+<ol>
+<li>Stream自己不会存储元素;</li>
+<li>Stream操作不会改变源对象;</li>
+<li>Stream操作延迟执行，必须到终端操作时才会执行。</li>
+</ol>
+<p>#</p>
 
       
     </div>
+    
+    
+    
+	
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+	</div>
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    David Aaronson
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="www.xiaoyb.cc/2021/02/28/Java流式编程/" title="Java流式编程Stream">www.xiaoyb.cc/2021/02/28/Java流式编程/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Stream/" rel="tag"># Stream</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/02/22/2021年度计划/" rel="next" title="2021年度计划">
+                <i class="fa fa-chevron-left"></i> 2021年度计划
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -356,6 +521,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -611,6 +783,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

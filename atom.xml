@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.xiaoyb.cc/"/>
-  <updated>2021-02-22T15:36:51.496Z</updated>
+  <updated>2021-02-28T12:48:33.789Z</updated>
   <id>www.xiaoyb.cc/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java流式编程Stream</title>
+    <link href="www.xiaoyb.cc/2021/02/28/Java%E6%B5%81%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    <id>www.xiaoyb.cc/2021/02/28/Java流式编程/</id>
+    <published>2021-02-28T12:32:35.000Z</published>
+    <updated>2021-02-28T12:48:33.789Z</updated>
+    
+    <content type="html"><![CDATA[<p>#什么是Stream<br>Stream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素队列。简而言之，Stream就是提供了一种高效且易于使用的处理数据的方式。<br>特点：</p><ol><li>Stream自己不会存储元素;</li><li>Stream操作不会改变源对象;</li><li>Stream操作延迟执行，必须到终端操作时才会执行。</li></ol><p>#</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;#什么是Stream&lt;br&gt;Stream是JDK8中新增的API,对集合Collection的功能进行增强，可以方便地对集合中的元素进行操作。Stream流其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其实本身并不存储任何元素Stream是一个来自数据源的元素
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="www.xiaoyb.cc/tags/Java/"/>
+    
+      <category term="Stream" scheme="www.xiaoyb.cc/tags/Stream/"/>
+    
+  </entry>
   
   <entry>
     <title>2021年度计划</title>
@@ -477,30 +502,6 @@
       <category term="hexo" scheme="www.xiaoyb.cc/tags/hexo/"/>
     
       <category term="域名" scheme="www.xiaoyb.cc/tags/%E5%9F%9F%E5%90%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>eclipse下创建maven webapp项目</title>
-    <link href="www.xiaoyb.cc/2017/04/22/eclipse%E4%B8%8B%E5%88%9B%E5%BB%BAmaven-webapp%E9%A1%B9%E7%9B%AE/"/>
-    <id>www.xiaoyb.cc/2017/04/22/eclipse下创建maven-webapp项目/</id>
-    <published>2017-04-22T08:17:03.000Z</published>
-    <updated>2017-07-23T13:24:50.755Z</updated>
-    
-    <content type="html"><![CDATA[<p>1、开启eclipse，右键new——》other，如下图找到maven project<br><a id="more"></a><br><img src="http://i.imgur.com/tLozsmT.jpg" alt=""><br>2、选择maven project，显示创建maven项目的窗口，勾选如图所示，Create a simple project<br><img src="http://i.imgur.com/8RBxu5E.jpg" alt=""><br>3、输入maven项目的基本信息，如下图所示：<br><img src="http://i.imgur.com/m69rSeD.jpg" alt=""><br>4、完成maven项目的创建，生成相应的maven项目结果，如下所示，此处有部分结构是项目不需要的，我们需要去掉：<br><img src="http://i.imgur.com/MzkoXcz.jpg" alt=""><br>5、选择项目，右键选择Properties，进入属性页面，选择到Maven菜单下，如下图所示：<br><img src="http://i.imgur.com/wMgDBuy.jpg" alt=""><br>6、选择java版本为1.7，并去掉其他两项，如下图：<br><img src="http://i.imgur.com/SXeVRQJ.jpg" alt=""><br>7、点击ok之后，再次回到项目结构，此时项目结构比较清晰，符合我们想要创建的maven项目<br><img src="http://i.imgur.com/335DCN2.jpg" alt=""><br>8、此时webapp下的结果还没有显示出来，因为此时我们还没有配置此的项目为web项目，再次进去Properties配置，如下图所示：<br><img src="http://i.imgur.com/rNzAT8S.jpg" alt=""><br>9、点击Further configuration available…，如下：<br><img src="http://i.imgur.com/ZD9GThf.jpg" alt=""><br>10、配置src/main/webapp，并勾选生成web.xml的选项，如下：<br><img src="http://i.imgur.com/WRO3v9x.jpg" alt=""><br>11、确定之后，返回到maven菜单下去掉Dynamic Web Module的勾选，点击ok，如下所示，webapp目录结构显示出来了：<br><img src="http://i.imgur.com/XMUM5u7.jpg" alt=""><br>12、此时还需要配置，src/main/webapp为“/”项目的根目录，如下所示：<br><img src="http://i.imgur.com/VfwJFIP.jpg" alt=""><br>13、完成如上配置后，最后完成maven webapp项目结构如下图所示：<br><img src="http://i.imgur.com/ZNSDos7.jpg" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1、开启eclipse，右键new——》other，如下图找到maven project&lt;br&gt;
-    
-    </summary>
-    
-      <category term="javaweb" scheme="www.xiaoyb.cc/categories/javaweb/"/>
-    
-    
-      <category term="maven" scheme="www.xiaoyb.cc/tags/maven/"/>
-    
-      <category term="javaweb" scheme="www.xiaoyb.cc/tags/javaweb/"/>
     
   </entry>
   
