@@ -1,140 +1,51 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-  <script>
-  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
-  daovoice('init', {
-      app_id: "d78c0096"
-    });
-  daovoice('update');
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="机器学习,sklearn," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="对于太多的特征，一般需要进行降维处理。PCA是最常用的降维的方法，sklearn提供了PCA降维的方法。 函数原型1class sklearn.decomposition.PCA(n_components=None, copy=True, whiten=False, svd_solver=&amp;apos;auto&amp;apos;, tol=0.0, iterated_power=&amp;apos;auto&amp;ap">
-<meta name="keywords" content="机器学习,sklearn">
+  <meta name="description" content="对于太多的特征，一般需要进行降维处理。PCA是最常用的降维的方法，sklearn提供了PCA降维的方法。 函数原型1class sklearn.decomposition.PCA(n_components&#x3D;None, copy&#x3D;True, whiten&#x3D;False, svd_solver&#x3D;&amp;#x27;auto&amp;#x27;, tol&#x3D;0.0, iterated_power&#x3D;&amp;#x27;auto&amp;#x">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sklearn PCA降维">
-<meta property="og:url" content="www.xiaoyb.cc/2017/06/01/sklearn-PCA降维/index.html">
+<meta property="og:url" content="http://example.com/2017/06/01/sklearn-PCA%E9%99%8D%E7%BB%B4/index.html">
 <meta property="og:site_name" content="David Aaronson">
-<meta property="og:description" content="对于太多的特征，一般需要进行降维处理。PCA是最常用的降维的方法，sklearn提供了PCA降维的方法。 函数原型1class sklearn.decomposition.PCA(n_components=None, copy=True, whiten=False, svd_solver=&amp;apos;auto&amp;apos;, tol=0.0, iterated_power=&amp;apos;auto&amp;ap">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-23T13:24:50.759Z">
+<meta property="og:description" content="对于太多的特征，一般需要进行降维处理。PCA是最常用的降维的方法，sklearn提供了PCA降维的方法。 函数原型1class sklearn.decomposition.PCA(n_components&#x3D;None, copy&#x3D;True, whiten&#x3D;False, svd_solver&#x3D;&amp;#x27;auto&amp;#x27;, tol&#x3D;0.0, iterated_power&#x3D;&amp;#x27;auto&amp;#x">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-06-01T10:01:31.000Z">
+<meta property="article:modified_time" content="2023-10-18T12:23:15.958Z">
+<meta property="article:author" content="David Aaronson">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="sklearn">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sklearn PCA降维">
-<meta name="twitter:description" content="对于太多的特征，一般需要进行降维处理。PCA是最常用的降维的方法，sklearn提供了PCA降维的方法。 函数原型1class sklearn.decomposition.PCA(n_components=None, copy=True, whiten=False, svd_solver=&amp;apos;auto&amp;apos;, tol=0.0, iterated_power=&amp;apos;auto&amp;ap">
+
+<link rel="canonical" href="http://example.com/2017/06/01/sklearn-PCA%E9%99%8D%E7%BB%B4/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="www.xiaoyb.cc/2017/06/01/sklearn-PCA降维/"/>
-
-
-
-
 
   <title>sklearn PCA降维 | David Aaronson</title>
   
@@ -143,293 +54,150 @@
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?89b72b8b15f71e8732bbf6020d51d20e";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">David Aaronson</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">David Aaronson</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
+
+
+
 
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Startseite</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archiv</a>
 
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/06/01/sklearn-PCA降维/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2017/06/01/sklearn-PCA%E9%99%8D%E7%BB%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="David Aaronson">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="在浮躁的社会中,我携书本同行">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="David Aaronson">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">sklearn PCA降维</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          sklearn PCA降维
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T18:01:31+08:00">
-                2017-06-01
-              </time>
-            
+              <span class="post-meta-item-text">Veröffentlicht am</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+              <time title="Erstellt: 2017-06-01 18:01:31" itemprop="dateCreated datePublished" datetime="2017-06-01T18:01:31+08:00">2017-06-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2023-10-18 20:23:15" itemprop="dateModified" datetime="2023-10-18T20:23:15+08:00">2023-10-18</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/sklearn学习/" itemprop="url" rel="index">
-                    <span itemprop="name">sklearn学习</span>
-                  </a>
+                  <a href="/categories/sklearn%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">sklearn学习</span></a>
                 </span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/06/01/sklearn-PCA降维/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/06/01/sklearn-PCA降维/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i></i>阅读数
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,635字
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -437,354 +205,211 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <p>对于太多的特征，一般需要进行降维处理。PCA是最常用的降维的方法，sklearn提供了PCA降维的方法。</p>
-<h1 id="函数原型"><a href="#函数原型" class="headerlink" title="函数原型"></a>函数原型</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class sklearn.decomposition.PCA(n_components=None, copy=True, whiten=False, svd_solver=&apos;auto&apos;, tol=0.0, iterated_power=&apos;auto&apos;, random_state=None)</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<h1 id="函数原型"><a href="#函数原型" class="headerlink" title="函数原型"></a>函数原型</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class sklearn.decomposition.PCA(n_components=None, copy=True, whiten=False, svd_solver=&#x27;auto&#x27;, tol=0.0, iterated_power=&#x27;auto&#x27;, random_state=None)</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 <h1 id="主要参数"><a href="#主要参数" class="headerlink" title="主要参数"></a>主要参数</h1><ol>
-<li>n_components:<br>意义：PCA算法中所要保留的主成分个数n，也即保留下来的特征个数n<br>类型：int 或者 string，缺省时默认为None，所有成分被保留。<br> 赋值为int，比如n_components=1，将把原始数据降到一个维度。<br> 赋值为string，比如n_components=’mle’，将自动选取特征个数n，使得满足所要求的方差百分比。</li>
+<li>n_components:<br>意义：PCA算法中所要保留的主成分个数n，也即保留下来的特征个数n<br>类型：int 或者 string，缺省时默认为None，所有成分被保留。<br> 赋值为int，比如n_components&#x3D;1，将把原始数据降到一个维度。<br> 赋值为string，比如n_components&#x3D;’mle’，将自动选取特征个数n，使得满足所要求的方差百分比。</li>
 <li>copy:<br>类型：bool，True或者False，缺省时默认为True。<br>意义：表示是否在运行算法时，将原始训练数据复制一份。若为True，则运行PCA算法后，原始训练数据的值不            会有任何改变，因为是在原始数据的副本上进行运算；若为False，则运行PCA算法后，原始训练数据的              值会改，因为是在原始数据上进行降维计算。</li>
 <li>whiten:<br>类型：bool，缺省时默认为False<br>意义：白化，使得每个特征具有相同的方差。</li>
 </ol>
-<h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><p>和参数差不多，参考<a href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html" target="_blank" rel="noopener">http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html</a></p>
+<h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><p>和参数差不多，参考<a target="_blank" rel="noopener" href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html">http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html</a></p>
 <h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>fit(X[, y]) —— Fit the model with X.<br>fit_transform(X[, y])—— Fit the model with X and apply the dimensionality reduction on X.<br>get_covariance() —— Compute data covariance with the generative model.<br>get_params([deep]) —— Get parameters for this estimator.<br>get_precision() —— Compute data precision matrix with the generative model.<br>inverse_transform(X) —— Transform data back to its original space, i.e.,<br>score(X[, y]) —— Return the average log-likelihood of all samples<br>score_samples(X) —— Return the log-likelihood of each sample<br>set_params(**params) —— Set the parameters of this estimator.<br>transform(X) —— Apply the dimensionality reduction on X.<br>详细说明：</p>
 <ol>
-<li>fit(X,y=None)<br>fit()可以说是scikit-learn中通用的方法，每个需要训练的算法都会有fit()方法，它其实就是算法中的“训练”这一步骤。因为PCA是无监督学习算法，此处y自然等于None。</li>
+<li>fit(X,y&#x3D;None)<br>fit()可以说是scikit-learn中通用的方法，每个需要训练的算法都会有fit()方法，它其实就是算法中的“训练”这一步骤。因为PCA是无监督学习算法，此处y自然等于None。</li>
 <li>fit(X)，表示用数据X来训练PCA模型。<br>函数返回值：调用fit方法的对象本身。比如pca.fit(X)，表示用X对pca这个对象进行训练。</li>
-<li>fit_transform(X)<br>用X来训练PCA模型，同时返回降维后的数据。<br>newX=pca.fit_transform(X)，newX就是降维后的数据。</li>
-<li>inverse_transform()<br>将降维后的数据转换成原始数据，X=pca.inverse_transform(newX)</li>
-<li>transform(X)<br>将数据X转换成降维后的数据。当模型训练好后，对于新输入的数据，都可以用transform方法来降维。<br>此外，还有get_covariance()、get_precision()、get_params(deep=True)、score(X, y=None)等方法，参考上面的英文。<h1 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h1>以一组二维的数据data为例，data如下，一共12个样本（x,y），其实就是分布在直线y=x上的点，并且聚集在x=1、2、3、4上，各3个。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>data  </span><br><span class="line">array([[ <span class="number">1.</span>  ,  <span class="number">1.</span>  ],  </span><br><span class="line">       [ <span class="number">0.9</span> ,  <span class="number">0.95</span>],  </span><br><span class="line">       [ <span class="number">1.01</span>,  <span class="number">1.03</span>],  </span><br><span class="line">       [ <span class="number">2.</span>  ,  <span class="number">2.</span>  ],  </span><br><span class="line">       [ <span class="number">2.03</span>,  <span class="number">2.06</span>],  </span><br><span class="line">       [ <span class="number">1.98</span>,  <span class="number">1.89</span>],  </span><br><span class="line">       [ <span class="number">3.</span>  ,  <span class="number">3.</span>  ],  </span><br><span class="line">       [ <span class="number">3.03</span>,  <span class="number">3.05</span>],  </span><br><span class="line">       [ <span class="number">2.89</span>,  <span class="number">3.1</span> ],  </span><br><span class="line">       [ <span class="number">4.</span>  ,  <span class="number">4.</span>  ],  </span><br><span class="line">       [ <span class="number">4.06</span>,  <span class="number">4.02</span>],  </span><br><span class="line">       [ <span class="number">3.97</span>,  <span class="number">4.01</span>]])</span><br></pre></td></tr></table></figure>
-</li>
+<li>fit_transform(X)<br>用X来训练PCA模型，同时返回降维后的数据。<br>newX&#x3D;pca.fit_transform(X)，newX就是降维后的数据。</li>
+<li>inverse_transform()<br>将降维后的数据转换成原始数据，X&#x3D;pca.inverse_transform(newX)</li>
+<li>transform(X)<br>将数据X转换成降维后的数据。当模型训练好后，对于新输入的数据，都可以用transform方法来降维。<br>此外，还有get_covariance()、get_precision()、get_params(deep&#x3D;True)、score(X, y&#x3D;None)等方法，参考上面的英文。</li>
 </ol>
-<p>data这组数据，有两个特征，因为两个特征是近似相等的，所以用一个特征就能表示了，即可以降到一维。下面就来看看怎么用sklearn中的PCA算法包。<br>（1）n_components设置为1，copy默认为True，可以看到原始数据data并未改变，newData是一维的，并且明显地将原始数据分成了四类。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA   </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca=PCA(n_components=<span class="number">1</span>)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>newData=pca.fit_transform(data)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>newData  </span><br><span class="line">array([[<span class="number">-2.12015916</span>],  </span><br><span class="line">       [<span class="number">-2.22617682</span>],  </span><br><span class="line">       [<span class="number">-2.09185561</span>],  </span><br><span class="line">       [<span class="number">-0.70594692</span>],  </span><br><span class="line">       [<span class="number">-0.64227841</span>],  </span><br><span class="line">       [<span class="number">-0.79795758</span>],  </span><br><span class="line">       [ <span class="number">0.70826533</span>],  </span><br><span class="line">       [ <span class="number">0.76485312</span>],  </span><br><span class="line">       [ <span class="number">0.70139695</span>],  </span><br><span class="line">       [ <span class="number">2.12247757</span>],  </span><br><span class="line">       [ <span class="number">2.17900746</span>],  </span><br><span class="line">       [ <span class="number">2.10837406</span>]])  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>data  </span><br><span class="line">array([[ <span class="number">1.</span>  ,  <span class="number">1.</span>  ],  </span><br><span class="line">       [ <span class="number">0.9</span> ,  <span class="number">0.95</span>],  </span><br><span class="line">       [ <span class="number">1.01</span>,  <span class="number">1.03</span>],  </span><br><span class="line">       [ <span class="number">2.</span>  ,  <span class="number">2.</span>  ],  </span><br><span class="line">       [ <span class="number">2.03</span>,  <span class="number">2.06</span>],  </span><br><span class="line">       [ <span class="number">1.98</span>,  <span class="number">1.89</span>],  </span><br><span class="line">       [ <span class="number">3.</span>  ,  <span class="number">3.</span>  ],  </span><br><span class="line">       [ <span class="number">3.03</span>,  <span class="number">3.05</span>],  </span><br><span class="line">       [ <span class="number">2.89</span>,  <span class="number">3.1</span> ],  </span><br><span class="line">       [ <span class="number">4.</span>  ,  <span class="number">4.</span>  ],  </span><br><span class="line">       [ <span class="number">4.06</span>,  <span class="number">4.02</span>],  </span><br><span class="line">       [ <span class="number">3.97</span>,  <span class="number">4.01</span>]])</span><br></pre></td></tr></table></figure></p>
-<p>（2）将copy设置为False，原始数据data将发生改变。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca=PCA(n_components=<span class="number">1</span>,copy=<span class="keyword">False</span>)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>newData=pca.fit_transform(data)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>data  </span><br><span class="line">array([[<span class="number">-1.48916667</span>, <span class="number">-1.50916667</span>],  </span><br><span class="line">       [<span class="number">-1.58916667</span>, <span class="number">-1.55916667</span>],  </span><br><span class="line">       [<span class="number">-1.47916667</span>, <span class="number">-1.47916667</span>],  </span><br><span class="line">       [<span class="number">-0.48916667</span>, <span class="number">-0.50916667</span>],  </span><br><span class="line">       [<span class="number">-0.45916667</span>, <span class="number">-0.44916667</span>],  </span><br><span class="line">       [<span class="number">-0.50916667</span>, <span class="number">-0.61916667</span>],  </span><br><span class="line">       [ <span class="number">0.51083333</span>,  <span class="number">0.49083333</span>],  </span><br><span class="line">       [ <span class="number">0.54083333</span>,  <span class="number">0.54083333</span>],  </span><br><span class="line">       [ <span class="number">0.40083333</span>,  <span class="number">0.59083333</span>],  </span><br><span class="line">       [ <span class="number">1.51083333</span>,  <span class="number">1.49083333</span>],  </span><br><span class="line">       [ <span class="number">1.57083333</span>,  <span class="number">1.51083333</span>],  </span><br><span class="line">       [ <span class="number">1.48083333</span>,  <span class="number">1.50083333</span>]])</span><br></pre></td></tr></table></figure></p>
-<p>（3）n_components设置为’mle’，看看效果，自动降到了1维。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca=PCA(n_components=<span class="string">'mle'</span>)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>newData=pca.fit_transform(data)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>newData  </span><br><span class="line">array([[<span class="number">-2.12015916</span>],  </span><br><span class="line">       [<span class="number">-2.22617682</span>],  </span><br><span class="line">       [<span class="number">-2.09185561</span>],  </span><br><span class="line">       [<span class="number">-0.70594692</span>],  </span><br><span class="line">       [<span class="number">-0.64227841</span>],  </span><br><span class="line">       [<span class="number">-0.79795758</span>],  </span><br><span class="line">       [ <span class="number">0.70826533</span>],  </span><br><span class="line">       [ <span class="number">0.76485312</span>],  </span><br><span class="line">       [ <span class="number">0.70139695</span>],  </span><br><span class="line">       [ <span class="number">2.12247757</span>],  </span><br><span class="line">       [ <span class="number">2.17900746</span>],  </span><br><span class="line">       [ <span class="number">2.10837406</span>]])</span><br></pre></td></tr></table></figure></p>
-<p>（4）对象的属性值<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca.n_components  </span><br><span class="line"><span class="number">1</span>  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca.explained_variance_ratio_  </span><br><span class="line">array([ <span class="number">0.99910873</span>])  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca.explained_variance_  </span><br><span class="line">array([ <span class="number">2.55427003</span>])  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca.get_params  </span><br><span class="line">&lt;bound method PCA.get_params of PCA(copy=<span class="keyword">True</span>, n_components=<span class="number">1</span>, whiten=<span class="keyword">False</span>)&gt;</span><br></pre></td></tr></table></figure></p>
-<p>我们所训练的pca对象的n_components值为1，即保留1个特征，该特征的方差为2.55427003，占所有特征的方差百分比为0.99910873，意味着几乎保留了所有的信息。get_params返回各个参数的值。<br>（5）对象的方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>newA=pca.transform(A)</span><br><span class="line">```  </span><br><span class="line">对新的数据A，用已训练好的pca模型进行降维。</span><br><span class="line">```python</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca.set_params(copy=<span class="keyword">False</span>)  </span><br><span class="line">PCA(copy=<span class="keyword">False</span>, n_components=<span class="number">1</span>, whiten=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure></p>
+<h1 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h1><p>以一组二维的数据data为例，data如下，一共12个样本（x,y），其实就是分布在直线y&#x3D;x上的点，并且聚集在x&#x3D;1、2、3、4上，各3个。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>data  </span><br><span class="line">array([[ <span class="number">1.</span>  ,  <span class="number">1.</span>  ],  </span><br><span class="line">       [ <span class="number">0.9</span> ,  <span class="number">0.95</span>],  </span><br><span class="line">       [ <span class="number">1.01</span>,  <span class="number">1.03</span>],  </span><br><span class="line">       [ <span class="number">2.</span>  ,  <span class="number">2.</span>  ],  </span><br><span class="line">       [ <span class="number">2.03</span>,  <span class="number">2.06</span>],  </span><br><span class="line">       [ <span class="number">1.98</span>,  <span class="number">1.89</span>],  </span><br><span class="line">       [ <span class="number">3.</span>  ,  <span class="number">3.</span>  ],  </span><br><span class="line">       [ <span class="number">3.03</span>,  <span class="number">3.05</span>],  </span><br><span class="line">       [ <span class="number">2.89</span>,  <span class="number">3.1</span> ],  </span><br><span class="line">       [ <span class="number">4.</span>  ,  <span class="number">4.</span>  ],  </span><br><span class="line">       [ <span class="number">4.06</span>,  <span class="number">4.02</span>],  </span><br><span class="line">       [ <span class="number">3.97</span>,  <span class="number">4.01</span>]])  </span><br></pre></td></tr></table></figure>
+<p>data这组数据，有两个特征，因为两个特征是近似相等的，所以用一个特征就能表示了，即可以降到一维。下面就来看看怎么用sklearn中的PCA算法包。<br>（1）n_components设置为1，copy默认为True，可以看到原始数据data并未改变，newData是一维的，并且明显地将原始数据分成了四类。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA   </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca=PCA(n_components=<span class="number">1</span>)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>newData=pca.fit_transform(data)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>newData  </span><br><span class="line">array([[-<span class="number">2.12015916</span>],  </span><br><span class="line">       [-<span class="number">2.22617682</span>],  </span><br><span class="line">       [-<span class="number">2.09185561</span>],  </span><br><span class="line">       [-<span class="number">0.70594692</span>],  </span><br><span class="line">       [-<span class="number">0.64227841</span>],  </span><br><span class="line">       [-<span class="number">0.79795758</span>],  </span><br><span class="line">       [ <span class="number">0.70826533</span>],  </span><br><span class="line">       [ <span class="number">0.76485312</span>],  </span><br><span class="line">       [ <span class="number">0.70139695</span>],  </span><br><span class="line">       [ <span class="number">2.12247757</span>],  </span><br><span class="line">       [ <span class="number">2.17900746</span>],  </span><br><span class="line">       [ <span class="number">2.10837406</span>]])  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>data  </span><br><span class="line">array([[ <span class="number">1.</span>  ,  <span class="number">1.</span>  ],  </span><br><span class="line">       [ <span class="number">0.9</span> ,  <span class="number">0.95</span>],  </span><br><span class="line">       [ <span class="number">1.01</span>,  <span class="number">1.03</span>],  </span><br><span class="line">       [ <span class="number">2.</span>  ,  <span class="number">2.</span>  ],  </span><br><span class="line">       [ <span class="number">2.03</span>,  <span class="number">2.06</span>],  </span><br><span class="line">       [ <span class="number">1.98</span>,  <span class="number">1.89</span>],  </span><br><span class="line">       [ <span class="number">3.</span>  ,  <span class="number">3.</span>  ],  </span><br><span class="line">       [ <span class="number">3.03</span>,  <span class="number">3.05</span>],  </span><br><span class="line">       [ <span class="number">2.89</span>,  <span class="number">3.1</span> ],  </span><br><span class="line">       [ <span class="number">4.</span>  ,  <span class="number">4.</span>  ],  </span><br><span class="line">       [ <span class="number">4.06</span>,  <span class="number">4.02</span>],  </span><br><span class="line">       [ <span class="number">3.97</span>,  <span class="number">4.01</span>]])  </span><br></pre></td></tr></table></figure>
+<p>（2）将copy设置为False，原始数据data将发生改变。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca=PCA(n_components=<span class="number">1</span>,copy=<span class="literal">False</span>)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>newData=pca.fit_transform(data)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>data  </span><br><span class="line">array([[-<span class="number">1.48916667</span>, -<span class="number">1.50916667</span>],  </span><br><span class="line">       [-<span class="number">1.58916667</span>, -<span class="number">1.55916667</span>],  </span><br><span class="line">       [-<span class="number">1.47916667</span>, -<span class="number">1.47916667</span>],  </span><br><span class="line">       [-<span class="number">0.48916667</span>, -<span class="number">0.50916667</span>],  </span><br><span class="line">       [-<span class="number">0.45916667</span>, -<span class="number">0.44916667</span>],  </span><br><span class="line">       [-<span class="number">0.50916667</span>, -<span class="number">0.61916667</span>],  </span><br><span class="line">       [ <span class="number">0.51083333</span>,  <span class="number">0.49083333</span>],  </span><br><span class="line">       [ <span class="number">0.54083333</span>,  <span class="number">0.54083333</span>],  </span><br><span class="line">       [ <span class="number">0.40083333</span>,  <span class="number">0.59083333</span>],  </span><br><span class="line">       [ <span class="number">1.51083333</span>,  <span class="number">1.49083333</span>],  </span><br><span class="line">       [ <span class="number">1.57083333</span>,  <span class="number">1.51083333</span>],  </span><br><span class="line">       [ <span class="number">1.48083333</span>,  <span class="number">1.50083333</span>]])  </span><br></pre></td></tr></table></figure>
+<p>（3）n_components设置为’mle’，看看效果，自动降到了1维。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca=PCA(n_components=<span class="string">&#x27;mle&#x27;</span>)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>newData=pca.fit_transform(data)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>newData  </span><br><span class="line">array([[-<span class="number">2.12015916</span>],  </span><br><span class="line">       [-<span class="number">2.22617682</span>],  </span><br><span class="line">       [-<span class="number">2.09185561</span>],  </span><br><span class="line">       [-<span class="number">0.70594692</span>],  </span><br><span class="line">       [-<span class="number">0.64227841</span>],  </span><br><span class="line">       [-<span class="number">0.79795758</span>],  </span><br><span class="line">       [ <span class="number">0.70826533</span>],  </span><br><span class="line">       [ <span class="number">0.76485312</span>],  </span><br><span class="line">       [ <span class="number">0.70139695</span>],  </span><br><span class="line">       [ <span class="number">2.12247757</span>],  </span><br><span class="line">       [ <span class="number">2.17900746</span>],  </span><br><span class="line">       [ <span class="number">2.10837406</span>]])  </span><br></pre></td></tr></table></figure>
+<p>（4）对象的属性值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca.n_components  </span><br><span class="line"><span class="number">1</span>  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca.explained_variance_ratio_  </span><br><span class="line">array([ <span class="number">0.99910873</span>])  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca.explained_variance_  </span><br><span class="line">array([ <span class="number">2.55427003</span>])  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca.get_params  </span><br><span class="line">&lt;bound method PCA.get_params of PCA(copy=<span class="literal">True</span>, n_components=<span class="number">1</span>, whiten=<span class="literal">False</span>)&gt;  </span><br></pre></td></tr></table></figure>
+<p>我们所训练的pca对象的n_components值为1，即保留1个特征，该特征的方差为2.55427003，占所有特征的方差百分比为0.99910873，意味着几乎保留了所有的信息。get_params返回各个参数的值。<br>（5）对象的方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>newA=pca.transform(A)</span><br><span class="line">```  </span><br><span class="line">对新的数据A，用已训练好的pca模型进行降维。</span><br><span class="line">```python</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pca.set_params(copy=<span class="literal">False</span>)  </span><br><span class="line">PCA(copy=<span class="literal">False</span>, n_components=<span class="number">1</span>, whiten=<span class="literal">False</span>) </span><br></pre></td></tr></table></figure>
 <p>设置参数。</p>
-<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>在一个论坛上看到的例子<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入数值计算库</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment">#导入科学计算库</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="comment">#导入数据预处理库</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"><span class="comment">#导入PCA算法库</span></span><br><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA</span><br><span class="line"></span><br><span class="line"><span class="comment">#读取贷款状态数据从创建名为LoanStats3a的数据表</span></span><br><span class="line">LoanStats3a=pd.DataFrame(pd.read_csv(<span class="string">'LoanStats3a.csv'</span>))</span><br><span class="line"> </span><br><span class="line"><span class="comment">#查看数据表内容</span></span><br><span class="line">LoanStats3a.head()</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除包含空值的特征</span></span><br><span class="line">LoanStats3a=LoanStats3a.dropna()</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置特征表X</span></span><br><span class="line"><span class="comment">#将贷款数据表中的贷款特征数据单独提取出来，用于后面的降维操作。</span></span><br><span class="line">X = np.array(LoanStats3a[[<span class="string">'loan_amnt'</span>, <span class="string">'funded_amnt_inv'</span>, <span class="string">'installment'</span>,</span><br><span class="line"><span class="string">'annual_inc'</span>, <span class="string">'dti'</span>, <span class="string">'delinq_2yrs'</span>, <span class="string">'inq_last_6mths'</span>, <span class="string">'open_acc'</span>,</span><br><span class="line"><span class="string">'pub_rec'</span>, <span class="string">'revol_bal'</span>, <span class="string">'total_acc'</span>, <span class="string">'out_prncp'</span>, <span class="string">'out_prncp_inv'</span>,</span><br><span class="line"><span class="string">'total_pymnt'</span>, <span class="string">'total_pymnt_inv'</span>, <span class="string">'total_rec_prncp'</span>, <span class="string">'total_rec_int'</span>,</span><br><span class="line"><span class="string">'total_rec_late_fee'</span>, <span class="string">'recoveries'</span>, <span class="string">'collection_recovery_fee'</span>,</span><br><span class="line"><span class="string">'last_pymnt_amnt'</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#对特征数据进行标准化处理,去除不同数据的单位限制，将它们转化为无量纲的纯数值。</span></span><br><span class="line">sc = StandardScaler()</span><br><span class="line">X_std = sc.fit_transform(X)</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建PCA对象，n_components=3</span></span><br><span class="line">pca = decomposition.PCA(n_components=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用PCA对特征进行降维</span></span><br><span class="line">X_std_pca = pca.fit_transform(X_std)</span><br><span class="line"></span><br><span class="line"><span class="comment">#下面的写法与上面相同,下面进行了白化变换，数据还原之后进行了方差的归一化</span></span><br><span class="line">pca=PCA(n_components=<span class="number">6</span>,whiten=<span class="keyword">True</span>)</span><br><span class="line">pca.fit(X_std)</span><br><span class="line">newData=pca.transform(X_std)</span><br><span class="line">X=pca.inverse_transform(newData)</span><br></pre></td></tr></table></figure></p>
-<p>本文参考：<a href="http://blog.csdn.net/u012162613/article/details/42192293" target="_blank" rel="noopener">http://blog.csdn.net/u012162613/article/details/42192293</a><br>        <a href="http://www.aboutyun.com/thread-21655-1-1.html" target="_blank" rel="noopener">http://www.aboutyun.com/thread-21655-1-1.html</a></p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>在一个论坛上看到的例子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入数值计算库</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment">#导入科学计算库</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="comment">#导入数据预处理库</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"><span class="comment">#导入PCA算法库</span></span><br><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA</span><br><span class="line"></span><br><span class="line"><span class="comment">#读取贷款状态数据从创建名为LoanStats3a的数据表</span></span><br><span class="line">LoanStats3a=pd.DataFrame(pd.read_csv(<span class="string">&#x27;LoanStats3a.csv&#x27;</span>))</span><br><span class="line"> </span><br><span class="line"><span class="comment">#查看数据表内容</span></span><br><span class="line">LoanStats3a.head()</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除包含空值的特征</span></span><br><span class="line">LoanStats3a=LoanStats3a.dropna()</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置特征表X</span></span><br><span class="line"><span class="comment">#将贷款数据表中的贷款特征数据单独提取出来，用于后面的降维操作。</span></span><br><span class="line">X = np.array(LoanStats3a[[<span class="string">&#x27;loan_amnt&#x27;</span>, <span class="string">&#x27;funded_amnt_inv&#x27;</span>, <span class="string">&#x27;installment&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;annual_inc&#x27;</span>, <span class="string">&#x27;dti&#x27;</span>, <span class="string">&#x27;delinq_2yrs&#x27;</span>, <span class="string">&#x27;inq_last_6mths&#x27;</span>, <span class="string">&#x27;open_acc&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;pub_rec&#x27;</span>, <span class="string">&#x27;revol_bal&#x27;</span>, <span class="string">&#x27;total_acc&#x27;</span>, <span class="string">&#x27;out_prncp&#x27;</span>, <span class="string">&#x27;out_prncp_inv&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;total_pymnt&#x27;</span>, <span class="string">&#x27;total_pymnt_inv&#x27;</span>, <span class="string">&#x27;total_rec_prncp&#x27;</span>, <span class="string">&#x27;total_rec_int&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;total_rec_late_fee&#x27;</span>, <span class="string">&#x27;recoveries&#x27;</span>, <span class="string">&#x27;collection_recovery_fee&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;last_pymnt_amnt&#x27;</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#对特征数据进行标准化处理,去除不同数据的单位限制，将它们转化为无量纲的纯数值。</span></span><br><span class="line">sc = StandardScaler()</span><br><span class="line">X_std = sc.fit_transform(X)</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建PCA对象，n_components=3</span></span><br><span class="line">pca = decomposition.PCA(n_components=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用PCA对特征进行降维</span></span><br><span class="line">X_std_pca = pca.fit_transform(X_std)</span><br><span class="line"></span><br><span class="line"><span class="comment">#下面的写法与上面相同,下面进行了白化变换，数据还原之后进行了方差的归一化</span></span><br><span class="line">pca=PCA(n_components=<span class="number">6</span>,whiten=<span class="literal">True</span>)</span><br><span class="line">pca.fit(X_std)</span><br><span class="line">newData=pca.transform(X_std)</span><br><span class="line">X=pca.inverse_transform(newData)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>本文参考：<a target="_blank" rel="noopener" href="http://blog.csdn.net/u012162613/article/details/42192293">http://blog.csdn.net/u012162613/article/details/42192293</a><br>        <a target="_blank" rel="noopener" href="http://www.aboutyun.com/thread-21655-1-1.html">http://www.aboutyun.com/thread-21655-1-1.html</a></p>
 
-      
     </div>
-    
-    
-    
-	
-	<div>
-  
-    <div>
-    
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-  
-	</div>
 
     
-
+    
     
 
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者：</strong>
-    David Aaronson
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="www.xiaoyb.cc/2017/06/01/sklearn-PCA降维/" title="sklearn PCA降维">www.xiaoyb.cc/2017/06/01/sklearn-PCA降维/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
-          
-            <a href="/tags/sklearn/" rel="tag"># sklearn</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/05/31/lightgbm-python接口的安装/" rel="next" title="lightgbm python接口的安装">
-                <i class="fa fa-chevron-left"></i> lightgbm python接口的安装
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+              <a href="/tags/sklearn/" rel="tag"># sklearn</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/05/记一次坑爹的windows下安装xgboost的经历/" rel="prev" title="记一次坑爹的windows下安装xgboost的经历">
-                记一次坑爹的windows下安装xgboost的经历 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/05/31/lightgbm-python%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%89%E8%A3%85/" rel="prev" title="lightgbm python接口的安装">
+      <i class="fa fa-chevron-left"></i> lightgbm python接口的安装
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/06/05/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%9D%91%E7%88%B9%E7%9A%84windows%E4%B8%8B%E5%AE%89%E8%A3%85xgboost%E7%9A%84%E7%BB%8F%E5%8E%86/" rel="next" title="记一次坑爹的windows下安装xgboost的经历">
+      记一次坑爹的windows下安装xgboost的经历 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-
-  
-    <div class="comments" id="comments">
-    </div>
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="David Aaronson" />
-            
-              <p class="site-author-name" itemprop="name">David Aaronson</p>
-              <p class="site-description motion-element" itemprop="description">在浮躁的社会中,我携书本同行</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">45</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/xiaoybboy" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" title="NexT">
-                      
-                        <i class="fa fa-fw fa-google"></i>NexT</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=5276811&auto=0&height=66"></iframe>
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数原型"><span class="nav-number">1.</span> <span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主要参数"><span class="nav-number">2.</span> <span class="nav-text">主要参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性"><span class="nav-number">3.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法"><span class="nav-number">4.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Example"><span class="nav-number">5.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例"><span class="nav-number">6.</span> <span class="nav-text">示例</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">David Aaronson</span>
-
-  
-</div>
-
-
-
-
-
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>访问人数
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      人
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>总访问量
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      次
-    </span>
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Inhaltsverzeichnis
+        </li>
+        <li class="sidebar-nav-overview">
+          Übersicht
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%8F%82%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">主要参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="nav-number">3.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Example"><span class="nav-number">5.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-number">6.</span> <span class="nav-text">示例</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">David Aaronson</p>
+  <div class="site-description" itemprop="description">在浮躁的社会中,我携书本同行</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">Artikel</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">Kategorien</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">schlagwörter</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">David Aaronson</span>
+</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
 
 
 
 
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -802,444 +427,6 @@
 
 
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'oJj4VKBTWmnSXOJUkeaN1J4m-gzGzoHsz',
-        appKey: 'HX69JVFeHHrJQAKOejk4BbHN',
-        placeholder: 'Say Something',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
 
 
 
@@ -1247,40 +434,5 @@
 
   
 
-  
-
-  
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
-  
-
-  
-
-  <!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/clicklove.js"></script>
 </body>
 </html>

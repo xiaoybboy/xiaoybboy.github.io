@@ -1,140 +1,51 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-  <script>
-  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
-  daovoice('init', {
-      app_id: "d78c0096"
-    });
-  daovoice('update');
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="算法,回溯法," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="刷题的时候碰到一个很常见的算法-回溯法，看了一些博客，感觉这个讲得通俗易懂。转过来，后面有些自己的补充。&amp;emsp;&amp;emsp;回溯法（探索与回溯法）是一种选优搜索法，又称为试探法，按选优条件向前搜索，以达到目标。但当探索到某一步时，发现原先选择并不优或达不到目标，就退回一步重新选择，这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为“回溯点”。">
-<meta name="keywords" content="算法,回溯法">
+  <meta name="description" content="刷题的时候碰到一个很常见的算法-回溯法，看了一些博客，感觉这个讲得通俗易懂。转过来，后面有些自己的补充。&amp;emsp;&amp;emsp;回溯法（探索与回溯法）是一种选优搜索法，又称为试探法，按选优条件向前搜索，以达到目标。但当探索到某一步时，发现原先选择并不优或达不到目标，就退回一步重新选择，这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为“回溯点”。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="回溯算法详解">
-<meta property="og:url" content="www.xiaoyb.cc/2017/04/11/回朔算法详解/index.html">
+<meta property="og:url" content="http://example.com/2017/04/11/%E5%9B%9E%E6%9C%94%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="David Aaronson">
 <meta property="og:description" content="刷题的时候碰到一个很常见的算法-回溯法，看了一些博客，感觉这个讲得通俗易懂。转过来，后面有些自己的补充。&amp;emsp;&amp;emsp;回溯法（探索与回溯法）是一种选优搜索法，又称为试探法，按选优条件向前搜索，以达到目标。但当探索到某一步时，发现原先选择并不优或达不到目标，就退回一步重新选择，这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为“回溯点”。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-23T13:24:50.761Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-04-11T03:47:08.000Z">
+<meta property="article:modified_time" content="2023-10-18T12:23:15.996Z">
+<meta property="article:author" content="David Aaronson">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="回溯法">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="回溯算法详解">
-<meta name="twitter:description" content="刷题的时候碰到一个很常见的算法-回溯法，看了一些博客，感觉这个讲得通俗易懂。转过来，后面有些自己的补充。&amp;emsp;&amp;emsp;回溯法（探索与回溯法）是一种选优搜索法，又称为试探法，按选优条件向前搜索，以达到目标。但当探索到某一步时，发现原先选择并不优或达不到目标，就退回一步重新选择，这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为“回溯点”。">
+
+<link rel="canonical" href="http://example.com/2017/04/11/%E5%9B%9E%E6%9C%94%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="www.xiaoyb.cc/2017/04/11/回朔算法详解/"/>
-
-
-
-
 
   <title>回溯算法详解 | David Aaronson</title>
   
@@ -143,293 +54,150 @@
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?89b72b8b15f71e8732bbf6020d51d20e";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">David Aaronson</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">David Aaronson</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
+
+
+
 
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Startseite</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archiv</a>
 
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/04/11/回朔算法详解/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2017/04/11/%E5%9B%9E%E6%9C%94%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="David Aaronson">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="在浮躁的社会中,我携书本同行">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="David Aaronson">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">回溯算法详解</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          回溯算法详解
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T11:47:08+08:00">
-                2017-04-11
-              </time>
-            
+              <span class="post-meta-item-text">Veröffentlicht am</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+              <time title="Erstellt: 2017-04-11 11:47:08" itemprop="dateCreated datePublished" datetime="2017-04-11T11:47:08+08:00">2017-04-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2023-10-18 20:23:15" itemprop="dateModified" datetime="2023-10-18T20:23:15+08:00">2023-10-18</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/04/11/回朔算法详解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/04/11/回朔算法详解/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i></i>阅读数
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2,743字
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -437,356 +205,213 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <p>刷题的时候碰到一个很常见的算法-回溯法，看了一些博客，感觉这个讲得通俗易懂。转过来，后面有些自己的补充。<br>&emsp;&emsp;回溯法（探索与回溯法）是一种选优搜索法，又称为试探法，按选优条件向前搜索，以达到目标。但当探索到某一步时，发现原先选择并不优或达不到目标，就退回一步重新选择，这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为“回溯点”。<br><a id="more"></a><br>首先我们来看一道题目：<br>Combinations：Given two integers n and k,return all possible combinations of k numbersout of 1 … n. For example, If n = 4 and k =2, a solution is:</p>
-<p>[<br> [2,4],<br> [3,4],<br> [2,3],<br> [1,2],<br> [1,3],<br> [1,4],<br>]<br>（做一个白话版的描述，给你两个整数 n和k，从1-n中选择k个数字的组合。比如n=4，那么从1,2,3,4中选取两个数字的组合，包括图上所述的四种。）<br>然后我们看看题目给出的框架：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">   <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; combine(<span class="keyword">int</span> n, <span class="keyword">int</span> k) &#123; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>要求返回的类型是List&lt;List<integer>&gt; 也就是说将所有可能的组合list（由整数构成）放入另一个list（由list构成）中。<br>现在进行套路教学：要求返回List&lt;List<integer>&gt;，那我就给你一个List&lt;List<integer>&gt;，因此</integer></integer></integer></p>
+        <p>刷题的时候碰到一个很常见的算法-回溯法，看了一些博客，感觉这个讲得通俗易懂。转过来，后面有些自己的补充。<br>&emsp;&emsp;回溯法（探索与回溯法）是一种选优搜索法，又称为试探法，按选优条件向前搜索，以达到目标。但当探索到某一步时，发现原先选择并不优或达不到目标，就退回一步重新选择，这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为“回溯点”。</p>
+<span id="more"></span>
+<p>首先我们来看一道题目：<br>Combinations：Given two integers n and k,return all possible combinations of k numbersout of 1 … n. For example, If n &#x3D; 4 and k &#x3D;2, a solution is:</p>
+<p>[<br> [2,4],<br> [3,4],<br> [2,3],<br> [1,2],<br> [1,3],<br> [1,4],<br>]<br>（做一个白话版的描述，给你两个整数 n和k，从1-n中选择k个数字的组合。比如n&#x3D;4，那么从1,2,3,4中选取两个数字的组合，包括图上所述的四种。）<br>然后我们看看题目给出的框架：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">combine</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k)</span> &#123; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>要求返回的类型是List&lt;List<Integer>&gt; 也就是说将所有可能的组合list（由整数构成）放入另一个list（由list构成）中。<br>现在进行套路教学：要求返回List&lt;List<Integer>&gt;，那我就给你一个List&lt;List<Integer>&gt;，因此</p>
 <ol>
-<li>定义一个全局List&lt;List<integer>&gt; result=new ArrayList&lt;List<integer>&gt;();</integer></integer></li>
-<li>定义一个辅助的方法（函数）public void backtracking(int n,int k, List<integer>list){}<br>n k 总是要有的吧，加上这两个参数，前面提到List<integer> 是数字的组合，也是需要的吧，这三个是必须的，没问题吧。（可以尝试性地写参数，最后不需要的删除）</integer></integer></li>
-<li>接着就是我们的重头戏了，如何实现这个算法？对于n=4，k=2，1,2,3,4中选2个数字，我们可以做如下尝试，加入先选择1，那我们只需要再选择一个数字，注意这时候k=1了（此时只需要选择1个数字啦）。当然，我们也可以先选择2,3 或者4，通俗化一点，我们可以选择（1-n）的所有数字，这个是可以用一个循环来描述？每次选择一个加入我们的链表list中，下一次只要再选择k-1个数字。那什么时候结束呢？当然是k&lt;0的时候啦，这时候都选完了。<br>有了上面的分析，我们可以开始填写public void backtracking(int n,int k, List<integer> list){}中的内容。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> k,<span class="keyword">int</span> start,List&lt;Integer&gt; list)</span></span>&#123;  </span><br><span class="line">        <span class="keyword">if</span>(k&lt;<span class="number">0</span>)    <span class="keyword">return</span>;  </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(k==<span class="number">0</span>)&#123;  <span class="comment">//k==0表示已经找到了k个数字的组合，这时候加入全局result中  </span></span><br><span class="line">            result.add(<span class="keyword">new</span> ArrayList(list));  </span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;  </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=start;i&lt;=n;i++)&#123;  </span><br><span class="line">                list.add(i);<span class="comment">//尝试性的加入i  </span></span><br><span class="line">                <span class="comment">//开始回溯啦，下一次要找的数字减少一个所以用k-1，i+1见后面分析  </span></span><br><span class="line">                backtracking(n,k-<span class="number">1</span>,i+<span class="number">1</span>,list);  </span><br><span class="line">                <span class="comment">//（留白，有用=。=）  </span></span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</integer></li>
+<li>定义一个全局List&lt;List<Integer>&gt; result&#x3D;new ArrayList&lt;List<Integer>&gt;();</li>
+<li>定义一个辅助的方法（函数）public void backtracking(int n,int k, List<Integer>list){}<br>n k 总是要有的吧，加上这两个参数，前面提到List<Integer> 是数字的组合，也是需要的吧，这三个是必须的，没问题吧。（可以尝试性地写参数，最后不需要的删除）</li>
+<li>接着就是我们的重头戏了，如何实现这个算法？对于n&#x3D;4，k&#x3D;2，1,2,3,4中选2个数字，我们可以做如下尝试，加入先选择1，那我们只需要再选择一个数字，注意这时候k&#x3D;1了（此时只需要选择1个数字啦）。当然，我们也可以先选择2,3 或者4，通俗化一点，我们可以选择（1-n）的所有数字，这个是可以用一个循环来描述？每次选择一个加入我们的链表list中，下一次只要再选择k-1个数字。那什么时候结束呢？当然是k&lt;0的时候啦，这时候都选完了。<br>有了上面的分析，我们可以开始填写public void backtracking(int n,int k, List<Integer> list){}中的内容。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">backtracking</span><span class="params">(<span class="type">int</span> n,<span class="type">int</span> k,<span class="type">int</span> start,List&lt;Integer&gt; list)</span>&#123;  </span><br><span class="line">        <span class="keyword">if</span>(k&lt;<span class="number">0</span>)    <span class="keyword">return</span>;  </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(k==<span class="number">0</span>)&#123;  <span class="comment">//k==0表示已经找到了k个数字的组合，这时候加入全局result中  </span></span><br><span class="line">            result.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>(list));  </span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;  </span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=start;i&lt;=n;i++)&#123;  </span><br><span class="line">                list.add(i);<span class="comment">//尝试性的加入i  </span></span><br><span class="line">                <span class="comment">//开始回溯啦，下一次要找的数字减少一个所以用k-1，i+1见后面分析  </span></span><br><span class="line">                backtracking(n,k-<span class="number">1</span>,i+<span class="number">1</span>,list);  </span><br><span class="line">                <span class="comment">//（留白，有用=。=）  </span></span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+观察一下上述代码，我们加入了一个start变量，它是i的起点。为什么要加入它呢？比如我们第一次加入了1，下一次搜索的时候还能再搜索1了么？肯定不可以啊！我们必须从他的下一个数字开始，也就是2 、3或者4啦。所以start就是一个开始标记这个很重要啦！<br>这时候我们在主方法中加入backtracking(n,k,1,list);调试后发现答案不对啊！为什么我的答案比他长那么多？</li>
 </ol>
-<p>观察一下上述代码，我们加入了一个start变量，它是i的起点。为什么要加入它呢？比如我们第一次加入了1，下一次搜索的时候还能再搜索1了么？肯定不可以啊！我们必须从他的下一个数字开始，也就是2 、3或者4啦。所以start就是一个开始标记这个很重要啦！<br>这时候我们在主方法中加入backtracking(n,k,1,list);调试后发现答案不对啊！为什么我的答案比他长那么多？</p>
-<p>回溯回溯当然要退回再走啦，你不退回，当然又臭又长了！所以我们要在刚才代码注释留白处加上退回语句。仔细分析刚才的过程，我们每次找到了1,2这一对答案以后，下一次希望2退出然后让3进来，1 3就是我们要找的下一个组合。如果不回退，找到了2 ，3又进来，找到了3，4又进来，所以就出现了我们的错误答案。正确的做法就是加上：list.remove(list.size()-1);他的作用就是每次清除一个空位 让后续元素加入。寻找成功，最后一个元素要退位，寻找不到，方法不可行，那么我们回退，也要移除最后一个元素。<br>所以完整的程序如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;  </span><br><span class="line">   List&lt;List&lt;Integer&gt;&gt; result=<span class="keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();  </span><br><span class="line">   <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; combine(<span class="keyword">int</span> n, <span class="keyword">int</span> k) &#123;  </span><br><span class="line">       List&lt;Integer&gt; list=<span class="keyword">new</span> ArrayList&lt;Integer&gt;();  </span><br><span class="line">       backtracking(n,k,<span class="number">1</span>,list);  </span><br><span class="line">       <span class="keyword">return</span> result;  </span><br><span class="line">    &#125;  </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> k,<span class="keyword">int</span> start,List&lt;Integer&gt;list)</span></span>&#123;  </span><br><span class="line">       <span class="keyword">if</span>(k&lt;<span class="number">0</span>) <span class="keyword">return</span> ;  </span><br><span class="line">       <span class="keyword">else</span> <span class="keyword">if</span>(k==<span class="number">0</span>)&#123;  </span><br><span class="line">           result.add(<span class="keyword">new</span> ArrayList(list));  </span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;  </span><br><span class="line">           <span class="keyword">for</span>(<span class="keyword">int</span> i=start;i&lt;=n;i++)&#123;  </span><br><span class="line">                list.add(i);  </span><br><span class="line">                backtracking(n,k-<span class="number">1</span>,i+<span class="number">1</span>,list);  </span><br><span class="line">                list.remove(list.size()-<span class="number">1</span>);  </span><br><span class="line">            &#125;  </span><br><span class="line">       &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>是不是有点想法了？那么我们操刀一下。<br>Combination Sum<br>Given a set ofcandidate numbers (C) and a target number (T), findall unique combinations in C where thecandidate numbers sums toT.<br>The same repeated numbermay be chosen from C unlimited numberof times.<br>Note:<br>All numbers (including target) will be positive integers.<br>The solution set must not contain duplicate combinations.<br>For example,given candidate set [2, 3, 6, 7] and target 7,<br>A solution set is:<br>[<br> [7],<br> [2,2, 3]<br>]<br>（容我啰嗦地白话下，给你一个正数数组candidate[],一个目标值target，寻找里面所有的不重复组合，让其和等于target，给你[2,3,6,7] 2+2+3=7 ,7=7,所以可能组合为[2,2,3],[7]）<br>按照前述的套路走一遍：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">   List&lt;List&lt;Integer&gt;&gt; result=<span class="keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();</span><br><span class="line">   <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; combinationSum(<span class="keyword">int</span>[] candidates,<span class="keyword">int</span> target) &#123;</span><br><span class="line">       Arrays.sort(candidates);</span><br><span class="line">       List&lt;Integer&gt; list=<span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">       <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(<span class="keyword">int</span>[] candidates,<span class="keyword">int</span> target,<span class="keyword">int</span> start,)</span></span>&#123;       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>回溯回溯当然要退回再走啦，你不退回，当然又臭又长了！所以我们要在刚才代码注释留白处加上退回语句。仔细分析刚才的过程，我们每次找到了1,2这一对答案以后，下一次希望2退出然后让3进来，1 3就是我们要找的下一个组合。如果不回退，找到了2 ，3又进来，找到了3，4又进来，所以就出现了我们的错误答案。正确的做法就是加上：list.remove(list.size()-1);他的作用就是每次清除一个空位 让后续元素加入。寻找成功，最后一个元素要退位，寻找不到，方法不可行，那么我们回退，也要移除最后一个元素。<br>所以完整的程序如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;  </span><br><span class="line">   List&lt;List&lt;Integer&gt;&gt; result=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;List&lt;Integer&gt;&gt;();  </span><br><span class="line">   <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">combine</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k)</span> &#123;  </span><br><span class="line">       List&lt;Integer&gt; list=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Integer&gt;();  </span><br><span class="line">       backtracking(n,k,<span class="number">1</span>,list);  </span><br><span class="line">       <span class="keyword">return</span> result;  </span><br><span class="line">    &#125;  </span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">backtracking</span><span class="params">(<span class="type">int</span> n,<span class="type">int</span> k,<span class="type">int</span> start,List&lt;Integer&gt;list)</span>&#123;  </span><br><span class="line">       <span class="keyword">if</span>(k&lt;<span class="number">0</span>) <span class="keyword">return</span> ;  </span><br><span class="line">       <span class="keyword">else</span> <span class="keyword">if</span>(k==<span class="number">0</span>)&#123;  </span><br><span class="line">           result.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>(list));  </span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;  </span><br><span class="line">           <span class="keyword">for</span>(<span class="type">int</span> i=start;i&lt;=n;i++)&#123;  </span><br><span class="line">                list.add(i);  </span><br><span class="line">                backtracking(n,k-<span class="number">1</span>,i+<span class="number">1</span>,list);  </span><br><span class="line">                list.remove(list.size()-<span class="number">1</span>);  </span><br><span class="line">            &#125;  </span><br><span class="line">       &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+<p>是不是有点想法了？那么我们操刀一下。<br>Combination Sum<br>Given a set ofcandidate numbers (C) and a target number (T), findall unique combinations in C where thecandidate numbers sums toT.<br>The same repeated numbermay be chosen from C unlimited numberof times.<br>Note:<br>All numbers (including target) will be positive integers.<br>The solution set must not contain duplicate combinations.<br>For example,given candidate set [2, 3, 6, 7] and target 7,<br>A solution set is:<br>[<br> [7],<br> [2,2, 3]<br>]<br>（容我啰嗦地白话下，给你一个正数数组candidate[],一个目标值target，寻找里面所有的不重复组合，让其和等于target，给你[2,3,6,7] 2+2+3&#x3D;7 ,7&#x3D;7,所以可能组合为[2,2,3],[7]）<br>按照前述的套路走一遍：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">   List&lt;List&lt;Integer&gt;&gt; result=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;List&lt;Integer&gt;&gt;();</span><br><span class="line">   <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">combinationSum</span><span class="params">(<span class="type">int</span>[] candidates,<span class="type">int</span> target)</span> &#123;</span><br><span class="line">       Arrays.sort(candidates);</span><br><span class="line">       List&lt;Integer&gt; list=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Integer&gt;();</span><br><span class="line">       <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">backtracking</span><span class="params">(<span class="type">int</span>[] candidates,<span class="type">int</span> target,<span class="type">int</span> start,)</span>&#123;       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol>
-<li>全局List&lt;List<integer>&gt; result先定义</integer></li>
-<li>回溯backtracking方法要定义，数组candidates 目标target 开头start 辅助链表List<integer> list都加上。</integer></li>
+<li>全局List&lt;List<Integer>&gt; result先定义</li>
+<li>回溯backtracking方法要定义，数组candidates 目标target 开头start 辅助链表List<Integer> list都加上。</li>
 <li>分析算法：以[2,3,6,7]  每次尝试加入数组任何一个值，用循环来描述，表示依次选定一个值<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(inti=start;i&lt;candidates.length;i++)&#123;</span><br><span class="line">       list.add(candidates[i]);</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
-</li>
+接下来回溯方法再调用。比如第一次选了2，下次还能再选2是吧，所以每次start都可以从当前i开始（ps：如果不允许重复，从i+1开始）。第一次选择2，下一次要凑的数就不是7了，而是7-2，也就是5，一般化就是remain&#x3D;target-candidates[i],所以回溯方法为：<br>backtracking(candidates,target-candidates[i],i,list);<br>然后加上退回语句：list.remove(list.size()-1);<br>那么什么时候找到的解符合要求呢？自然是remain（注意区分初始的target）&#x3D;0了，表示之前的组合恰好能凑出target。如果remain&lt;0 表示凑的数太大了，组合不可行，要回退。当remain&gt;0 说明凑的还不够，继续凑。<br>所以完整方法如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;  </span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; result=newArrayList&lt;List&lt;Integer&gt;&gt;();  </span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt;combinationSum(<span class="type">int</span>[] candidates, <span class="type">int</span> target) &#123;  </span><br><span class="line">        Arrays.sort(candidates);<span class="comment">//所给数组可能无序，排序保证解按照非递减组合  </span></span><br><span class="line">        List&lt;Integer&gt; list=newArrayList&lt;Integer&gt;();  </span><br><span class="line">        backtracking(candidates,target,<span class="number">0</span>,list);<span class="comment">//给定target，start=0表示从数组第一个开始  </span></span><br><span class="line">        <span class="keyword">return</span> result;<span class="comment">//返回解的组合链表  </span></span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">backtracking</span><span class="params">(<span class="type">int</span>[]candidates,<span class="type">int</span> target,<span class="type">int</span> start,List&lt;Integer&gt; list)</span>&#123;  </span><br><span class="line">         </span><br><span class="line">            <span class="keyword">if</span>(target&lt;<span class="number">0</span>)    <span class="keyword">return</span>;<span class="comment">//凑过头了  </span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(target==<span class="number">0</span>)&#123;  </span><br><span class="line">                result.add(newArrayList&lt;&gt;(list));<span class="comment">//正好凑出答案，开心地加入解的链表    </span></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;  </span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> i=start;i&lt;candidates.length;i++)&#123;<span class="comment">//循环试探每个数  </span></span><br><span class="line">                    list.add(candidates[i]);<span class="comment">//尝试加入  </span></span><br><span class="line">           			<span class="comment">//下一次凑target-candidates[i]，允许重复，还是从i开始  </span></span><br><span class="line">                   backtracking(candidates,target-candidates[i],i,list);                     </span><br><span class="line">           		   list.remove(list.size()-<span class="number">1</span>);<span class="comment">//回退  </span></span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;  </span><br><span class="line">         </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+是不是觉得还是有迹可循的？下一篇博客将部分回溯算法拿出来，供大家更好地发现其中的套路。<br>This structure might apply to many other backtracking questions, but here I am just going to demonstrate Subsets, Permutations, and Combination Sum.</li>
 </ol>
-<p>接下来回溯方法再调用。比如第一次选了2，下次还能再选2是吧，所以每次start都可以从当前i开始（ps：如果不允许重复，从i+1开始）。第一次选择2，下一次要凑的数就不是7了，而是7-2，也就是5，一般化就是remain=target-candidates[i],所以回溯方法为：<br>backtracking(candidates,target-candidates[i],i,list);<br>然后加上退回语句：list.remove(list.size()-1);<br>那么什么时候找到的解符合要求呢？自然是remain（注意区分初始的target）=0了，表示之前的组合恰好能凑出target。如果remain<0 表示凑的数太大了，组合不可行，要回退。当remain="">0 说明凑的还不够，继续凑。<br>所以完整方法如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;  </span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; result=newArrayList&lt;List&lt;Integer&gt;&gt;();  </span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt;combinationSum(<span class="keyword">int</span>[] candidates, <span class="keyword">int</span> target) &#123;  </span><br><span class="line">        Arrays.sort(candidates);<span class="comment">//所给数组可能无序，排序保证解按照非递减组合  </span></span><br><span class="line">        List&lt;Integer&gt; list=newArrayList&lt;Integer&gt;();  </span><br><span class="line">        backtracking(candidates,target,<span class="number">0</span>,list);<span class="comment">//给定target，start=0表示从数组第一个开始  </span></span><br><span class="line">        <span class="keyword">return</span> result;<span class="comment">//返回解的组合链表  </span></span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(<span class="keyword">int</span>[]candidates,<span class="keyword">int</span> target,<span class="keyword">int</span> start,List&lt;Integer&gt; list)</span></span>&#123;  </span><br><span class="line">         </span><br><span class="line">            <span class="keyword">if</span>(target&lt;<span class="number">0</span>)    <span class="keyword">return</span>;<span class="comment">//凑过头了  </span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(target==<span class="number">0</span>)&#123;  </span><br><span class="line">                result.add(newArrayList&lt;&gt;(list));<span class="comment">//正好凑出答案，开心地加入解的链表    </span></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;  </span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i=start;i&lt;candidates.length;i++)&#123;<span class="comment">//循环试探每个数  </span></span><br><span class="line">                    list.add(candidates[i]);<span class="comment">//尝试加入  </span></span><br><span class="line">           			<span class="comment">//下一次凑target-candidates[i]，允许重复，还是从i开始  </span></span><br><span class="line">                   backtracking(candidates,target-candidates[i],i,list);                     </span><br><span class="line">           		   list.remove(list.size()-<span class="number">1</span>);<span class="comment">//回退  </span></span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;  </span><br><span class="line">         </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></0></p>
-<p>是不是觉得还是有迹可循的？下一篇博客将部分回溯算法拿出来，供大家更好地发现其中的套路。<br>This structure might apply to many other backtracking questions, but here I am just going to demonstrate Subsets, Permutations, and Combination Sum.</p>
-<p>Subsets : <a href="https://leetcode.com/problems/subsets/" target="_blank" rel="noopener">https://leetcode.com/problems/subsets/</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; subsets(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    backtrack(list, <span class="keyword">new</span> ArrayList&lt;&gt;(), nums, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; list , List&lt;Integer&gt; tempList, <span class="keyword">int</span> [] nums, <span class="keyword">int</span> start)</span></span>&#123;</span><br><span class="line">    list.add(<span class="keyword">new</span> ArrayList&lt;&gt;(tempList));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = start; i &lt; nums.length; i++)&#123;</span><br><span class="line">        tempList.add(nums[i]);</span><br><span class="line">        backtrack(list, tempList, nums, i + <span class="number">1</span>);</span><br><span class="line">        tempList.remove(tempList.size() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Subsets II (contains duplicates) : <a href="https://leetcode.com/problems/subsets-ii/" target="_blank" rel="noopener">https://leetcode.com/problems/subsets-ii/</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; subsetsWithDup(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    backtrack(list, <span class="keyword">new</span> ArrayList&lt;&gt;(), nums, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; list, List&lt;Integer&gt; tempList, <span class="keyword">int</span> [] nums, <span class="keyword">int</span> start)</span></span>&#123;</span><br><span class="line">    list.add(<span class="keyword">new</span> ArrayList&lt;&gt;(tempList));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = start; i &lt; nums.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i &gt; start &amp;&amp; nums[i] == nums[i-<span class="number">1</span>]) <span class="keyword">continue</span>; <span class="comment">// skip duplicates</span></span><br><span class="line">        tempList.add(nums[i]);</span><br><span class="line">        backtrack(list, tempList, nums, i + <span class="number">1</span>);</span><br><span class="line">        tempList.remove(tempList.size() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Permutations : <a href="https://leetcode.com/problems/permutations/" target="_blank" rel="noopener">https://leetcode.com/problems/permutations/</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; permute(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">   List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">   <span class="comment">// Arrays.sort(nums); // not necessary</span></span><br><span class="line">   backtrack(list, <span class="keyword">new</span> ArrayList&lt;&gt;(), nums);</span><br><span class="line">   <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; list, List&lt;Integer&gt; tempList, <span class="keyword">int</span> [] nums)</span></span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(tempList.size() == nums.length)&#123;</span><br><span class="line">      list.add(<span class="keyword">new</span> ArrayList&lt;&gt;(tempList));</span><br><span class="line">   &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123; </span><br><span class="line">         <span class="keyword">if</span>(tempList.contains(nums[i])) <span class="keyword">continue</span>; <span class="comment">// element already exists, skip</span></span><br><span class="line">         tempList.add(nums[i]);</span><br><span class="line">         backtrack(list, tempList, nums);</span><br><span class="line">         tempList.remove(tempList.size() - <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Permutations II (contains duplicates) : <a href="https://leetcode.com/problems/permutations-ii/" target="_blank" rel="noopener">https://leetcode.com/problems/permutations-ii/</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; permuteUnique(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    backtrack(list, <span class="keyword">new</span> ArrayList&lt;&gt;(), nums, <span class="keyword">new</span> <span class="keyword">boolean</span>[nums.length]);</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; list, List&lt;Integer&gt; tempList, <span class="keyword">int</span> [] nums, <span class="keyword">boolean</span> [] used)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tempList.size() == nums.length)&#123;</span><br><span class="line">        list.add(<span class="keyword">new</span> ArrayList&lt;&gt;(tempList));</span><br><span class="line">    &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(used[i] || i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i-<span class="number">1</span>] &amp;&amp; !used[i - <span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">            used[i] = <span class="keyword">true</span>; </span><br><span class="line">            tempList.add(nums[i]);</span><br><span class="line">            backtrack(list, tempList, nums, used);</span><br><span class="line">            used[i] = <span class="keyword">false</span>; </span><br><span class="line">            tempList.remove(tempList.size() - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Combination Sum : <a href="https://leetcode.com/problems/combination-sum/" target="_blank" rel="noopener">https://leetcode.com/problems/combination-sum/</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; combinationSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    backtrack(list, <span class="keyword">new</span> ArrayList&lt;&gt;(), nums, target, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; list, List&lt;Integer&gt; tempList, <span class="keyword">int</span> [] nums, <span class="keyword">int</span> remain, <span class="keyword">int</span> start)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(remain &lt; <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(remain == <span class="number">0</span>) list.add(<span class="keyword">new</span> ArrayList&lt;&gt;(tempList));</span><br><span class="line">    <span class="keyword">else</span>&#123; </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = start; i &lt; nums.length; i++)&#123;</span><br><span class="line">            tempList.add(nums[i]);</span><br><span class="line">            backtrack(list, tempList, nums, remain - nums[i], i); <span class="comment">// not i + 1 because we can reuse same elements</span></span><br><span class="line">            tempList.remove(tempList.size() - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Combination Sum II (can’t reuse same element) : <a href="https://leetcode.com/problems/combination-sum-ii/" target="_blank" rel="noopener">https://leetcode.com/problems/combination-sum-ii/</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; combinationSum2(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    backtrack(list, <span class="keyword">new</span> ArrayList&lt;&gt;(), nums, target, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; list, List&lt;Integer&gt; tempList, <span class="keyword">int</span> [] nums, <span class="keyword">int</span> remain, <span class="keyword">int</span> start)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(remain &lt; <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(remain == <span class="number">0</span>) list.add(<span class="keyword">new</span> ArrayList&lt;&gt;(tempList));</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = start; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i &gt; start &amp;&amp; nums[i] == nums[i-<span class="number">1</span>]) <span class="keyword">continue</span>; <span class="comment">// skip duplicates</span></span><br><span class="line">            tempList.add(nums[i]);</span><br><span class="line">            backtrack(list, tempList, nums, remain - nums[i], i + <span class="number">1</span>);</span><br><span class="line">            tempList.remove(tempList.size() - <span class="number">1</span>); </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Palindrome Partitioning : <a href="https://leetcode.com/problems/palindrome-partitioning/" target="_blank" rel="noopener">https://leetcode.com/problems/palindrome-partitioning/</a></p>
-<pre><code class="java"><span class="keyword">public</span> List&lt;List&lt;String&gt;&gt; partition(String s) {
-   List&lt;List&lt;String&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();
-   backtrack(list, <span class="keyword">new</span> ArrayList&lt;&gt;(), s, <span class="number">0</span>);
-   <span class="keyword">return</span> list;
-}
-
-<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(List&lt;List&lt;String&gt;&gt; list, List&lt;String&gt; tempList, String s, <span class="keyword">int</span> start)</span></span>{
-   <span class="keyword">if</span>(start == s.length())
-      list.add(<span class="keyword">new</span> ArrayList&lt;&gt;(tempList));
-   <span class="keyword">else</span>{
-      <span class="keyword">for</span>(<span class="keyword">int</span> i = start; i &lt; s.length(); i++){
-         <span class="keyword">if</span>(isPalindrome(s, start, i)){
-            tempList.add(s.substring(start, i + <span class="number">1</span>));
-            backtrack(list, tempList, s, i + <span class="number">1</span>);
-            tempList.remove(tempList.size() - <span class="number">1</span>);
-         }
-      }
-   }
-}
-
-<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(String s, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span></span>{
-   <span class="keyword">while</span>(low &lt; high)
-      <span class="keyword">if</span>(s.charAt(low++) != s.charAt(high--)) <span class="keyword">return</span> <span class="keyword">false</span>;
-   <span class="keyword">return</span> <span class="keyword">true</span>;
-}
-</code></pre>
-
-      
+<p>Subsets : <a target="_blank" rel="noopener" href="https://leetcode.com/problems/subsets/">https://leetcode.com/problems/subsets/</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">subsets</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    backtrack(list, <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(), nums, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">backtrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; list , List&lt;Integer&gt; tempList, <span class="type">int</span> [] nums, <span class="type">int</span> start)</span>&#123;</span><br><span class="line">    list.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(tempList));</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> start; i &lt; nums.length; i++)&#123;</span><br><span class="line">        tempList.add(nums[i]);</span><br><span class="line">        backtrack(list, tempList, nums, i + <span class="number">1</span>);</span><br><span class="line">        tempList.remove(tempList.size() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Subsets II (contains duplicates) : <a target="_blank" rel="noopener" href="https://leetcode.com/problems/subsets-ii/">https://leetcode.com/problems/subsets-ii/</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">subsetsWithDup</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    backtrack(list, <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(), nums, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">backtrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; list, List&lt;Integer&gt; tempList, <span class="type">int</span> [] nums, <span class="type">int</span> start)</span>&#123;</span><br><span class="line">    list.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(tempList));</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> start; i &lt; nums.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i &gt; start &amp;&amp; nums[i] == nums[i-<span class="number">1</span>]) <span class="keyword">continue</span>; <span class="comment">// skip duplicates</span></span><br><span class="line">        tempList.add(nums[i]);</span><br><span class="line">        backtrack(list, tempList, nums, i + <span class="number">1</span>);</span><br><span class="line">        tempList.remove(tempList.size() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>Permutations : <a target="_blank" rel="noopener" href="https://leetcode.com/problems/permutations/">https://leetcode.com/problems/permutations/</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">permute</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">   List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">   <span class="comment">// Arrays.sort(nums); // not necessary</span></span><br><span class="line">   backtrack(list, <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(), nums);</span><br><span class="line">   <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">backtrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; list, List&lt;Integer&gt; tempList, <span class="type">int</span> [] nums)</span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(tempList.size() == nums.length)&#123;</span><br><span class="line">      list.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(tempList));</span><br><span class="line">   &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++)&#123; </span><br><span class="line">         <span class="keyword">if</span>(tempList.contains(nums[i])) <span class="keyword">continue</span>; <span class="comment">// element already exists, skip</span></span><br><span class="line">         tempList.add(nums[i]);</span><br><span class="line">         backtrack(list, tempList, nums);</span><br><span class="line">         tempList.remove(tempList.size() - <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>Permutations II (contains duplicates) : <a target="_blank" rel="noopener" href="https://leetcode.com/problems/permutations-ii/">https://leetcode.com/problems/permutations-ii/</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">permuteUnique</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    backtrack(list, <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(), nums, <span class="keyword">new</span> <span class="title class_">boolean</span>[nums.length]);</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">backtrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; list, List&lt;Integer&gt; tempList, <span class="type">int</span> [] nums, <span class="type">boolean</span> [] used)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tempList.size() == nums.length)&#123;</span><br><span class="line">        list.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(tempList));</span><br><span class="line">    &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(used[i] || i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i-<span class="number">1</span>] &amp;&amp; !used[i - <span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">            used[i] = <span class="literal">true</span>; </span><br><span class="line">            tempList.add(nums[i]);</span><br><span class="line">            backtrack(list, tempList, nums, used);</span><br><span class="line">            used[i] = <span class="literal">false</span>; </span><br><span class="line">            tempList.remove(tempList.size() - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Combination Sum : <a target="_blank" rel="noopener" href="https://leetcode.com/problems/combination-sum/">https://leetcode.com/problems/combination-sum/</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">combinationSum</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    backtrack(list, <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(), nums, target, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">backtrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; list, List&lt;Integer&gt; tempList, <span class="type">int</span> [] nums, <span class="type">int</span> remain, <span class="type">int</span> start)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(remain &lt; <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(remain == <span class="number">0</span>) list.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(tempList));</span><br><span class="line">    <span class="keyword">else</span>&#123; </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> start; i &lt; nums.length; i++)&#123;</span><br><span class="line">            tempList.add(nums[i]);</span><br><span class="line">            backtrack(list, tempList, nums, remain - nums[i], i); <span class="comment">// not i + 1 because we can reuse same elements</span></span><br><span class="line">            tempList.remove(tempList.size() - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Combination Sum II (can’t reuse same element) : <a target="_blank" rel="noopener" href="https://leetcode.com/problems/combination-sum-ii/">https://leetcode.com/problems/combination-sum-ii/</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">combinationSum2</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    backtrack(list, <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(), nums, target, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">backtrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; list, List&lt;Integer&gt; tempList, <span class="type">int</span> [] nums, <span class="type">int</span> remain, <span class="type">int</span> start)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(remain &lt; <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(remain == <span class="number">0</span>) list.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(tempList));</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> start; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i &gt; start &amp;&amp; nums[i] == nums[i-<span class="number">1</span>]) <span class="keyword">continue</span>; <span class="comment">// skip duplicates</span></span><br><span class="line">            tempList.add(nums[i]);</span><br><span class="line">            backtrack(list, tempList, nums, remain - nums[i], i + <span class="number">1</span>);</span><br><span class="line">            tempList.remove(tempList.size() - <span class="number">1</span>); </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>Palindrome Partitioning : <a target="_blank" rel="noopener" href="https://leetcode.com/problems/palindrome-partitioning/">https://leetcode.com/problems/palindrome-partitioning/</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;String&gt;&gt; <span class="title function_">partition</span><span class="params">(String s)</span> &#123;</span><br><span class="line">   List&lt;List&lt;String&gt;&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">   backtrack(list, <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(), s, <span class="number">0</span>);</span><br><span class="line">   <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">backtrack</span><span class="params">(List&lt;List&lt;String&gt;&gt; list, List&lt;String&gt; tempList, String s, <span class="type">int</span> start)</span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(start == s.length())</span><br><span class="line">      list.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(tempList));</span><br><span class="line">   <span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> start; i &lt; s.length(); i++)&#123;</span><br><span class="line">         <span class="keyword">if</span>(isPalindrome(s, start, i))&#123;</span><br><span class="line">            tempList.add(s.substring(start, i + <span class="number">1</span>));</span><br><span class="line">            backtrack(list, tempList, s, i + <span class="number">1</span>);</span><br><span class="line">            tempList.remove(tempList.size() - <span class="number">1</span>);</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isPalindrome</span><span class="params">(String s, <span class="type">int</span> low, <span class="type">int</span> high)</span>&#123;</span><br><span class="line">   <span class="keyword">while</span>(low &lt; high)</span><br><span class="line">      <span class="keyword">if</span>(s.charAt(low++) != s.charAt(high--)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">   <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
-    
-    
-    
-	
-	<div>
-  
-    <div>
-    
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-  
-	</div>
 
     
-
+    
     
 
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者：</strong>
-    David Aaronson
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="www.xiaoyb.cc/2017/04/11/回朔算法详解/" title="回溯算法详解">www.xiaoyb.cc/2017/04/11/回朔算法详解/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/算法/" rel="tag"># 算法</a>
-          
-            <a href="/tags/回溯法/" rel="tag"># 回溯法</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/04/10/Java源码之StringBuffer-StringBuilder/" rel="next" title="Java源码之StringBuffer,StringBuilder">
-                <i class="fa fa-chevron-left"></i> Java源码之StringBuffer,StringBuilder
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+              <a href="/tags/%E5%9B%9E%E6%BA%AF%E6%B3%95/" rel="tag"># 回溯法</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/12/为什么新生代需要两个Survivor区/" rel="prev" title="为什么新生代需要两个Survivor区">
-                为什么新生代需要两个Survivor区 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/04/10/Java%E6%BA%90%E7%A0%81%E4%B9%8BStringBuffer-StringBuilder/" rel="prev" title="Java源码之StringBuffer,StringBuilder">
+      <i class="fa fa-chevron-left"></i> Java源码之StringBuffer,StringBuilder
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/04/12/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%96%B0%E7%94%9F%E4%BB%A3%E9%9C%80%E8%A6%81%E4%B8%A4%E4%B8%AASurvivor%E5%8C%BA/" rel="next" title="为什么新生代需要两个Survivor区">
+      为什么新生代需要两个Survivor区 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-
-  
-    <div class="comments" id="comments">
-    </div>
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="David Aaronson" />
-            
-              <p class="site-author-name" itemprop="name">David Aaronson</p>
-              <p class="site-description motion-element" itemprop="description">在浮躁的社会中,我携书本同行</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">45</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/xiaoybboy" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" title="NexT">
-                      
-                        <i class="fa fa-fw fa-google"></i>NexT</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=5276811&auto=0&height=66"></iframe>
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">David Aaronson</span>
-
-  
-</div>
-
-
-
-
-
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>访问人数
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      人
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>总访问量
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      次
-    </span>
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Inhaltsverzeichnis
+        </li>
+        <li class="sidebar-nav-overview">
+          Übersicht
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">David Aaronson</p>
+  <div class="site-description" itemprop="description">在浮躁的社会中,我携书本同行</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">Artikel</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">Kategorien</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">schlagwörter</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">David Aaronson</span>
+</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
 
 
 
 
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -804,444 +429,6 @@
 
 
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'oJj4VKBTWmnSXOJUkeaN1J4m-gzGzoHsz',
-        appKey: 'HX69JVFeHHrJQAKOejk4BbHN',
-        placeholder: 'Say Something',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
 
 
 
@@ -1249,40 +436,5 @@
 
   
 
-  
-
-  
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
-  
-
-  
-
-  <!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/clicklove.js"></script>
 </body>
 </html>

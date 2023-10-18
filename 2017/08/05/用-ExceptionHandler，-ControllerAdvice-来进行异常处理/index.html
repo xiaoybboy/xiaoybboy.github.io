@@ -1,140 +1,51 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-  <script>
-  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
-  daovoice('init', {
-      app_id: "d78c0096"
-    });
-  daovoice('update');
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="springmvc,异常处理," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="有时候我们想统一处理一个Controller中抛出的异常怎么搞呢？直接在Controller里面加上用@ExceptionHandler标注一个处理异常的方法像下面这样子，@ExceptionHandler只在当前controller里面有效。当前controller中所有抛出指定异常的方法。">
-<meta name="keywords" content="springmvc,异常处理">
+  <meta name="description" content="有时候我们想统一处理一个Controller中抛出的异常怎么搞呢？直接在Controller里面加上用@ExceptionHandler标注一个处理异常的方法像下面这样子，@ExceptionHandler只在当前controller里面有效。当前controller中所有抛出指定异常的方法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用@ExceptionHandler，@ControllerAdvice 来进行异常处理">
-<meta property="og:url" content="www.xiaoyb.cc/2017/08/05/用-ExceptionHandler，-ControllerAdvice-来进行异常处理/index.html">
+<meta property="og:url" content="http://example.com/2017/08/05/%E7%94%A8-ExceptionHandler%EF%BC%8C-ControllerAdvice-%E6%9D%A5%E8%BF%9B%E8%A1%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="David Aaronson">
 <meta property="og:description" content="有时候我们想统一处理一个Controller中抛出的异常怎么搞呢？直接在Controller里面加上用@ExceptionHandler标注一个处理异常的方法像下面这样子，@ExceptionHandler只在当前controller里面有效。当前controller中所有抛出指定异常的方法。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-24T08:40:53.523Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-08-05T11:03:25.000Z">
+<meta property="article:modified_time" content="2023-10-18T12:23:16.062Z">
+<meta property="article:author" content="David Aaronson">
+<meta property="article:tag" content="springmvc">
+<meta property="article:tag" content="异常处理">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用@ExceptionHandler，@ControllerAdvice 来进行异常处理">
-<meta name="twitter:description" content="有时候我们想统一处理一个Controller中抛出的异常怎么搞呢？直接在Controller里面加上用@ExceptionHandler标注一个处理异常的方法像下面这样子，@ExceptionHandler只在当前controller里面有效。当前controller中所有抛出指定异常的方法。">
+
+<link rel="canonical" href="http://example.com/2017/08/05/%E7%94%A8-ExceptionHandler%EF%BC%8C-ControllerAdvice-%E6%9D%A5%E8%BF%9B%E8%A1%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="www.xiaoyb.cc/2017/08/05/用-ExceptionHandler，-ControllerAdvice-来进行异常处理/"/>
-
-
-
-
 
   <title>用@ExceptionHandler，@ControllerAdvice 来进行异常处理 | David Aaronson</title>
   
@@ -143,293 +54,150 @@
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?89b72b8b15f71e8732bbf6020d51d20e";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">David Aaronson</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">David Aaronson</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
+
+
+
 
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Startseite</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archiv</a>
 
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/08/05/用-ExceptionHandler，-ControllerAdvice-来进行异常处理/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2017/08/05/%E7%94%A8-ExceptionHandler%EF%BC%8C-ControllerAdvice-%E6%9D%A5%E8%BF%9B%E8%A1%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="David Aaronson">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="在浮躁的社会中,我携书本同行">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="David Aaronson">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">用@ExceptionHandler，@ControllerAdvice 来进行异常处理</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          用@ExceptionHandler，@ControllerAdvice 来进行异常处理
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-05T19:03:25+08:00">
-                2017-08-05
-              </time>
-            
+              <span class="post-meta-item-text">Veröffentlicht am</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+              <time title="Erstellt: 2017-08-05 19:03:25" itemprop="dateCreated datePublished" datetime="2017-08-05T19:03:25+08:00">2017-08-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2023-10-18 20:23:16" itemprop="dateModified" datetime="2023-10-18T20:23:16+08:00">2023-10-18</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/spring/" itemprop="url" rel="index">
-                    <span itemprop="name">spring</span>
-                  </a>
+                  <a href="/categories/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a>
                 </span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/05/用-ExceptionHandler，-ControllerAdvice-来进行异常处理/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/08/05/用-ExceptionHandler，-ControllerAdvice-来进行异常处理/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i></i>阅读数
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  829字
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -437,376 +205,204 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <p>有时候我们想统一处理一个Controller中抛出的异常怎么搞呢？<br>直接在Controller里面加上用@ExceptionHandler标注一个处理异常的方法像下面这样子，@ExceptionHandler只在当前controller里面有效。当前controller中所有抛出指定异常的方法。<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.	<span class="meta">@ExceptionHandler</span>(MissingServletRequestParameterException.class)  </span><br><span class="line"><span class="number">2</span>.	<span class="meta">@ResponseStatus</span>(HttpStatus.BAD_REQUEST)  </span><br><span class="line"><span class="number">3</span>.	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">processMethod</span><span class="params">(MissingServletRequestParameterException ex,HttpServletRequest request ,HttpServletResponse response)</span> <span class="keyword">throws</span> IOException </span>&#123;  </span><br><span class="line"><span class="number">4</span>.	    System.out.println(<span class="string">"抛异常了！"</span>+ex.getLocalizedMessage());  </span><br><span class="line"><span class="number">5</span>.	    logger.error(<span class="string">"抛异常了！"</span>+ex.getLocalizedMessage());  </span><br><span class="line"><span class="number">6</span>.	    response.getWriter().printf(ex.getMessage());  </span><br><span class="line"><span class="number">7</span>.	    response.flushBuffer();  </span><br><span class="line">```  </span><br><span class="line">这样，Controller里面的方法抛出了MissingServletRequestParameterException异常就会执行上面的这个方法来进行异常处理。</span><br><span class="line">像我下面的代码`</span><br><span class="line">```java</span><br><span class="line"><span class="number">1</span>.	<span class="meta">@RequestMapping</span>(<span class="string">"/index"</span>)  </span><br><span class="line"><span class="number">2</span>.	<span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">(@RequestParam String id,ModelMap modelMap)</span></span>&#123;  </span><br><span class="line"><span class="number">3</span>.	    <span class="keyword">if</span> (id==<span class="keyword">null</span>)&#123;</span><br><span class="line"><span class="number">4</span>.		   <span class="keyword">throw</span> <span class="keyword">new</span> MissingServletRequestParameterException();</span><br><span class="line"><span class="number">5</span>.	&#125;</span><br><span class="line"><span class="number">6</span>.	    <span class="keyword">return</span> <span class="string">"login"</span>;  </span><br><span class="line"><span class="number">7</span>.	&#125; </span><br><span class="line">``` </span><br><span class="line">如果我没有传入id值，那么就会抛出MissingServletRequestParameterException的异常，就会被上面的异常处理方法处理。</span><br><span class="line">上面的<span class="meta">@ExceptionHandler</span>(MissingServletRequestParameterException.class)这个注解的value的值是一个Class[]类型的，这里的ExceptionClass是你自己指定的，你也可以指定多个需要处理的异常类型，比如这样</span><br><span class="line"><span class="meta">@ExceptionHandler</span>(value = &#123;MissingServletRequestParameterException.class,BindException.class&#125;)，这样就会处理多个异常了。</span><br><span class="line">另一种更加通用的方法时：</span><br><span class="line">首先定义这样一个统一异常处理类</span><br><span class="line">```java</span><br><span class="line">ExceptionController.Java</span><br><span class="line"><span class="number">1</span>.	<span class="keyword">import</span> net.sf.json.JSONObject;  </span><br><span class="line"><span class="number">2</span>.	<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">ExceptionController</span> </span>&#123;  </span><br><span class="line"><span class="number">3</span>.	    <span class="meta">@ExceptionHandler</span>  </span><br><span class="line"><span class="number">4</span>.	    <span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">String <span class="title">exceptionProcess</span><span class="params">(HttpServletRequest request, HttpServletResponse  </span></span></span><br><span class="line"><span class="function"><span class="params"><span class="number">5.</span>	            response, RuntimeException ex)</span> </span>&#123;  </span><br><span class="line"><span class="number">6</span>.	        JSONObject json = <span class="keyword">new</span> JSONObject();  </span><br><span class="line"><span class="number">7</span>.	        json.put(<span class="string">"isError"</span>, <span class="keyword">true</span>);  </span><br><span class="line"><span class="number">8</span>.	        json.put(<span class="string">"msg"</span>, ex.getMessage());  </span><br><span class="line"><span class="number">9</span>.	        <span class="keyword">return</span> json.toString();  </span><br><span class="line"><span class="number">10</span>.	    &#125;  </span><br><span class="line"><span class="number">11</span>.	&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>有时候我们想统一处理一个Controller中抛出的异常怎么搞呢？<br>直接在Controller里面加上用@ExceptionHandler标注一个处理异常的方法像下面这样子，@ExceptionHandler只在当前controller里面有效。当前controller中所有抛出指定异常的方法。</p>
+<span id="more"></span>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>	<span class="meta">@ExceptionHandler(MissingServletRequestParameterException.class)</span>  </span><br><span class="line"><span class="number">2.</span>	<span class="meta">@ResponseStatus(HttpStatus.BAD_REQUEST)</span>  </span><br><span class="line"><span class="number">3.</span>	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">processMethod</span><span class="params">(MissingServletRequestParameterException ex,HttpServletRequest request ,HttpServletResponse response)</span> <span class="keyword">throws</span> IOException &#123;  </span><br><span class="line"><span class="number">4.</span>	    System.out.println(<span class="string">&quot;抛异常了！&quot;</span>+ex.getLocalizedMessage());  </span><br><span class="line"><span class="number">5.</span>	    logger.error(<span class="string">&quot;抛异常了！&quot;</span>+ex.getLocalizedMessage());  </span><br><span class="line"><span class="number">6.</span>	    response.getWriter().printf(ex.getMessage());  </span><br><span class="line"><span class="number">7.</span>	    response.flushBuffer();  </span><br><span class="line">```  </span><br><span class="line">这样，Controller里面的方法抛出了MissingServletRequestParameterException异常就会执行上面的这个方法来进行异常处理。</span><br><span class="line">像我下面的代码`</span><br><span class="line">```java</span><br><span class="line"><span class="number">1.</span>	<span class="meta">@RequestMapping(&quot;/index&quot;)</span>  </span><br><span class="line"><span class="number">2.</span>	<span class="keyword">public</span> String <span class="title function_">index</span><span class="params">(<span class="meta">@RequestParam</span> String id,ModelMap modelMap)</span>&#123;  </span><br><span class="line"><span class="number">3.</span>	    <span class="keyword">if</span> (id==<span class="literal">null</span>)&#123;</span><br><span class="line"><span class="number">4.</span>		   <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">MissingServletRequestParameterException</span>();</span><br><span class="line"><span class="number">5.</span>	&#125;</span><br><span class="line"><span class="number">6.</span>	    <span class="keyword">return</span> <span class="string">&quot;login&quot;</span>;  </span><br><span class="line"><span class="number">7.</span>	&#125; </span><br></pre></td></tr></table></figure>
+<p>如果我没有传入id值，那么就会抛出MissingServletRequestParameterException的异常，就会被上面的异常处理方法处理。<br>上面的@ExceptionHandler(MissingServletRequestParameterException.class)这个注解的value的值是一个Class[]类型的，这里的ExceptionClass是你自己指定的，你也可以指定多个需要处理的异常类型，比如这样<br>@ExceptionHandler(value &#x3D; {MissingServletRequestParameterException.class,BindException.class})，这样就会处理多个异常了。<br>另一种更加通用的方法时：<br>首先定义这样一个统一异常处理类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ExceptionController.Java</span><br><span class="line"><span class="number">1.</span>	<span class="keyword">import</span> net.sf.json.JSONObject;  </span><br><span class="line"><span class="number">2.</span>	<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">ExceptionController</span> &#123;  </span><br><span class="line"><span class="number">3.</span>	    <span class="meta">@ExceptionHandler</span>  </span><br><span class="line"><span class="number">4.</span>	    <span class="keyword">public</span> <span class="meta">@ResponseBody</span> String <span class="title function_">exceptionProcess</span><span class="params">(HttpServletRequest request, HttpServletResponse  </span></span><br><span class="line"><span class="params"><span class="number">5.</span>	            response, RuntimeException ex)</span> &#123;  </span><br><span class="line"><span class="number">6.</span>	        <span class="type">JSONObject</span> <span class="variable">json</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JSONObject</span>();  </span><br><span class="line"><span class="number">7.</span>	        json.put(<span class="string">&quot;isError&quot;</span>, <span class="literal">true</span>);  </span><br><span class="line"><span class="number">8.</span>	        json.put(<span class="string">&quot;msg&quot;</span>, ex.getMessage());  </span><br><span class="line"><span class="number">9.</span>	        <span class="keyword">return</span> json.toString();  </span><br><span class="line"><span class="number">10.</span>	    &#125;  </span><br><span class="line"><span class="number">11.</span>	&#125;  </span><br></pre></td></tr></table></figure>
 <p>在需要进行统一处理的类中继承这个class</p>
-<pre><code class="java"><span class="number">1</span>.    <span class="keyword">import</span> net.sf.json.JSONObject;  
-<span class="number">2</span>.    <span class="meta">@RequestMapping</span>(<span class="string">"/auth/customer"</span>)  
-<span class="number">3</span>.    <span class="meta">@Controller</span>  
-<span class="number">4</span>.    <span class="meta">@LoginAuth</span>  
-<span class="number">5</span>.    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomerController</span> <span class="keyword">extends</span> <span class="title">ExceptionController</span> </span>{  
-<span class="number">6</span>.        <span class="meta">@Resource</span>  
-<span class="number">7</span>.        <span class="keyword">private</span> CustomerService customerService;  
-<span class="number">8</span>.          
-<span class="number">9</span>.        <span class="comment">/** </span>
-<span class="comment">10.         *  </span>
-<span class="comment">11.         * <span class="doctag">@param</span> page 第几页，从1开始 </span>
-<span class="comment">12.         * <span class="doctag">@param</span> rows 每页多少记录的行数 </span>
-<span class="comment">13.         * <span class="doctag">@return</span> JSON String </span>
-<span class="comment">14.         */</span>  
-<span class="number">15</span>.        <span class="meta">@RequestMapping</span>(<span class="string">"/querybypage"</span>)  
-<span class="number">16</span>.        <span class="meta">@ResponseBody</span>  
-<span class="number">17</span>.        <span class="function"><span class="keyword">public</span> String <span class="title">QueryByPage</span><span class="params">(<span class="keyword">int</span> page, <span class="keyword">int</span> rows)</span> </span>{  
-<span class="number">18</span>.            <span class="comment">//当为缺省值的时候进行赋值  </span>
-<span class="number">19</span>.            <span class="keyword">int</span> currentpage = ( page == <span class="number">0</span>) ? <span class="number">1</span>: page;   <span class="comment">//第几页  </span>
-<span class="number">20</span>.            <span class="keyword">int</span> pageSize = (rows == <span class="number">0</span>) ? <span class="number">5</span>: rows;   <span class="comment">//每页显示数量  </span>
-<span class="number">21</span>.            <span class="keyword">int</span> index = (currentpage - <span class="number">1</span>) * pageSize;   <span class="comment">//从第几条开始显示  </span>
-<span class="number">22</span>.            JSONObject map = customerService.queryByPage(index, pageSize);  
-<span class="number">23</span>.            <span class="keyword">return</span> map.toString();  
-<span class="number">24</span>.        }  
-<span class="number">25</span>.          
-<span class="number">26</span>.        <span class="meta">@RequestMapping</span>(<span class="string">"/test"</span>)  
-<span class="number">27</span>.        <span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">Object <span class="title">test</span><span class="params">()</span> </span>{  
-<span class="number">28</span>.            JSONObject json = <span class="keyword">new</span> JSONObject();  
-<span class="number">29</span>.            json.put(<span class="string">"status"</span>, <span class="string">"success"</span>);  
-<span class="number">30</span>.            String str = <span class="keyword">null</span>;  
-<span class="number">31</span>.            str.toString();  
-<span class="number">32</span>.            <span class="keyword">return</span> json.toString();  
-<span class="number">33</span>.        }  
-<span class="number">34</span>.    } 
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>	<span class="keyword">import</span> net.sf.json.JSONObject;  </span><br><span class="line"><span class="number">2.</span>	<span class="meta">@RequestMapping(&quot;/auth/customer&quot;)</span>  </span><br><span class="line"><span class="number">3.</span>	<span class="meta">@Controller</span>  </span><br><span class="line"><span class="number">4.</span>	<span class="meta">@LoginAuth</span>  </span><br><span class="line"><span class="number">5.</span>	<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CustomerController</span> <span class="keyword">extends</span> <span class="title class_">ExceptionController</span> &#123;  </span><br><span class="line"><span class="number">6.</span>	    <span class="meta">@Resource</span>  </span><br><span class="line"><span class="number">7.</span>	    <span class="keyword">private</span> CustomerService customerService;  </span><br><span class="line"><span class="number">8.</span>	      </span><br><span class="line"><span class="number">9.</span>	    <span class="comment">/** </span></span><br><span class="line"><span class="comment">10.	     *  </span></span><br><span class="line"><span class="comment">11.	     * <span class="doctag">@param</span> page 第几页，从1开始 </span></span><br><span class="line"><span class="comment">12.	     * <span class="doctag">@param</span> rows 每页多少记录的行数 </span></span><br><span class="line"><span class="comment">13.	     * <span class="doctag">@return</span> JSON String </span></span><br><span class="line"><span class="comment">14.	     */</span>  </span><br><span class="line"><span class="number">15.</span>	    <span class="meta">@RequestMapping(&quot;/querybypage&quot;)</span>  </span><br><span class="line"><span class="number">16.</span>	    <span class="meta">@ResponseBody</span>  </span><br><span class="line"><span class="number">17.</span>	    <span class="keyword">public</span> String <span class="title function_">QueryByPage</span><span class="params">(<span class="type">int</span> page, <span class="type">int</span> rows)</span> &#123;  </span><br><span class="line"><span class="number">18.</span>	        <span class="comment">//当为缺省值的时候进行赋值  </span></span><br><span class="line"><span class="number">19.</span>	        <span class="type">int</span> <span class="variable">currentpage</span> <span class="operator">=</span> ( page == <span class="number">0</span>) ? <span class="number">1</span>: page;   <span class="comment">//第几页  </span></span><br><span class="line"><span class="number">20.</span>	        <span class="type">int</span> <span class="variable">pageSize</span> <span class="operator">=</span> (rows == <span class="number">0</span>) ? <span class="number">5</span>: rows;   <span class="comment">//每页显示数量  </span></span><br><span class="line"><span class="number">21.</span>	        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> (currentpage - <span class="number">1</span>) * pageSize;   <span class="comment">//从第几条开始显示  </span></span><br><span class="line"><span class="number">22.</span>	        <span class="type">JSONObject</span> <span class="variable">map</span> <span class="operator">=</span> customerService.queryByPage(index, pageSize);  </span><br><span class="line"><span class="number">23.</span>	        <span class="keyword">return</span> map.toString();  </span><br><span class="line"><span class="number">24.</span>	    &#125;  </span><br><span class="line"><span class="number">25.</span>	      </span><br><span class="line"><span class="number">26.</span>	    <span class="meta">@RequestMapping(&quot;/test&quot;)</span>  </span><br><span class="line"><span class="number">27.</span>	    <span class="keyword">public</span> <span class="meta">@ResponseBody</span> Object <span class="title function_">test</span><span class="params">()</span> &#123;  </span><br><span class="line"><span class="number">28.</span>	        <span class="type">JSONObject</span> <span class="variable">json</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JSONObject</span>();  </span><br><span class="line"><span class="number">29.</span>	        json.put(<span class="string">&quot;status&quot;</span>, <span class="string">&quot;success&quot;</span>);  </span><br><span class="line"><span class="number">30.</span>	        <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="literal">null</span>;  </span><br><span class="line"><span class="number">31.</span>	        str.toString();  </span><br><span class="line"><span class="number">32.</span>	        <span class="keyword">return</span> json.toString();  </span><br><span class="line"><span class="number">33.</span>	    &#125;  </span><br><span class="line"><span class="number">34.</span>	&#125; </span><br></pre></td></tr></table></figure>
+<p>其中重要的一行是<br>1.	public class CustomerController extends ExceptionController<br>这样CustomController里的方法被访问的时候， 如果有异常，就会被exceptionProces()处理.因为继承之后，子类中都有这个标注的方法了。<br>但这个注解只会是在当前的Controller里面起作用，如果想在所有的Controller里面统一处理异常的话，可以用@ControllerAdvice来创建一个专门处理全局的的类。</p>
+<pre><code class="java">1.	@ControllerAdvice    
+2.	    public class SpringExceptionHandler&#123;    
+3.	      /**  
+4.	         * 全局处理Exception  
+5.	         * 错误的情况下返回500  
+6.	         * @param ex  
+7.	         * @param req  
+8.	         * @return  
+9.	         */    
+10.	        @ExceptionHandler(value = &#123;Exception.class&#125;)    
+11.	        public ResponseEntity&lt;Object&gt; handleOtherExceptions(final Exception ex, final WebRequest req) &#123;    
+12.	            TResult tResult = new TResult();  //处理结果  
+13.	            tResult.setStatus(CodeType.V_500);    
+14.	            tResult.setErrorMessage(ex.getMessage());    
+15.	            return new ResponseEntity&lt;Object&gt;(tResult,HttpStatus.OK);    
+16.	        &#125;    
+17.	    &#125;
 </code></pre>
-<p>其中重要的一行是</p>
-<ol>
-<li>public class CustomerController extends ExceptionController<br>这样CustomController里的方法被访问的时候， 如果有异常，就会被exceptionProces()处理.因为继承之后，子类中都有这个标注的方法了。<br>但这个注解只会是在当前的Controller里面起作用，如果想在所有的Controller里面统一处理异常的话，可以用@ControllerAdvice来创建一个专门处理全局的的类。<br><code>`</code>java</li>
-<li>@ControllerAdvice    </li>
-<li>public class SpringExceptionHandler{    </li>
-<li>/**  </li>
-<li><ul>
-<li>全局处理Exception  </li>
-</ul>
-</li>
-<li><ul>
-<li>错误的情况下返回500  </li>
-</ul>
-</li>
-<li><ul>
-<li>@param ex  </li>
-</ul>
-</li>
-<li><ul>
-<li>@param req  </li>
-</ul>
-</li>
-<li><ul>
-<li>@return  </li>
-</ul>
-</li>
-<li>*/    </li>
-<li>@ExceptionHandler(value = {Exception.class})    </li>
-<li>public ResponseEntity<object> handleOtherExceptions(final Exception ex, final WebRequest req) {    </object></li>
-<li>TResult tResult = new TResult();  //处理结果  </li>
-<li>tResult.setStatus(CodeType.V_500);    </li>
-<li>tResult.setErrorMessage(ex.getMessage());    </li>
-<li>return new ResponseEntity<object>(tResult,HttpStatus.OK);    </object></li>
-<li>}    </li>
-<li>}<br><code>`</code><br>注意，这种注解在springmvc的配置文件中扫描是，要把@ControllerAdvice也包含进来，否则不起作用。<br>此外，@ControllerAdvice还可以用于全局的requestMapping，较少用。<br>参考：<a href="http://jinnianshilongnian.iteye.com/blog/1866350" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/blog/1866350</a><br><a href="http://blog.csdn.net/u013632755/article/details/49908621" target="_blank" rel="noopener">http://blog.csdn.net/u013632755/article/details/49908621</a></li>
-</ol>
+<p>注意，这种注解在springmvc的配置文件中扫描是，要把@ControllerAdvice也包含进来，否则不起作用。<br>此外，@ControllerAdvice还可以用于全局的requestMapping，较少用。<br>参考：<a target="_blank" rel="noopener" href="http://jinnianshilongnian.iteye.com/blog/1866350">http://jinnianshilongnian.iteye.com/blog/1866350</a><br>     <a target="_blank" rel="noopener" href="http://blog.csdn.net/u013632755/article/details/49908621">http://blog.csdn.net/u013632755/article/details/49908621</a></p>
 
-      
     </div>
-    
-    
-    
-	
-	<div>
-  
-    <div>
-    
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-  
-	</div>
 
     
-
+    
     
 
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者：</strong>
-    David Aaronson
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="www.xiaoyb.cc/2017/08/05/用-ExceptionHandler，-ControllerAdvice-来进行异常处理/" title="用@ExceptionHandler，@ControllerAdvice 来进行异常处理">www.xiaoyb.cc/2017/08/05/用-ExceptionHandler，-ControllerAdvice-来进行异常处理/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/springmvc/" rel="tag"># springmvc</a>
-          
-            <a href="/tags/异常处理/" rel="tag"># 异常处理</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/08/01/SpringMVC自定义注解/" rel="next" title="SpringMVC自定义注解和拦截器实现用户行为验证">
-                <i class="fa fa-chevron-left"></i> SpringMVC自定义注解和拦截器实现用户行为验证
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/springmvc/" rel="tag"># springmvc</a>
+              <a href="/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" rel="tag"># 异常处理</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/07/SpringMVC自定义注解和拦截器实现用户行为验证/" rel="prev" title="SpringMVC 使用HandlerMethodArgumentResolver自定义解析器实现请求数据绑定方法入参">
-                SpringMVC 使用HandlerMethodArgumentResolver自定义解析器实现请求数据绑定方法入参 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/08/01/SpringMVC%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/" rel="prev" title="SpringMVC自定义注解和拦截器实现用户行为验证">
+      <i class="fa fa-chevron-left"></i> SpringMVC自定义注解和拦截器实现用户行为验证
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/08/07/SpringMVC%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA%E9%AA%8C%E8%AF%81/" rel="next" title="SpringMVC 使用HandlerMethodArgumentResolver自定义解析器实现请求数据绑定方法入参">
+      SpringMVC 使用HandlerMethodArgumentResolver自定义解析器实现请求数据绑定方法入参 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-
-  
-    <div class="comments" id="comments">
-    </div>
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="David Aaronson" />
-            
-              <p class="site-author-name" itemprop="name">David Aaronson</p>
-              <p class="site-description motion-element" itemprop="description">在浮躁的社会中,我携书本同行</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">45</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/xiaoybboy" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" title="NexT">
-                      
-                        <i class="fa fa-fw fa-google"></i>NexT</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=5276811&auto=0&height=66"></iframe>
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">David Aaronson</span>
-
-  
-</div>
-
-
-
-
-
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>访问人数
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      人
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>总访问量
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      次
-    </span>
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Inhaltsverzeichnis
+        </li>
+        <li class="sidebar-nav-overview">
+          Übersicht
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">David Aaronson</p>
+  <div class="site-description" itemprop="description">在浮躁的社会中,我携书本同行</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">Artikel</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">Kategorien</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">schlagwörter</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">David Aaronson</span>
+</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
 
 
 
 
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -824,444 +420,6 @@
 
 
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'oJj4VKBTWmnSXOJUkeaN1J4m-gzGzoHsz',
-        appKey: 'HX69JVFeHHrJQAKOejk4BbHN',
-        placeholder: 'Say Something',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
 
 
 
@@ -1269,40 +427,5 @@
 
   
 
-  
-
-  
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
-  
-
-  
-
-  <!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/clicklove.js"></script>
 </body>
 </html>

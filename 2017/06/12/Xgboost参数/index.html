@@ -1,140 +1,50 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-  <script>
-  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
-  daovoice('init', {
-      app_id: "d78c0096"
-    });
-  daovoice('update');
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Xgboost," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="XGBoost的参数XGBoost的作者把所有的参数分成了三类：  通用参数：宏观函数控制。 Booster参数：控制每一步的booster(tree/regression)。 学习目标参数：控制训练目标的表现。在这里我会类比GBM来讲解，所以作为一种基础知识，强烈推荐先阅读这篇文章。">
-<meta name="keywords" content="Xgboost">
+  <meta name="description" content="XGBoost的参数XGBoost的作者把所有的参数分成了三类：  通用参数：宏观函数控制。 Booster参数：控制每一步的booster(tree&#x2F;regression)。 学习目标参数：控制训练目标的表现。在这里我会类比GBM来讲解，所以作为一种基础知识，强烈推荐先阅读这篇文章。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xgboost参数">
-<meta property="og:url" content="www.xiaoyb.cc/2017/06/12/Xgboost参数/index.html">
+<meta property="og:url" content="http://example.com/2017/06/12/Xgboost%E5%8F%82%E6%95%B0/index.html">
 <meta property="og:site_name" content="David Aaronson">
-<meta property="og:description" content="XGBoost的参数XGBoost的作者把所有的参数分成了三类：  通用参数：宏观函数控制。 Booster参数：控制每一步的booster(tree/regression)。 学习目标参数：控制训练目标的表现。在这里我会类比GBM来讲解，所以作为一种基础知识，强烈推荐先阅读这篇文章。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-23T13:24:50.754Z">
+<meta property="og:description" content="XGBoost的参数XGBoost的作者把所有的参数分成了三类：  通用参数：宏观函数控制。 Booster参数：控制每一步的booster(tree&#x2F;regression)。 学习目标参数：控制训练目标的表现。在这里我会类比GBM来讲解，所以作为一种基础知识，强烈推荐先阅读这篇文章。">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-06-12T10:58:23.000Z">
+<meta property="article:modified_time" content="2023-10-18T12:23:15.858Z">
+<meta property="article:author" content="David Aaronson">
+<meta property="article:tag" content="Xgboost">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xgboost参数">
-<meta name="twitter:description" content="XGBoost的参数XGBoost的作者把所有的参数分成了三类：  通用参数：宏观函数控制。 Booster参数：控制每一步的booster(tree/regression)。 学习目标参数：控制训练目标的表现。在这里我会类比GBM来讲解，所以作为一种基础知识，强烈推荐先阅读这篇文章。">
+
+<link rel="canonical" href="http://example.com/2017/06/12/Xgboost%E5%8F%82%E6%95%B0/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="www.xiaoyb.cc/2017/06/12/Xgboost参数/"/>
-
-
-
-
 
   <title>Xgboost参数 | David Aaronson</title>
   
@@ -143,293 +53,150 @@
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?89b72b8b15f71e8732bbf6020d51d20e";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">David Aaronson</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">David Aaronson</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
+
+
+
 
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Startseite</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archiv</a>
 
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="www.xiaoyb.cc/2017/06/12/Xgboost参数/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2017/06/12/Xgboost%E5%8F%82%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="David Aaronson">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="在浮躁的社会中,我携书本同行">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="David Aaronson">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Xgboost参数</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Xgboost参数
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-12T18:58:23+08:00">
-                2017-06-12
-              </time>
-            
+              <span class="post-meta-item-text">Veröffentlicht am</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+              <time title="Erstellt: 2017-06-12 18:58:23" itemprop="dateCreated datePublished" datetime="2017-06-12T18:58:23+08:00">2017-06-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2023-10-18 20:23:15" itemprop="dateModified" datetime="2023-10-18T20:23:15+08:00">2023-10-18</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Xgboost/" itemprop="url" rel="index">
-                    <span itemprop="name">Xgboost</span>
-                  </a>
+                  <a href="/categories/Xgboost/" itemprop="url" rel="index"><span itemprop="name">Xgboost</span></a>
                 </span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/06/12/Xgboost参数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/06/12/Xgboost参数/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i></i>阅读数
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,700字
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -437,343 +204,218 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <h1 id="XGBoost的参数"><a href="#XGBoost的参数" class="headerlink" title="XGBoost的参数"></a>XGBoost的参数</h1><p>XGBoost的作者把所有的参数分成了三类：</p>
 <ol>
 <li>通用参数：宏观函数控制。</li>
-<li>Booster参数：控制每一步的booster(tree/regression)。</li>
-<li>学习目标参数：控制训练目标的表现。<br>在这里我会类比GBM来讲解，所以作为一种基础知识，强烈推荐先阅读这篇文章。<a id="more"></a>
-<h2 id="通用参数"><a href="#通用参数" class="headerlink" title="通用参数"></a>通用参数</h2>这些参数用来控制XGBoost的宏观功能。<h3 id="booster-默认gbtree"><a href="#booster-默认gbtree" class="headerlink" title="booster[默认gbtree]"></a>booster[默认gbtree]</h3>选择每次迭代的模型，有两种选择：<br>gbtree：基于树的模型<br>gbliner：线性模型<h3 id="silent-默认0"><a href="#silent-默认0" class="headerlink" title="silent[默认0]"></a>silent[默认0]</h3>当这个参数值为1时，静默模式开启，不会输出任何信息。<br>一般这个参数就保持默认的0，因为这样能帮我们更好地理解模型。<h3 id="nthread-默认值为最大可能的线程数"><a href="#nthread-默认值为最大可能的线程数" class="headerlink" title="nthread[默认值为最大可能的线程数]"></a>nthread[默认值为最大可能的线程数]</h3>这个参数用来进行多线程控制，应当输入系统的核数。<br>如果你希望使用CPU全部的核，那就不要输入这个参数，算法会自动检测它。<br>还有两个参数，XGBoost会自动设置，目前你不用管它。接下来咱们一起看booster参数。<h2 id="booster参数"><a href="#booster参数" class="headerlink" title="booster参数"></a>booster参数</h2>尽管有两种booster可供选择，我这里只介绍tree booster，因为它的表现远远胜过linear booster，所以linear booster很少用到。<h3 id="eta-默认0-3"><a href="#eta-默认0-3" class="headerlink" title="eta[默认0.3]"></a>eta[默认0.3]</h3>和GBM中的 learning rate 参数类似。<br>通过减少每一步的权重，可以提高模型的鲁棒性。<br>典型值为0.01-0.2。<h3 id="min-child-weight-默认1"><a href="#min-child-weight-默认1" class="headerlink" title="min_child_weight[默认1]"></a>min_child_weight[默认1]</h3>决定最小叶子节点样本权重和。<br>和GBM的 min_child_leaf 参数类似，但不完全一样。XGBoost的这个参数是最小样本权重的和，而GBM参数是最小样本总数。<br>这个参数用于避免过拟合。当它的值较大时，可以避免模型学习到局部的特殊样本。<br>但是如果这个值过高，会导致欠拟合。这个参数需要使用CV来调整。<h3 id="max-depth-默认6"><a href="#max-depth-默认6" class="headerlink" title="max_depth[默认6]"></a>max_depth[默认6]</h3>和GBM中的参数相同，这个值为树的最大深度。<br>这个值也是用来避免过拟合的。max_depth越大，模型会学到更具体更局部的样本。<br>需要使用CV函数来进行调优。<br>典型值：3-10<h3 id="max-leaf-nodes"><a href="#max-leaf-nodes" class="headerlink" title="max_leaf_nodes"></a>max_leaf_nodes</h3>树上最大的节点或叶子的数量。<br>可以替代max_depth的作用。因为如果生成的是二叉树，一个深度为n的树最多生成n2个叶子。<br>如果定义了这个参数，GBM会忽略max_depth参数。<h3 id="gamma-默认0"><a href="#gamma-默认0" class="headerlink" title="gamma[默认0]"></a>gamma[默认0]</h3>在节点分裂时，只有分裂后损失函数的值下降了，才会分裂这个节点。Gamma指定了节点分裂所需的最小损失函数下降值。<br>这个参数的值越大，算法越保守。这个参数的值和损失函数息息相关，所以是需要调整的。<h3 id="max-delta-step-默认0"><a href="#max-delta-step-默认0" class="headerlink" title="max_delta_step[默认0]"></a>max_delta_step[默认0]</h3>这参数限制每棵树权重改变的最大步长。如果这个参数的值为0，那就意味着没有约束。如果它被赋予了某个正值，那么它会让这个算法更加保守。<br>通常，这个参数不需要设置。但是当各类别的样本十分不平衡时，它对逻辑回归是很有帮助的。<br>这个参数一般用不到，但是你可以挖掘出来它更多的用处。<h3 id="subsample-默认1"><a href="#subsample-默认1" class="headerlink" title="subsample[默认1]"></a>subsample[默认1]</h3>和GBM中的subsample参数一模一样。这个参数控制对于每棵树，随机采样的比例。<br>减小这个参数的值，算法会更加保守，避免过拟合。但是，如果这个值设置得过小，它可能会导致欠拟合。<br>典型值：0.5-1<h3 id="colsample-bytree-默认1"><a href="#colsample-bytree-默认1" class="headerlink" title="colsample_bytree[默认1]"></a>colsample_bytree[默认1]</h3>和GBM里面的max_features参数类似。用来控制每棵随机采样的列数的占比(每一列是一个特征)。<br>典型值：0.5-1<h3 id="colsample-bylevel-默认1"><a href="#colsample-bylevel-默认1" class="headerlink" title="colsample_bylevel[默认1]"></a>colsample_bylevel[默认1]</h3>用来控制树的每一级的每一次分裂，对列数的采样的占比。<br>我个人一般不太用这个参数，因为subsample参数和colsample_bytree参数可以起到相同的作用。但是如果感兴趣，可以挖掘这个参数更多的用处。<h3 id="lambda-默认1"><a href="#lambda-默认1" class="headerlink" title="lambda[默认1]"></a>lambda[默认1]</h3>权重的L2正则化项。(和Ridge regression类似)。<br>这个参数是用来控制XGBoost的正则化部分的。虽然大部分数据科学家很少用到这个参数，但是这个参数在减少过拟合上还是可以挖掘出更多用处的。<h3 id="alpha-默认1"><a href="#alpha-默认1" class="headerlink" title="alpha[默认1]"></a>alpha[默认1]</h3>权重的L1正则化项。(和Lasso regression类似)。<br>可以应用在很高维度的情况下，使得算法的速度更快。<h3 id="scale-pos-weight-默认1"><a href="#scale-pos-weight-默认1" class="headerlink" title="scale_pos_weight[默认1]"></a>scale_pos_weight[默认1]</h3>在各类别样本十分不平衡时，把这个参数设定为一个正值，可以使算法更快收敛。<h2 id="学习目标参数"><a href="#学习目标参数" class="headerlink" title="学习目标参数"></a>学习目标参数</h2>这个参数用来控制理想的优化目标和每一步结果的度量方法。<h3 id="objective-默认reg-linear"><a href="#objective-默认reg-linear" class="headerlink" title="objective[默认reg:linear]"></a>objective[默认reg:linear]</h3>这个参数定义需要被最小化的损失函数。最常用的值有： </li>
+<li>Booster参数：控制每一步的booster(tree&#x2F;regression)。</li>
+<li>学习目标参数：控制训练目标的表现。<br>在这里我会类比GBM来讲解，所以作为一种基础知识，强烈推荐先阅读这篇文章。<span id="more"></span></li>
+</ol>
+<h2 id="通用参数"><a href="#通用参数" class="headerlink" title="通用参数"></a>通用参数</h2><p>这些参数用来控制XGBoost的宏观功能。</p>
+<h3 id="booster-默认gbtree"><a href="#booster-默认gbtree" class="headerlink" title="booster[默认gbtree]"></a>booster[默认gbtree]</h3><p>选择每次迭代的模型，有两种选择：<br>gbtree：基于树的模型<br>gbliner：线性模型</p>
+<h3 id="silent-默认0"><a href="#silent-默认0" class="headerlink" title="silent[默认0]"></a>silent[默认0]</h3><p>当这个参数值为1时，静默模式开启，不会输出任何信息。<br>一般这个参数就保持默认的0，因为这样能帮我们更好地理解模型。</p>
+<h3 id="nthread-默认值为最大可能的线程数"><a href="#nthread-默认值为最大可能的线程数" class="headerlink" title="nthread[默认值为最大可能的线程数]"></a>nthread[默认值为最大可能的线程数]</h3><p>这个参数用来进行多线程控制，应当输入系统的核数。<br>如果你希望使用CPU全部的核，那就不要输入这个参数，算法会自动检测它。<br>还有两个参数，XGBoost会自动设置，目前你不用管它。接下来咱们一起看booster参数。</p>
+<h2 id="booster参数"><a href="#booster参数" class="headerlink" title="booster参数"></a>booster参数</h2><p>尽管有两种booster可供选择，我这里只介绍tree booster，因为它的表现远远胜过linear booster，所以linear booster很少用到。</p>
+<h3 id="eta-默认0-3"><a href="#eta-默认0-3" class="headerlink" title="eta[默认0.3]"></a>eta[默认0.3]</h3><p>和GBM中的 learning rate 参数类似。<br>通过减少每一步的权重，可以提高模型的鲁棒性。<br>典型值为0.01-0.2。</p>
+<h3 id="min-child-weight-默认1"><a href="#min-child-weight-默认1" class="headerlink" title="min_child_weight[默认1]"></a>min_child_weight[默认1]</h3><p>决定最小叶子节点样本权重和。<br>和GBM的 min_child_leaf 参数类似，但不完全一样。XGBoost的这个参数是最小样本权重的和，而GBM参数是最小样本总数。<br>这个参数用于避免过拟合。当它的值较大时，可以避免模型学习到局部的特殊样本。<br>但是如果这个值过高，会导致欠拟合。这个参数需要使用CV来调整。</p>
+<h3 id="max-depth-默认6"><a href="#max-depth-默认6" class="headerlink" title="max_depth[默认6]"></a>max_depth[默认6]</h3><p>和GBM中的参数相同，这个值为树的最大深度。<br>这个值也是用来避免过拟合的。max_depth越大，模型会学到更具体更局部的样本。<br>需要使用CV函数来进行调优。<br>典型值：3-10</p>
+<h3 id="max-leaf-nodes"><a href="#max-leaf-nodes" class="headerlink" title="max_leaf_nodes"></a>max_leaf_nodes</h3><p>树上最大的节点或叶子的数量。<br>可以替代max_depth的作用。因为如果生成的是二叉树，一个深度为n的树最多生成n2个叶子。<br>如果定义了这个参数，GBM会忽略max_depth参数。</p>
+<h3 id="gamma-默认0"><a href="#gamma-默认0" class="headerlink" title="gamma[默认0]"></a>gamma[默认0]</h3><p>在节点分裂时，只有分裂后损失函数的值下降了，才会分裂这个节点。Gamma指定了节点分裂所需的最小损失函数下降值。<br>这个参数的值越大，算法越保守。这个参数的值和损失函数息息相关，所以是需要调整的。</p>
+<h3 id="max-delta-step-默认0"><a href="#max-delta-step-默认0" class="headerlink" title="max_delta_step[默认0]"></a>max_delta_step[默认0]</h3><p>这参数限制每棵树权重改变的最大步长。如果这个参数的值为0，那就意味着没有约束。如果它被赋予了某个正值，那么它会让这个算法更加保守。<br>通常，这个参数不需要设置。但是当各类别的样本十分不平衡时，它对逻辑回归是很有帮助的。<br>这个参数一般用不到，但是你可以挖掘出来它更多的用处。</p>
+<h3 id="subsample-默认1"><a href="#subsample-默认1" class="headerlink" title="subsample[默认1]"></a>subsample[默认1]</h3><p>和GBM中的subsample参数一模一样。这个参数控制对于每棵树，随机采样的比例。<br>减小这个参数的值，算法会更加保守，避免过拟合。但是，如果这个值设置得过小，它可能会导致欠拟合。<br>典型值：0.5-1</p>
+<h3 id="colsample-bytree-默认1"><a href="#colsample-bytree-默认1" class="headerlink" title="colsample_bytree[默认1]"></a>colsample_bytree[默认1]</h3><p>和GBM里面的max_features参数类似。用来控制每棵随机采样的列数的占比(每一列是一个特征)。<br>典型值：0.5-1</p>
+<h3 id="colsample-bylevel-默认1"><a href="#colsample-bylevel-默认1" class="headerlink" title="colsample_bylevel[默认1]"></a>colsample_bylevel[默认1]</h3><p>用来控制树的每一级的每一次分裂，对列数的采样的占比。<br>我个人一般不太用这个参数，因为subsample参数和colsample_bytree参数可以起到相同的作用。但是如果感兴趣，可以挖掘这个参数更多的用处。</p>
+<h3 id="lambda-默认1"><a href="#lambda-默认1" class="headerlink" title="lambda[默认1]"></a>lambda[默认1]</h3><p>权重的L2正则化项。(和Ridge regression类似)。<br>这个参数是用来控制XGBoost的正则化部分的。虽然大部分数据科学家很少用到这个参数，但是这个参数在减少过拟合上还是可以挖掘出更多用处的。</p>
+<h3 id="alpha-默认1"><a href="#alpha-默认1" class="headerlink" title="alpha[默认1]"></a>alpha[默认1]</h3><p>权重的L1正则化项。(和Lasso regression类似)。<br>可以应用在很高维度的情况下，使得算法的速度更快。</p>
+<h3 id="scale-pos-weight-默认1"><a href="#scale-pos-weight-默认1" class="headerlink" title="scale_pos_weight[默认1]"></a>scale_pos_weight[默认1]</h3><p>在各类别样本十分不平衡时，把这个参数设定为一个正值，可以使算法更快收敛。</p>
+<h2 id="学习目标参数"><a href="#学习目标参数" class="headerlink" title="学习目标参数"></a>学习目标参数</h2><p>这个参数用来控制理想的优化目标和每一步结果的度量方法。</p>
+<h3 id="objective-默认reg-linear"><a href="#objective-默认reg-linear" class="headerlink" title="objective[默认reg:linear]"></a>objective[默认reg:linear]</h3><p>这个参数定义需要被最小化的损失函数。最常用的值有： </p>
+<ol>
 <li>binary:logistic 二分类的逻辑回归，返回预测的概率(不是类别)。</li>
 <li>multi:softmax 使用softmax的多分类器，返回预测的类别(不是概率)。<br>在这种情况下，你还需要多设一个参数：num_class(类别数目)。</li>
-<li>multi:softprob 和multi:softmax参数一样，但是返回的是每个数据属于各个类别的概率。<h3 id="eval-metric-默认值取决于objective参数的取值"><a href="#eval-metric-默认值取决于objective参数的取值" class="headerlink" title="eval_metric[默认值取决于objective参数的取值]"></a>eval_metric[默认值取决于objective参数的取值]</h3>对于有效数据的度量方法。<br>对于回归问题，默认值是rmse，对于分类问题，默认值是error。<br>典型值有： </li>
-<li>rmse 均方根误差(∑Ni=1ϵ2N−−−−−−√)</li>
-<li>mae 平均绝对误差(∑Ni=1|ϵ|N)</li>
+<li>multi:softprob 和multi:softmax参数一样，但是返回的是每个数据属于各个类别的概率。</li>
+</ol>
+<h3 id="eval-metric-默认值取决于objective参数的取值"><a href="#eval-metric-默认值取决于objective参数的取值" class="headerlink" title="eval_metric[默认值取决于objective参数的取值]"></a>eval_metric[默认值取决于objective参数的取值]</h3><p>对于有效数据的度量方法。<br>对于回归问题，默认值是rmse，对于分类问题，默认值是error。<br>典型值有： </p>
+<ol>
+<li>rmse 均方根误差(∑Ni&#x3D;1ϵ2N−−−−−−√)</li>
+<li>mae 平均绝对误差(∑Ni&#x3D;1|ϵ|N)</li>
 <li>logloss 负对数似然函数值</li>
 <li>error 二分类错误率(阈值为0.5)</li>
 <li>merror 多分类错误率</li>
 <li>mlogloss 多分类logloss损失函数</li>
-<li>auc 曲线下面积<h3 id="seed-默认0"><a href="#seed-默认0" class="headerlink" title="seed(默认0)"></a>seed(默认0)</h3>随机数的种子<br>设置它可以复现随机数据的结果，也可以用于调整参数<br>如果你之前用的是Scikit-learn,你可能不太熟悉这些参数。但是有个好消息，python的XGBoost模块有一个sklearn包，XGBClassifier。这个包中的参数是按sklearn风格命名的。会改变的函数名是：<br>1、eta -&gt; learning_rate<br>2、lambda -&gt; reg_lambda<br>3、alpha -&gt; reg_alpha<br>你肯定在疑惑为啥咱们没有介绍和GBM中的n_estimators类似的参数。XGBClassifier中确实有一个类似的参数，但是，是在标准XGBoost实现中调用拟合函数时，把它作为num_boosting_rounds参数传入。<br>XGBoost Guide 的一些部分是我强烈推荐大家阅读的，通过它可以对代码和参数有一个更好的了解：<br><a href="http://xgboost.readthedocs.io/en/latest/parameter.html#general-parameters" target="_blank" rel="noopener">http://xgboost.readthedocs.io/en/latest/parameter.html#general-parameters</a><br><a href="https://github.com/dmlc/xgboost/tree/master/demo/guide-python" title="XGBoost Demo Codes" target="_blank" rel="noopener">https://github.com/dmlc/xgboost/tree/master/demo/guide-python</a><br><a href="http://xgboost.readthedocs.io/en/latest/python/python_api.html" title="Python Api" target="_blank" rel="noopener">http://xgboost.readthedocs.io/en/latest/python/python_api.html</a><br>本文参考：<a href="http://blog.csdn.net/han_xiaoyang/article/details/52665396" target="_blank" rel="noopener">http://blog.csdn.net/han_xiaoyang/article/details/52665396</a></li>
+<li>auc 曲线下面积</li>
 </ol>
+<h3 id="seed-默认0"><a href="#seed-默认0" class="headerlink" title="seed(默认0)"></a>seed(默认0)</h3><p>随机数的种子<br>设置它可以复现随机数据的结果，也可以用于调整参数<br>如果你之前用的是Scikit-learn,你可能不太熟悉这些参数。但是有个好消息，python的XGBoost模块有一个sklearn包，XGBClassifier。这个包中的参数是按sklearn风格命名的。会改变的函数名是：<br>1、eta -&gt; learning_rate<br>2、lambda -&gt; reg_lambda<br>3、alpha -&gt; reg_alpha<br>你肯定在疑惑为啥咱们没有介绍和GBM中的n_estimators类似的参数。XGBClassifier中确实有一个类似的参数，但是，是在标准XGBoost实现中调用拟合函数时，把它作为num_boosting_rounds参数传入。<br>XGBoost Guide 的一些部分是我强烈推荐大家阅读的，通过它可以对代码和参数有一个更好的了解：<br><a target="_blank" rel="noopener" href="http://xgboost.readthedocs.io/en/latest/parameter.html#general-parameters">http://xgboost.readthedocs.io/en/latest/parameter.html#general-parameters</a><br><a target="_blank" rel="noopener" href="https://github.com/dmlc/xgboost/tree/master/demo/guide-python" title="XGBoost Demo Codes">https://github.com/dmlc/xgboost/tree/master/demo/guide-python</a><br><a target="_blank" rel="noopener" href="http://xgboost.readthedocs.io/en/latest/python/python_api.html" title="Python Api">http://xgboost.readthedocs.io/en/latest/python/python_api.html</a><br>本文参考：<a target="_blank" rel="noopener" href="http://blog.csdn.net/han_xiaoyang/article/details/52665396">http://blog.csdn.net/han_xiaoyang/article/details/52665396</a></p>
 
-      
     </div>
-    
-    
-    
-	
-	<div>
-  
-    <div>
-    
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-  
-	</div>
 
     
-
+    
     
 
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者：</strong>
-    David Aaronson
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="www.xiaoyb.cc/2017/06/12/Xgboost参数/" title="Xgboost参数">www.xiaoyb.cc/2017/06/12/Xgboost参数/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Xgboost/" rel="tag"># Xgboost</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/06/07/python求list的平均数、众数、最大值、最小值、极值、方差等/" rel="next" title="python求list的平均数、众数、最大值、最小值、极值、方差等">
-                <i class="fa fa-chevron-left"></i> python求list的平均数、众数、最大值、最小值、极值、方差等
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Xgboost/" rel="tag"># Xgboost</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/22/maven/" rel="prev" title="maven项目创建时出错">
-                maven项目创建时出错 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/06/07/python%E6%B1%82list%E7%9A%84%E5%B9%B3%E5%9D%87%E6%95%B0%E3%80%81%E4%BC%97%E6%95%B0%E3%80%81%E6%9C%80%E5%A4%A7%E5%80%BC%E3%80%81%E6%9C%80%E5%B0%8F%E5%80%BC%E3%80%81%E6%9E%81%E5%80%BC%E3%80%81%E6%96%B9%E5%B7%AE%E7%AD%89/" rel="prev" title="python求list的平均数、众数、最大值、最小值、极值、方差等">
+      <i class="fa fa-chevron-left"></i> python求list的平均数、众数、最大值、最小值、极值、方差等
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/07/22/maven/" rel="next" title="maven项目创建时出错">
+      maven项目创建时出错 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-
-  
-    <div class="comments" id="comments">
-    </div>
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="David Aaronson" />
-            
-              <p class="site-author-name" itemprop="name">David Aaronson</p>
-              <p class="site-description motion-element" itemprop="description">在浮躁的社会中,我携书本同行</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">45</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/xiaoybboy" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" title="NexT">
-                      
-                        <i class="fa fa-fw fa-google"></i>NexT</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=5276811&auto=0&height=66"></iframe>
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#XGBoost的参数"><span class="nav-number">1.</span> <span class="nav-text">XGBoost的参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通用参数"><span class="nav-number">1.1.</span> <span class="nav-text">通用参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#booster-默认gbtree"><span class="nav-number">1.1.1.</span> <span class="nav-text">booster[默认gbtree]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#silent-默认0"><span class="nav-number">1.1.2.</span> <span class="nav-text">silent[默认0]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nthread-默认值为最大可能的线程数"><span class="nav-number">1.1.3.</span> <span class="nav-text">nthread[默认值为最大可能的线程数]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#booster参数"><span class="nav-number">1.2.</span> <span class="nav-text">booster参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#eta-默认0-3"><span class="nav-number">1.2.1.</span> <span class="nav-text">eta[默认0.3]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#min-child-weight-默认1"><span class="nav-number">1.2.2.</span> <span class="nav-text">min_child_weight[默认1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#max-depth-默认6"><span class="nav-number">1.2.3.</span> <span class="nav-text">max_depth[默认6]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#max-leaf-nodes"><span class="nav-number">1.2.4.</span> <span class="nav-text">max_leaf_nodes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gamma-默认0"><span class="nav-number">1.2.5.</span> <span class="nav-text">gamma[默认0]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#max-delta-step-默认0"><span class="nav-number">1.2.6.</span> <span class="nav-text">max_delta_step[默认0]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#subsample-默认1"><span class="nav-number">1.2.7.</span> <span class="nav-text">subsample[默认1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#colsample-bytree-默认1"><span class="nav-number">1.2.8.</span> <span class="nav-text">colsample_bytree[默认1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#colsample-bylevel-默认1"><span class="nav-number">1.2.9.</span> <span class="nav-text">colsample_bylevel[默认1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda-默认1"><span class="nav-number">1.2.10.</span> <span class="nav-text">lambda[默认1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alpha-默认1"><span class="nav-number">1.2.11.</span> <span class="nav-text">alpha[默认1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scale-pos-weight-默认1"><span class="nav-number">1.2.12.</span> <span class="nav-text">scale_pos_weight[默认1]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习目标参数"><span class="nav-number">1.3.</span> <span class="nav-text">学习目标参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#objective-默认reg-linear"><span class="nav-number">1.3.1.</span> <span class="nav-text">objective[默认reg:linear]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eval-metric-默认值取决于objective参数的取值"><span class="nav-number">1.3.2.</span> <span class="nav-text">eval_metric[默认值取决于objective参数的取值]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#seed-默认0"><span class="nav-number">1.3.3.</span> <span class="nav-text">seed(默认0)</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">David Aaronson</span>
-
-  
-</div>
-
-
-
-
-
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>访问人数
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      人
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>总访问量
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      次
-    </span>
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Inhaltsverzeichnis
+        </li>
+        <li class="sidebar-nav-overview">
+          Übersicht
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#XGBoost%E7%9A%84%E5%8F%82%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">XGBoost的参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%8F%82%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">通用参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#booster-%E9%BB%98%E8%AE%A4gbtree"><span class="nav-number">1.1.1.</span> <span class="nav-text">booster[默认gbtree]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#silent-%E9%BB%98%E8%AE%A40"><span class="nav-number">1.1.2.</span> <span class="nav-text">silent[默认0]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nthread-%E9%BB%98%E8%AE%A4%E5%80%BC%E4%B8%BA%E6%9C%80%E5%A4%A7%E5%8F%AF%E8%83%BD%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%95%B0"><span class="nav-number">1.1.3.</span> <span class="nav-text">nthread[默认值为最大可能的线程数]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#booster%E5%8F%82%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">booster参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#eta-%E9%BB%98%E8%AE%A40-3"><span class="nav-number">1.2.1.</span> <span class="nav-text">eta[默认0.3]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#min-child-weight-%E9%BB%98%E8%AE%A41"><span class="nav-number">1.2.2.</span> <span class="nav-text">min_child_weight[默认1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#max-depth-%E9%BB%98%E8%AE%A46"><span class="nav-number">1.2.3.</span> <span class="nav-text">max_depth[默认6]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#max-leaf-nodes"><span class="nav-number">1.2.4.</span> <span class="nav-text">max_leaf_nodes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gamma-%E9%BB%98%E8%AE%A40"><span class="nav-number">1.2.5.</span> <span class="nav-text">gamma[默认0]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#max-delta-step-%E9%BB%98%E8%AE%A40"><span class="nav-number">1.2.6.</span> <span class="nav-text">max_delta_step[默认0]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#subsample-%E9%BB%98%E8%AE%A41"><span class="nav-number">1.2.7.</span> <span class="nav-text">subsample[默认1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#colsample-bytree-%E9%BB%98%E8%AE%A41"><span class="nav-number">1.2.8.</span> <span class="nav-text">colsample_bytree[默认1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#colsample-bylevel-%E9%BB%98%E8%AE%A41"><span class="nav-number">1.2.9.</span> <span class="nav-text">colsample_bylevel[默认1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda-%E9%BB%98%E8%AE%A41"><span class="nav-number">1.2.10.</span> <span class="nav-text">lambda[默认1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alpha-%E9%BB%98%E8%AE%A41"><span class="nav-number">1.2.11.</span> <span class="nav-text">alpha[默认1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scale-pos-weight-%E9%BB%98%E8%AE%A41"><span class="nav-number">1.2.12.</span> <span class="nav-text">scale_pos_weight[默认1]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87%E5%8F%82%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">学习目标参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#objective-%E9%BB%98%E8%AE%A4reg-linear"><span class="nav-number">1.3.1.</span> <span class="nav-text">objective[默认reg:linear]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eval-metric-%E9%BB%98%E8%AE%A4%E5%80%BC%E5%8F%96%E5%86%B3%E4%BA%8Eobjective%E5%8F%82%E6%95%B0%E7%9A%84%E5%8F%96%E5%80%BC"><span class="nav-number">1.3.2.</span> <span class="nav-text">eval_metric[默认值取决于objective参数的取值]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#seed-%E9%BB%98%E8%AE%A40"><span class="nav-number">1.3.3.</span> <span class="nav-text">seed(默认0)</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">David Aaronson</p>
+  <div class="site-description" itemprop="description">在浮躁的社会中,我携书本同行</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">Artikel</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">Kategorien</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">schlagwörter</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">David Aaronson</span>
+</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
 
 
 
 
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -791,444 +433,6 @@
 
 
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'oJj4VKBTWmnSXOJUkeaN1J4m-gzGzoHsz',
-        appKey: 'HX69JVFeHHrJQAKOejk4BbHN',
-        placeholder: 'Say Something',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
 
 
 
@@ -1236,40 +440,5 @@
 
   
 
-  
-
-  
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
-  
-
-  
-
-  <!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/clicklove.js"></script>
 </body>
 </html>
