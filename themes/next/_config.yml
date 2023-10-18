@@ -98,9 +98,9 @@ creative_commons:
 
 # Schemes
 #scheme: Muse
-scheme: Mist
+#scheme: Mist
 #scheme: Pisces
-#scheme: Gemini
+scheme: Gemini
 
 # Dark Mode
 darkmode: true
@@ -163,7 +163,7 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: #/images/avatar.gif
+  url: /images/avatar.jpg
   # If true, the avatar will be dispalyed in circle.
   rounded: false
   # If true, the avatar will be rotated with the cursor.
@@ -177,6 +177,8 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
+  GitHub: https://github.com/xiaoybboy || github
+  NexT: http://theme-next.iissnan.com/getting-started.html || google
   #GitHub: https://github.com/yourname || fab fa-github
   #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
@@ -195,10 +197,9 @@ social_icons:
 
 # Blog rolls
 links_settings:
-  icon: fa fa-link
-  title: Links
-  # Available values: block | inline
-  layout: block
+  links_icon: link
+  links_title: Links
+  links_layout: block
 
 links:
   #Title: http://yoursite.com
@@ -676,7 +677,7 @@ google_analytics:
   only_pageview: false
 
 # Baidu Analytics
-baidu_analytics: # <app_id>
+baidu_analytics: 89b72b8b15f71e8732bbf6020d51d20e
 
 # Growingio Analytics
 growingio_analytics: # <project_id>
